@@ -296,5 +296,15 @@ def build():
     return slug_meta
 
 
+def sync_index():
+    """Copia mockup/home.html in index.html alla radice: e' quello che
+    Vercel serve per '/'. Tenerli sincronizzati a mano e' un errore
+    facile da fare, quindi lo fa questo script."""
+    import shutil
+    shutil.copyfile(HOME, os.path.join(ROOT, "index.html"))
+    print("sincronizzato: /index.html <- mockup/home.html")
+
+
 if __name__ == "__main__":
     build()
+    sync_index()
