@@ -1,33 +1,38 @@
 # Foto della home
 
-Carica qui le fotografie, poi avvisami: le incorporo nella pagina.
+## Usate (incorporate in mockup/home.html come base64)
 
-## Nomi attesi
+| File           | Slot                       | Note |
+|----------------|-----------------------------|------|
+| `ritratto.jpg` | Card "5 domande"            | ridimensionata a 1600px lato lungo, ~144 KB |
+| `giardino.jpg` | Card "agriturismi"          | ridimensionata a 1600px lato lungo, ~281 KB |
 
-| File            | Dove finisce            | Soggetto                          |
-|-----------------|-------------------------|-----------------------------------|
-| `spiaggia.jpg`  | Guida in evidenza       | cane grande in spiaggia, orizzontale |
-| `viaggio.jpg`   | Card "traghetto"        | cane in viaggio, auto o nave      |
-| `ritratto.jpg`  | Card "5 domande"        | primo piano di un cane di taglia grande |
-| `giardino.jpg`  | Card "agriturismi"      | cane in un prato o giardino recintato |
+## Non usata
 
-I nomi non sono obbligatori: se carichi file con altri nomi me lo dici e
-li assegno io agli slot giusti.
+| File | Motivo |
+|------|--------|
+| `non-usata-pomerania.jpg` | Cane piccolo (Pomerania) in casa con bandana natalizia — fuori posizionamento (il sito parla di cani *grandi*) e stagionalmente non generico. Tenuta nel repo nel caso serva altrove, ma non montata nella pagina. |
 
-## Formato
+## Slot ancora vuoti
 
-- JPEG, lato lungo **1600 px** basta e avanza (le foto Pexels a piena
-  risoluzione sono da 5000 px e pesano inutilmente).
-- Sotto **400 KB** l'una: la pagina intera deve stare sotto i 16 MB una
-  volta incorporate.
+| Slot atteso     | Dove finisce         | Soggetto                              |
+|-----------------|-----------------------|----------------------------------------|
+| `spiaggia.jpg`  | Guida in evidenza      | cane grande in spiaggia, orizzontale  |
+| `viaggio.jpg`   | Card "traghetto"       | cane in viaggio, auto o nave          |
+
+## Formato per le prossime foto
+
+- JPEG, lato lungo **1600 px**
+- Sotto **400 KB** l'una
+- Preferibilmente cani di **taglia grande o gigante** — è il soggetto del sito
 
 ## Licenza
 
-Le foto Pexels sono coperte dalla Pexels License: uso gratuito anche
-commerciale, senza obbligo di attribuzione. Va comunque annotata qui la
-pagina di origine di ogni foto, per avere una traccia in caso di dubbi
-futuri sulla provenienza.
+Le foto Pexels sono coperte dalla Pexels License (uso gratuito anche
+commerciale, nessuna attribuzione obbligatoria). Traccia comunque qui la
+pagina Pexels di origine.
 
 | File | URL della pagina Pexels |
-|------|-------------------------|
-|      |                         |
+|------|---------------------------|
+| ritratto.jpg | (da aggiungere) |
+| giardino.jpg | (da aggiungere) |
