@@ -116,32 +116,40 @@
 
   .search{
     margin-top:40px; background:var(--surface); border:1px solid var(--ink);
-    display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr 1fr auto;
+    display:grid; grid-template-columns:1.6fr 1fr 1fr auto;
   }
-  @media (max-width:1080px){ .search{ grid-template-columns:1fr 1fr 1fr; } }
-  @media (max-width:640px){ .search{ grid-template-columns:1fr; } }
+  @media (max-width:760px){ .search{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .search{ grid-template-columns:1fr; } }
   .fld{
-    display:flex; flex-direction:column; gap:5px; padding:18px 20px;
+    display:flex; flex-direction:column; gap:5px; padding:16px 20px;
     border-right:1px solid var(--line); min-width:0;
   }
   .fld:last-of-type{ border-right:none; }
-  @media (max-width:1080px){
+  @media (max-width:760px){
     .fld{ border-bottom:1px solid var(--line); }
-    .fld:nth-child(3n){ border-right:none; }
+    .fld:nth-child(2n){ border-right:none; }
   }
-  @media (max-width:640px){ .fld{ border-right:none; } }
-  .fld .k{
+  @media (max-width:480px){ .fld{ border-right:none; } }
+  .fld label{
     font-family:'Martian Mono',monospace; font-weight:500; font-size:9px;
     letter-spacing:0.02em; text-transform:uppercase; color:var(--ink-2);
   }
-  .fld .v{ font-size:15px; font-weight:600; letter-spacing:-0.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .fld input, .fld select{
+    appearance:none; -webkit-appearance:none; border:none; background:none; padding:0;
+    font-family:'Onest',sans-serif; font-size:15px; font-weight:600; letter-spacing:-0.01em;
+    color:var(--ink); width:100%;
+  }
+  .fld input::placeholder{ color:var(--ink-2); font-weight:500; }
+  .fld input:focus, .fld select:focus{ outline:none; }
+  .fld select{ cursor:pointer; }
   .search .go{
     border:none; background:var(--klein); color:var(--on-klein);
     font-family:'Onest',sans-serif; font-size:13px; font-weight:700;
     letter-spacing:0.06em; text-transform:uppercase; cursor:pointer;
-    padding:18px 30px; transition:background-color .25s ease;
+    padding:16px 30px; transition:background-color .25s ease;
   }
   .search .go:hover{ background:var(--ink); }
+  .search-note{ margin-top:12px; font-size:12.5px; color:var(--ink-2); }
 
   .trust{ display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:20px; }
   .trust span{ display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink-2); }
@@ -376,14 +384,34 @@
         stessa camera.
       </p>
 
-      <form class="search rv" style="--d:180ms" onsubmit="return false;">
-        <div class="fld"><span class="k">Destinazione</span><span class="v">Toscana, Costa Amalfitana…</span></div>
-        <div class="fld"><span class="k">Check-in</span><span class="v">12 set 2026</span></div>
-        <div class="fld"><span class="k">Check-out</span><span class="v">15 set 2026</span></div>
-        <div class="fld"><span class="k">Quanti cani</span><span class="v">2 cani</span></div>
-        <div class="fld"><span class="k">Taglia</span><span class="v">Gigante · 45 kg+</span></div>
+      <form class="search rv" style="--d:180ms" action="/cerca/" method="get">
+        <div class="fld">
+          <label for="q-dest">Destinazione</label>
+          <input id="q-dest" name="regione" type="text" placeholder="Toscana, Trentino, Puglia…" autocomplete="off">
+        </div>
+        <div class="fld">
+          <label for="q-cani">Quanti cani</label>
+          <select id="q-cani" name="cani">
+            <option value="">Indifferente</option>
+            <option value="1">1 cane</option>
+            <option value="2">2 cani</option>
+            <option value="3">3 o più cani</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="q-taglia">Taglia</label>
+          <select id="q-taglia" name="taglia">
+            <option value="">Indifferente</option>
+            <option value="grande">Grande · 25–45 kg</option>
+            <option value="gigante">Gigante · oltre 45 kg</option>
+          </select>
+        </div>
         <button class="go" type="submit">Cerca</button>
       </form>
+      <p class="search-note rv" style="--d:200ms">
+        La ricerca filtra le strutture reali già raccolte in directory. Non gestiamo ancora
+        calendari di disponibilità: le date le concordi direttamente con la struttura.
+      </p>
 
       <div class="trust rv" style="--d:240ms">
         <span><b></b>Zero sorprese al check-in</span>
@@ -428,12 +456,12 @@
     <div class="wrap">
       <p class="lbl rv" style="margin-bottom:20px;">Filtri rapidi</p>
       <div class="chips rv">
-        <a class="chip" href="#strutture"><b>01</b> Cani oltre 40 kg benvenuti</a>
-        <a class="chip" href="#strutture"><b>02</b> Più di 2 cani ammessi</a>
-        <a class="chip" href="#strutture"><b>03</b> Giardino recintato</a>
-        <a class="chip" href="#strutture"><b>04</b> Accesso aree comuni</a>
-        <a class="chip" href="#strutture"><b>05</b> Vicino a spiagge pet friendly</a>
-        <a class="chip" href="#strutture"><b>06</b> Nessun supplemento</a>
+        <a class="chip" href="/cerca/"><b>01</b> Cani oltre 40 kg benvenuti</a>
+        <a class="chip" href="/cerca/"><b>02</b> Più di 2 cani ammessi</a>
+        <a class="chip" href="/cerca/"><b>03</b> Giardino recintato</a>
+        <a class="chip" href="/cerca/"><b>04</b> Accesso aree comuni</a>
+        <a class="chip" href="/cerca/"><b>05</b> Vicino a spiagge pet friendly</a>
+        <a class="chip" href="/cerca/?tag=Nessun%20supplemento"><b>06</b> Nessun supplemento</a>
       </div>
       <p class="seo-copy rv" style="--d:100ms">
         Cerchi un <strong>hotel pet friendly per cani grandi</strong>? Qui trovi
@@ -490,7 +518,7 @@
           <p class="lbl">Strutture in evidenza</p>
           <h2>Tre alloggi reali, per cominciare.</h2>
         </div>
-        <a class="btn btn-line" href="#strutture">Tutte le strutture</a>
+        <a class="btn btn-line" href="/cerca/">Tutte le strutture</a>
       </div>
 
       <div class="note rv">
@@ -501,7 +529,7 @@
       </div>
 
       <div class="stays">
-        <a class="stay rv" href="https://www.agriturismobellavita.it/agriturismo-per-animali/" target="_blank" rel="noopener">
+        <a class="stay rv" href="/struttura/agriturismo-bellavita/">
           <span class="stay-n">01 — PT</span>
           <div class="stay-main">
             <h3>Agriturismo Bellavita</h3>
@@ -513,10 +541,10 @@
               <span class="spec">Piscina per cani</span>
             </div>
           </div>
-          <span class="stay-go">agriturismobellavita.it ↗</span>
+          <span class="stay-go">Vedi la scheda →</span>
         </a>
 
-        <a class="stay rv" href="https://www.dogwelcome.it/strutture-cani-animali-ammessi/rifugi-e-baite/italia/trentino-alto-adige/trento/rifugio-gorck" target="_blank" rel="noopener" style="--d:90ms">
+        <a class="stay rv" href="/struttura/baita-gorck/" style="--d:90ms">
           <span class="stay-n">02 — TN</span>
           <div class="stay-main">
             <h3>Baita Gorck</h3>
@@ -527,10 +555,10 @@
               <span class="spec">Pulizie +10&nbsp;€</span>
             </div>
           </div>
-          <span class="stay-go">dogwelcome.it ↗</span>
+          <span class="stay-go">Vedi la scheda →</span>
         </a>
 
-        <a class="stay rv" href="https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/puglia/brindisi/masseria-le-terrazze-di-serranova" target="_blank" rel="noopener" style="--d:180ms">
+        <a class="stay rv" href="/struttura/masseria-le-terrazze-di-serranova/" style="--d:180ms">
           <span class="stay-n">03 — BR</span>
           <div class="stay-main">
             <h3>Masseria Le Terrazze di Serranova</h3>
@@ -541,7 +569,7 @@
               <span class="spec">Area sgambamento</span>
             </div>
           </div>
-          <span class="stay-go">dogwelcome.it ↗</span>
+          <span class="stay-go">Vedi la scheda →</span>
         </a>
       </div>
     </div>

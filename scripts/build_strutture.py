@@ -1,0 +1,246 @@
+#!/usr/bin/env python3
+"""
+Genera:
+  - /struttura/<slug>/index.html  — una pagina per ognuna delle strutture
+    reali in content/strutture.py
+  - /cerca/index.html             — elenco con filtro client-side (nessun
+    backend: sono solo 3 strutture, il filtro e' un semplice show/hide
+    via data-tags)
+
+Riusa <style>/header/footer di mockup/home.html, come scripts/build_blog.py.
+"""
+import os
+import sys
+import html
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/../content")
+from strutture import STRUTTURE, ALL_TAGS  # noqa: E402
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HOME = os.path.join(ROOT, "mockup", "home.html")
+
+
+def extract(src, start_marker, end_marker):
+    i1 = src.index(start_marker)
+    i2 = src.index(end_marker, i1) + len(end_marker)
+    return src[i1:i2]
+
+
+def nestify_links(fragment):
+    import re
+    return re.sub(r'href="#', 'href="/#', fragment)
+
+
+def build():
+    home_src = open(HOME, encoding="utf-8").read()
+    style_block = extract(home_src, "<style>", "</style>")
+    header_block = nestify_links(extract(home_src, '<header id="hd">', "</header>"))
+    footer_block = nestify_links(extract(home_src, "<footer>", "</footer>"))
+    header_script = extract(home_src, "<script>", "</script>")
+
+    detail_css = """
+  .det-hero{ padding:150px 0 40px; border-bottom:1px solid var(--line); }
+  .det-hero .lbl{ margin-bottom:10px; }
+  .det-hero h1{ font-size:clamp(28px,4vw,46px); max-width:22ch; }
+  .det-loc{ margin-top:10px; font-size:15px; color:var(--ink-2); }
+  .det-source{ margin-top:14px; font-size:13.5px; color:var(--ink-2); }
+  .det-source a{ color:var(--klein-text); text-decoration:underline; }
+  .det-badge{
+    display:inline-flex; align-items:center; gap:8px; margin-top:18px;
+    background:var(--surface-2); border:1px solid var(--line); padding:9px 15px;
+    font-size:12.5px; color:var(--ink-2);
+  }
+  .det-actions{ margin-top:24px; display:flex; gap:10px; flex-wrap:wrap; }
+  .det-body{ max-width:70ch; padding-block:56px; }
+  .det-body p{ font-size:16.5px; line-height:1.72; margin-bottom:18px; color:var(--ink-2); }
+  .fact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:40px; }
+  @media (max-width:560px){ .fact-grid{ grid-template-columns:1fr; } }
+  .fact{ background:var(--surface); padding:20px; }
+  .fact .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .fact .v{ margin-top:6px; font-size:15.5px; font-weight:700; color:var(--ink); }
+  .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
+  .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
+  .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+"""
+
+    cerca_css = """
+  .cerca-hero{ padding:150px 0 36px; border-bottom:1px solid var(--line); }
+  .cerca-hero h1{ font-size:clamp(28px,4vw,46px); max-width:22ch; }
+  .cerca-layout{ display:grid; grid-template-columns:260px 1fr; gap:32px; padding-block:44px 90px; align-items:start; }
+  @media (max-width:860px){ .cerca-layout{ grid-template-columns:1fr; } }
+  .filters{ border:1px solid var(--line); padding:22px; position:sticky; top:96px; display:flex; flex-direction:column; gap:14px; }
+  @media (max-width:860px){ .filters{ position:static; } }
+  .filters h2{ font-size:16px; }
+  .filt-opt{ display:flex; align-items:center; gap:10px; font-size:14px; cursor:pointer; }
+  .filt-opt input{ accent-color:var(--klein); width:16px; height:16px; flex-shrink:0; }
+  .results-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; flex-wrap:wrap; gap:10px; }
+  .results-count{ font-size:14.5px; font-weight:700; }
+  .results-count span{ color:var(--klein-text); }
+  .no-results{ display:none; padding:60px 20px; text-align:center; color:var(--ink-2); border:1px solid var(--line); }
+  .no-results.show{ display:block; }
+"""
+
+    # ---------- pagine struttura ----------
+    for st in STRUTTURE:
+        facts_html = "".join(
+            f'<div class="fact"><div class="k">{html.escape(k)}</div><div class="v">{html.escape(v)}</div></div>'
+            for k, v in st["fatti"]
+        )
+        servizi_html = "".join(f"<li>{html.escape(sv)}</li>" for sv in st["servizi"])
+        tags_html = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
+
+        page = f"""<title>{html.escape(st['nome'])}</title>
+<meta name="description" content="{html.escape(st['descrizione'][:150])}">
+<meta property="og:title" content="{html.escape(st['nome'])} — Oltre la Taglia">
+<meta property="og:type" content="place">
+<meta property="og:url" content="https://www.oltrelataglia.it/struttura/{st['slug']}/">
+<link rel="canonical" href="https://www.oltrelataglia.it/struttura/{st['slug']}/">
+{style_block}
+<style>{detail_css}</style>
+
+{header_block}
+
+<main id="top">
+  <section class="det-hero">
+    <div class="wrap">
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / {html.escape(st['regione'])}</p>
+      <h1 style="margin-top:10px;">{html.escape(st['nome'])}</h1>
+      <p class="det-loc">{html.escape(st['comune'])} · {html.escape(st['regione'])}</p>
+      <div class="stay-specs" style="margin-top:16px;">{tags_html}</div>
+      <p class="det-source">Dati presi da fonte pubblica: <a href="{st['fonte_url']}" target="_blank" rel="noopener">{html.escape(st['fonte_nome'])}</a> — da confermare direttamente con la struttura prima di prenotare.</p>
+      <div class="det-badge">Fonte pubblica, non ancora verificata telefonicamente dal team</div>
+      <div class="det-actions">
+        <a class="btn btn-klein" href="{st['sito_url']}" target="_blank" rel="noopener">Sito ufficiale ↗</a>
+        <a class="btn btn-line" href="/cerca/">&larr; Torna alla ricerca</a>
+      </div>
+    </div>
+  </section>
+
+  <article class="wrap">
+    <div class="det-body">
+      <div class="fact-grid">{facts_html}</div>
+      <p>{html.escape(st['descrizione'])}</p>
+      <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
+      <ul class="det-servizi">{servizi_html}</ul>
+    </div>
+  </article>
+</main>
+
+{footer_block}
+{header_script}
+"""
+        out_dir = os.path.join(ROOT, "struttura", st["slug"])
+        os.makedirs(out_dir, exist_ok=True)
+        with open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(page)
+        print("generata:", f"/struttura/{st['slug']}/")
+
+    # ---------- /cerca/index.html ----------
+    filters_html = "".join(
+        f'<label class="filt-opt"><input type="checkbox" value="{html.escape(t)}" onchange="applyFilters()">{html.escape(t)}</label>'
+        for t in ALL_TAGS
+    )
+
+    rows_html = []
+    for st in STRUTTURE:
+        tags_attr = "|".join(st["tags"])
+        tags_pill = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
+        rows_html.append(f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione'].lower())}">
+        <span class="stay-n">{st['regione_slug'][:2].upper()}</span>
+        <div class="stay-main">
+          <h3>{html.escape(st['nome'])}</h3>
+          <p class="stay-where">{html.escape(st['comune'])} · {html.escape(st['regione'])}</p>
+          <div class="stay-specs">{tags_pill}</div>
+        </div>
+        <span class="stay-go">Vedi la scheda →</span>
+      </a>''')
+
+    cerca_page = f"""<title>Cerca alloggi</title>
+<meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
+<link rel="canonical" href="https://www.oltrelataglia.it/cerca/">
+{style_block}
+<style>{cerca_css}</style>
+
+{header_block}
+
+<main id="top">
+  <section class="cerca-hero">
+    <div class="wrap">
+      <p class="lbl">Cerca</p>
+      <h1>Le strutture reali di questa directory.</h1>
+      <p style="margin-top:16px; max-width:60ch; font-size:16px; color:var(--ink-2);">
+        Sono {len(STRUTTURE)}, non 500: crescono una alla volta, verificata scheda per scheda.
+        Filtra per quello che conta davvero con un cane grande.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap cerca-layout">
+    <aside class="filters">
+      <h2>Filtra</h2>
+{filters_html}
+      <a href="/cerca/" class="btn btn-line" style="justify-content:center; margin-top:6px;" onclick="return resetFilters()">Azzera filtri</a>
+    </aside>
+
+    <div>
+      <div class="results-head">
+        <div class="results-count" id="results-count"><span>{len(STRUTTURE)}</span> strutture</div>
+      </div>
+      <div class="stays" id="stays-list">
+{chr(10).join(rows_html)}
+      </div>
+      <div class="no-results" id="no-results">Nessuna struttura corrisponde a questi filtri. Prova ad azzerarli — la directory è ancora piccola.</div>
+    </div>
+  </div>
+</main>
+
+{footer_block}
+{header_script}
+<script>
+(function(){{
+  "use strict";
+  window.applyFilters = function applyFilters(){{
+    var checked = Array.prototype.slice.call(document.querySelectorAll('.filt-opt input:checked')).map(function(el){{ return el.value; }});
+    var rows = document.querySelectorAll('#stays-list .stay');
+    var visible = 0;
+    rows.forEach(function(row){{
+      var tags = (row.getAttribute('data-tags') || '').split('|');
+      var match = checked.length === 0 || checked.some(function(c){{ return tags.indexOf(c) !== -1; }});
+      row.style.display = match ? '' : 'none';
+      if (match) visible++;
+    }});
+    document.getElementById('results-count').innerHTML = '<span>' + visible + '</span> strutt' + (visible === 1 ? 'ura' : 'ure');
+    document.getElementById('no-results').classList.toggle('show', visible === 0);
+  }};
+  window.resetFilters = function resetFilters(){{
+    document.querySelectorAll('.filt-opt input').forEach(function(el){{ el.checked = false; }});
+    applyFilters();
+    return false;
+  }};
+
+  // pre-filtro da querystring (?tag=..., ?regione=..., ?taglia=grande|gigante)
+  var params = new URLSearchParams(window.location.search);
+  var tag = params.get('tag');
+  if (tag) {{
+    var box = document.querySelector('.filt-opt input[value="' + CSS.escape(tag) + '"]');
+    if (box) box.checked = true;
+  }}
+  var regione = (params.get('regione') || '').trim().toLowerCase();
+  if (regione) {{
+    document.querySelectorAll('#stays-list .stay').forEach(function(row){{
+      if ((row.getAttribute('data-regione') || '').indexOf(regione) === -1) row.style.display = 'none';
+    }});
+  }}
+  applyFilters();
+}})();
+</script>
+"""
+    out_dir = os.path.join(ROOT, "cerca")
+    os.makedirs(out_dir, exist_ok=True)
+    with open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(cerca_page)
+    print("generata: /cerca/")
+
+
+if __name__ == "__main__":
+    build()

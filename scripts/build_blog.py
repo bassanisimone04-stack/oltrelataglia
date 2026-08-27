@@ -227,7 +227,7 @@ def build():
 }}
 </script>
 
-<script>{header_script}</script>
+{header_script}
 """
         out_dir = os.path.join(OUT_BLOG_DIR, slug)
         os.makedirs(out_dir, exist_ok=True)
@@ -286,7 +286,7 @@ def build():
 </main>
 
 {footer_block}
-<script>{header_script}</script>
+{header_script}
 """
     os.makedirs(OUT_BLOG_DIR, exist_ok=True)
     with open(os.path.join(OUT_BLOG_DIR, "index.html"), "w", encoding="utf-8") as f:
