@@ -1,38 +1,36 @@
 # Foto della home
 
-## Usate (incorporate in mockup/home.html come base64)
+## Montate
 
-| File           | Slot                       | Note |
-|----------------|-----------------------------|------|
-| `ritratto.jpg` | Card "5 domande"            | ridimensionata a 1600px lato lungo, ~144 KB |
-| `giardino.jpg` | Card "agriturismi"          | ridimensionata a 1600px lato lungo, ~281 KB |
+| File           | Dove finisce nella pagina                                  |
+|----------------|--------------------------------------------------------------|
+| `ritratto.jpg` | Fascia scura del manifesto, accanto a "Il tuo cane non è un problema di peso" |
+| `giardino.jpg` | Card blog "Agriturismi in Toscana con terreno recintato"    |
+
+## Servono ancora — 2 foto, essenziali
+
+| File           | Dove finisce                                                | Cosa deve mostrare |
+|----------------|----------------------------------------------------------------|---------------------|
+| `spiaggia.jpg` | Guida in evidenza, grande, in alto — "Le spiagge italiane dove un cane da 50 kg può correre libero" | Cane di taglia grande **in movimento** su una spiaggia (che corre, che nuota) — non seduto e fermo. Orizzontale. |
+| `viaggio.jpg`  | Card blog — "In traghetto con due cani giganti: documenti, gabbie, cabine" | Cane in un contesto di viaggio: in auto, dentro un trasportino, su un traghetto/porto. Non un ritratto in casa. |
 
 ## Non usata
 
-| File | Motivo |
-|------|--------|
-| `non-usata-pomerania.jpg` | Cane piccolo (Pomerania) in casa con bandana natalizia — fuori posizionamento (il sito parla di cani *grandi*) e stagionalmente non generico. Tenuta nel repo nel caso serva altrove, ma non montata nella pagina. |
+`non-usata-pomerania.jpg` — cane piccolo, in casa, bandana natalizia: fuori posizionamento (il sito parla di cani grandi/giganti) e fuori stagione. Tenuta nel repo, non montata.
 
-## Slot ancora vuoti
+## Requisiti tecnici (per ogni foto nuova)
 
-| Slot atteso     | Dove finisce         | Soggetto                              |
-|-----------------|-----------------------|----------------------------------------|
-| `spiaggia.jpg`  | Guida in evidenza      | cane grande in spiaggia, orizzontale  |
-| `viaggio.jpg`   | Card "traghetto"       | cane in viaggio, auto o nave          |
-
-## Formato per le prossime foto
-
-- JPEG, lato lungo **1600 px**
-- Sotto **400 KB** l'una
-- Preferibilmente cani di **taglia grande o gigante** — è il soggetto del sito
+- JPEG o PNG, qualunque risoluzione — ridimensiono e comprimo io a ~1600px / sotto 300KB prima di montarla
+- Meglio orizzontali per gli slot "spiaggia" e "viaggio" (le card sono 16:10)
+- Soggetto sempre un cane di **taglia grande o gigante** — è il posizionamento del sito
 
 ## Licenza
 
-Le foto Pexels sono coperte dalla Pexels License (uso gratuito anche
-commerciale, nessuna attribuzione obbligatoria). Traccia comunque qui la
-pagina Pexels di origine.
+Pexels License: uso libero anche commerciale, nessuna attribuzione
+obbligatoria. Tieni comunque traccia della pagina di origine, per
+sicurezza futura.
 
-| File | URL della pagina Pexels |
-|------|---------------------------|
+| File | URL pagina Pexels |
+|------|--------------------|
 | ritratto.jpg | (da aggiungere) |
 | giardino.jpg | (da aggiungere) |
