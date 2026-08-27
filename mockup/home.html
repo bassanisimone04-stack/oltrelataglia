@@ -97,7 +97,19 @@
   @media (max-width:980px){ .navlinks{ display:none; } }
 
   /* ── Hero + barra di ricerca ─────────────────── */
-  .hero{ padding:132px 0 52px; }
+  .hero{ position:relative; padding:132px 0 52px; overflow:hidden; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; background:var(--band); }
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; }
+  .hero-bg::after{
+    content:""; position:absolute; inset:0;
+    /* velatura: piu opaca in alto dove sta il testo, si apre verso il basso */
+    background:linear-gradient(180deg,
+      color-mix(in srgb, var(--paper) 92%, transparent) 0%,
+      color-mix(in srgb, var(--paper) 80%, transparent) 46%,
+      color-mix(in srgb, var(--paper) 55%, transparent) 78%,
+      color-mix(in srgb, var(--paper) 90%, transparent) 100%);
+  }
+  .hero > .wrap{ position:relative; z-index:1; }
   .hero h1{ font-size:clamp(38px, 6.3vw, 84px); font-weight:700; max-width:17ch; margin-top:16px; }
   .hero h1 em{ font-style:normal; color:var(--klein-text); }
   .hero-sub{ margin-top:24px; max-width:62ch; font-size:17px; }
@@ -350,6 +362,9 @@
 <main id="top">
 
   <section class="hero" id="cerca">
+    <!-- FOTO SFONDO — ampia, orizzontale, cane grande all'aperto (non un ritratto stretto:
+         deve reggere il crop su tutta la larghezza della pagina, anche su mobile) -->
+    <div class="hero-bg" id="hero-bg-slot"></div>
     <div class="wrap">
       <p class="lbl rv">Hotel pet friendly · Cani grandi e giganti · Tutta Italia</p>
       <h1 class="rv" style="--d:60ms">Vacanze senza limiti di taglia. Trova l'alloggio perfetto per il tuo <em>cane grande</em>.</h1>
