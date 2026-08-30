@@ -547,6 +547,65 @@ STRUTTURE = [
             "Azienda agricola biologica di 11 ettari",
         ],
     },
+    {
+        "slug": "podere-vignali",
+        "nome": "Agriturismo Podere Vignali",
+        "comune": "Pari, Civitella Paganico (Grosseto)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/toscana/grosseto/agriturismo-podere-vignali",
+        "sito_url": "https://www.poderevignali.it/",
+        "tags": ["Ogni taglia", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo tra uliveti e bosco sulle colline della Maremma, a Pari, nel comune di "
+            "Civitella Paganico (Grosseto), Toscana. Secondo la fonte pubblica consultata, ammette "
+            "cani di ogni taglia senza alcun supplemento. La struttura ha 4 camere, tutte con "
+            "ingresso indipendente dall'esterno, e una piscina panoramica."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Camere con ingresso indipendente dall'esterno",
+            "Piscina panoramica",
+            "Circondato da uliveti e bosco",
+        ],
+    },
+    {
+        "slug": "poggio-al-vento",
+        "nome": "Agriturismo Poggio al Vento",
+        "comune": "Castiglione d'Orcia (Siena)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "agriturismo.it",
+        "fonte_url": "https://www.agriturismo.it/it/agriturismi/toscana/siena/PoggioalventoinValdOrcia-9100147/index.html",
+        "sito_url": "https://www.poggioalvento.net/",
+        "tags": ["Ogni taglia"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo biologico nel cuore della Val d'Orcia, tra vigneti e ulivi, a Castiglione "
+            "d'Orcia (Siena), Toscana. Secondo la fonte pubblica consultata, ammette cani di ogni "
+            "taglia, inclusa quella gigante (oltre 45 kg), a condizione che siano educati e "
+            "sorvegliati; guinzaglio richiesto all'esterno e museruola in alcune aree. Numero "
+            "massimo di animali e supplemento non specificati nella fonte."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Non specificato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "4 appartamenti indipendenti",
+            "Agricoltura biologica",
+            "Nel cuore della Val d'Orcia",
+        ],
+    },
 ]
 
 ALL_TAGS = []
