@@ -364,6 +364,35 @@ STRUTTURE = [
             "Area di lavaggio self-service per cani",
         ],
     },
+    {
+        "slug": "agriturismo-baglio-don-bartolo",
+        "nome": "Agriturismo Baglio Don Bartolo",
+        "comune": "Castelluzzo, San Vito Lo Capo (Trapani)",
+        "regione": "Sicilia",
+        "regione_slug": "sicilia",
+        "fonte_nome": "agriturismo.it",
+        "fonte_url": "https://en.agriturismo.it/farmhouse/sicily/trapani/BaglioDonBartolo-8871927/index.html",
+        "sito_url": "https://www.bagliodonbartolo.com/",
+        "tags": ["Fino a taglia grande", "Accesso ristorante", "Pulizie 10€/giorno"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Agriturismo a Castelluzzo, vicino a San Vito Lo Capo (Trapani), in Sicilia. Secondo "
+            "la fonte pubblica consultata, ammette cani fino a taglia grande (25–45 kg) in "
+            "alloggio, ristorante e aree comuni, con museruola e guinzaglio obbligatori negli "
+            "spazi esterni. È previsto un supplemento di pulizia di 10€ al giorno."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (25–45 kg)"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "10€ al giorno di pulizia extra"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso a ristorante e aree comuni",
+            "Museruola e guinzaglio obbligatori all'esterno",
+            "A pochi km dalla spiaggia di San Vito Lo Capo",
+        ],
+    },
 ]
 
 ALL_TAGS = []
