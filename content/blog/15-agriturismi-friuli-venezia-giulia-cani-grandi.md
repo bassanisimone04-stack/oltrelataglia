@@ -6,6 +6,7 @@ keyword_principale: agriturismo friuli venezia giulia cani grandi
 keyword_correlate: [agriturismo carso cani ammessi, vacanze trieste con il cane, agriturismo cani taglia grande friuli]
 categoria: Destinazioni
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Agriturismi in Friuli Venezia Giulia per cani grandi

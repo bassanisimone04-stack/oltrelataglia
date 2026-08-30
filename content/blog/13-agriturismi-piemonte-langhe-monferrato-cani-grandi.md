@@ -6,6 +6,7 @@ keyword_principale: agriturismo piemonte cani grandi
 keyword_correlate: [agriturismo langhe cani ammessi, agriturismo monferrato animali, vacanze piemonte con il cane]
 categoria: Destinazioni
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Agriturismi in Piemonte per cani grandi: Langhe e Monferrato

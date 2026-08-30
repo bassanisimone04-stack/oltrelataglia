@@ -6,6 +6,7 @@ keyword_principale: dove dormire con cane gigante
 keyword_correlate: [hotel cani taglia gigante, agriturismo o hotel con il cane, b&b cani grandi ammessi]
 categoria: Guide
 tempo_lettura: 6 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Hotel, B&B o agriturismo: quale scegliere per un cane gigante

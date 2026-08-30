@@ -6,6 +6,7 @@ keyword_principale: documenti cane vacanze italia
 keyword_correlate: [libretto sanitario cane viaggio, microchip anagrafe canina obbligatorio, vaccinazioni cane prima di partire]
 categoria: Normativa e viaggi
 tempo_lettura: 6 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Documenti e vaccinazioni per viaggiare con il cane in Italia: checklist

@@ -6,6 +6,7 @@ keyword_principale: cani grandi bagno in mare
 keyword_correlate: [salvagente per cani taglia gigante, razze di cani che amano il mare, risciacquare pelo cane salsedine]
 categoria: Consigli pratici
 tempo_lettura: 7 min
+data_pubblicazione: 2026-08-27
 ---
 
 # Il cane gigante fa il bagno in mare? Consigli di sicurezza e attrezzatura

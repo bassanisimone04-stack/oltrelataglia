@@ -8,7 +8,8 @@ script, ogni volta che si tocca un contenuto o il design della home:
 """
 import os
 import sys
-from datetime import date
+import html
+from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_blog
@@ -17,6 +18,46 @@ import build_pages
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_URL = "https://www.taglialibera.it"
+
+
+def write_rss(blog_meta):
+    """Feed RSS degli articoli del blog, ordinato dal piu' recente. La data
+    di ogni articolo e' quella reale di prima pubblicazione (presa dal
+    frontmatter, popolata a sua volta dalla cronologia git)."""
+    items_meta = [m for m in blog_meta if m.get("data_pubblicazione")]
+    items_meta.sort(key=lambda m: m["data_pubblicazione"], reverse=True)
+
+    def rfc822(iso_date):
+        dt = datetime.strptime(iso_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        return dt.strftime("%a, %d %b %Y 00:00:00 +0000")
+
+    items = "\n".join(
+        f"""  <item>
+    <title>{html.escape(m['title'])}</title>
+    <link>{BASE_URL}/blog/{m['slug']}/</link>
+    <guid>{BASE_URL}/blog/{m['slug']}/</guid>
+    <description>{html.escape(m['meta_desc'])}</description>
+    <category>{html.escape(m['categoria'])}</category>
+    <pubDate>{rfc822(m['data_pubblicazione'])}</pubDate>
+  </item>"""
+        for m in items_meta
+    )
+    build_date = rfc822(date.today().isoformat())
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Taglia Libera — Guide</title>
+  <link>{BASE_URL}/blog/</link>
+  <description>Guide pratiche per chi viaggia con cani di taglia grande e gigante.</description>
+  <language>it-IT</language>
+  <lastBuildDate>{build_date}</lastBuildDate>
+{items}
+</channel>
+</rss>
+"""
+    with open(os.path.join(ROOT, "feed.xml"), "w", encoding="utf-8") as f:
+        f.write(xml)
+    print(f"generata: /feed.xml ({len(items_meta)} articoli)")
 
 
 def write_sitemap(blog_slugs, struttura_slugs, static_slugs):
@@ -51,3 +92,4 @@ if __name__ == "__main__":
     build_blog.sync_index()
     blog_slugs = [m["slug"] for m in blog_meta]
     write_sitemap(blog_slugs, struttura_slugs, static_slugs)
+    write_rss(blog_meta)

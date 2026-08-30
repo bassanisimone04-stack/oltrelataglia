@@ -6,6 +6,7 @@ keyword_principale: supplemento cane hotel quanto costa
 keyword_correlate: [prezzo cane agriturismo, tariffa cane hotel notte, quanto costa portare il cane in vacanza]
 categoria: Pratica
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Supplemento cane in hotel e agriturismo: quanto costa davvero

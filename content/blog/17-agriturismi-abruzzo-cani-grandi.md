@@ -6,6 +6,7 @@ keyword_principale: agriturismo abruzzo cani grandi
 keyword_correlate: [agriturismo majella cani ammessi, vacanze abruzzo con il cane, agriturismo cani taglia gigante abruzzo]
 categoria: Destinazioni
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Agriturismi in Abruzzo per cani grandi

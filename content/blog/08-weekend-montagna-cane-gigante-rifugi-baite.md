@@ -6,6 +6,7 @@ keyword_principale: rifugi baite cani grandi montagna
 keyword_correlate: [sentieri cani taglia gigante, cane in rifugio di montagna, weekend montagna con il cane]
 categoria: Destinazioni
 tempo_lettura: 6 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Weekend in montagna con un cane gigante: cosa aspettarsi da un rifugio o una baita

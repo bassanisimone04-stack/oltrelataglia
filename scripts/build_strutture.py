@@ -122,6 +122,8 @@ def build():
 <meta property="og:description" content="{html.escape(meta_desc)}">
 <meta property="og:type" content="place">
 <meta property="og:url" content="https://www.taglialibera.it/struttura/{st['slug']}/">
+<meta property="og:image" content="https://www.taglialibera.it/img/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.taglialibera.it/struttura/{st['slug']}/">
 {style_block}
 <style>{detail_css}</style>
@@ -262,6 +264,11 @@ def build():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cerca hotel e agriturismi per cani grandi | Taglia Libera</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
+<meta property="og:title" content="Cerca hotel e agriturismi per cani grandi | Taglia Libera">
+<meta property="og:description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.taglialibera.it/img/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.taglialibera.it/cerca/">
 {style_block}
 <style>{cerca_css}

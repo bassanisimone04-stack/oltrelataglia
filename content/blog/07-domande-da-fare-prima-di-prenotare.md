@@ -6,6 +6,7 @@ keyword_principale: domande da fare prima di prenotare hotel cane
 keyword_correlate: [cosa chiedere hotel cani grandi, supplemento cane hotel, cauzione animali hotel]
 categoria: Pratica
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Le 5 domande da fare sempre prima di prenotare (e perché contano)

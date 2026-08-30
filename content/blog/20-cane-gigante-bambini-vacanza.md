@@ -6,6 +6,7 @@ keyword_principale: cane gigante e bambini vacanza
 keyword_correlate: [cane grande con bambini consigli, sicurezza cane bambini vacanza, molossoide e bambini]
 categoria: Consigli pratici
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Cane gigante e bambini in vacanza: consigli per una convivenza serena

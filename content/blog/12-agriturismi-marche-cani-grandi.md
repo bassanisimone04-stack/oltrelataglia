@@ -6,6 +6,7 @@ keyword_principale: agriturismo marche cani grandi
 keyword_correlate: [agriturismo marche animali ammessi, vacanze marche con il cane, agriturismo cani taglia gigante marche]
 categoria: Destinazioni
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Agriturismi nelle Marche per cani grandi

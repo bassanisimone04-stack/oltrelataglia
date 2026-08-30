@@ -6,6 +6,7 @@ keyword_principale: weekend al lago con cane gigante
 keyword_correlate: [lago di garda cani taglia grande, lago trasimeno cani ammessi, vacanza al lago cane gigante]
 categoria: Destinazioni
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Weekend al lago con un cane gigante: Garda e Trasimeno

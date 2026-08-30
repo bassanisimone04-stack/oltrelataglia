@@ -6,6 +6,7 @@ keyword_principale: assicurazione rc cane taglia grande
 keyword_correlate: [assicurazione cane gigante, responsabilità civile cane morso, polizza cane obbligatoria]
 categoria: Consigli pratici
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Assicurazione RC per cani di taglia grande: serve davvero?

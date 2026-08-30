@@ -6,6 +6,7 @@ keyword_principale: cani di taglia gigante razze
 keyword_correlate: [quanto pesa un alano, razze cani giganti lista, cani grandi e giganti differenza]
 categoria: Consigli pratici
 tempo_lettura: 5 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Cani di taglia gigante: quali razze e quanto pesano

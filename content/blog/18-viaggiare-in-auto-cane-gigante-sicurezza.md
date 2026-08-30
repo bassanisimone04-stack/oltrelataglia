@@ -6,6 +6,7 @@ keyword_principale: viaggiare in auto con cane gigante
 keyword_correlate: [cane gigante in macchina sicurezza, cintura di sicurezza per cani, trasporto cane auto codice della strada]
 categoria: Consigli pratici
 tempo_lettura: 6 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Viaggiare in auto con un cane gigante in sicurezza

@@ -6,6 +6,7 @@ keyword_principale: colpo di calore cane estate mare
 keyword_correlate: [cani giganti e sabbia calda, protezione solare cani grandi, come rinfrescare un alano in spiaggia]
 categoria: Salute e benessere
 tempo_lettura: 8 min
+data_pubblicazione: 2026-08-27
 ---
 
 # Gestione del cane gigante sotto il sole: come evitare il colpo di calore al mare

@@ -6,6 +6,7 @@ keyword_principale: regolamento cani in spiaggia italia
 keyword_correlate: [ordinanze comunali bau beach, museruola obbligatoria cani grandi mare, documenti cane vacanze]
 categoria: Normativa e viaggi
 tempo_lettura: 7 min
+data_pubblicazione: 2026-08-27
 ---
 
 # Regolamenti e burocrazia: cosa serve per viaggiare in spiaggia con un molossoide

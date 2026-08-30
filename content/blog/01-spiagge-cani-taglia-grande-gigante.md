@@ -6,6 +6,7 @@ keyword_principale: spiagge per cani taglia grande
 keyword_correlate: [dog beach spazi grandi, stabilimenti balneari cani oltre 40 kg, spiagge per alani e san bernardo]
 categoria: Destinazioni
 tempo_lettura: 7 min
+data_pubblicazione: 2026-08-27
 ---
 
 # Spiagge attrezzate per cani grandi e giganti: dove andare senza problemi di spazio

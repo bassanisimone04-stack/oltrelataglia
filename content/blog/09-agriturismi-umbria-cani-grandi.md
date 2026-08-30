@@ -6,6 +6,7 @@ keyword_principale: agriturismo umbria cani grandi
 keyword_correlate: [agriturismo umbria animali ammessi, vacanze umbria con il cane, agriturismo cani senza supplemento umbria]
 categoria: Destinazioni
 tempo_lettura: 6 min
+data_pubblicazione: 2026-08-30
 ---
 
 # Agriturismi in Umbria per cani grandi: la guida

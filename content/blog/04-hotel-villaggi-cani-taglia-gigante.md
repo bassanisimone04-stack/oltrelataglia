@@ -6,6 +6,7 @@ keyword_principale: hotel pet friendly cani taglia grande
 keyword_correlate: [villaggi turistici ammettono cani giganti, hotel al mare accettano alano]
 categoria: Strutture
 tempo_lettura: 7 min
+data_pubblicazione: 2026-08-27
 ---
 
 # Strutture e hotel pet-friendly adatti a cani XXL (fuori e dentro la spiaggia)
