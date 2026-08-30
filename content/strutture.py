@@ -186,6 +186,93 @@ STRUTTURE = [
             "Alcuni appartamenti con giardino privato",
         ],
     },
+    {
+        "slug": "podere-il-poggiolo",
+        "nome": "Podere il Poggiolo",
+        "comune": "Pontassieve, Chianti Rufina (Firenze)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "podereilpoggiolo.it",
+        "fonte_url": "https://www.podereilpoggiolo.it/en/services/holiday-with-your-pets.html",
+        "sito_url": "https://www.podereilpoggiolo.it/en/",
+        "tags": ["Taglia gigante ok", "Accesso ristorante", "50€/animale a settimana"],
+        "taglia_bucket": "gigante",
+        "descrizione": (
+            "Azienda agricola biologica a conduzione familiare nel Chianti Rufina, a 23 km da "
+            "Firenze. Secondo il sito ufficiale, l'intera fattoria è recintata e i cani di tutte "
+            "le taglie — inclusa gigante — sono ammessi in alloggio, ristorante, aree comuni e "
+            "piscina. Il costo dichiarato è di 50€ per animale a settimana."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "50€ per animale a settimana"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso a ristorante, aree comuni e piscina",
+            "Intera proprietà recintata",
+            "Azienda agricola biologica",
+        ],
+    },
+    {
+        "slug": "agriturismo-podere-bello",
+        "nome": "Agriturismo Podere Bello",
+        "comune": "Pitigliano, Maremma (Grosseto)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/toscana/grosseto/agriturismo-podere-bello",
+        "sito_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/toscana/grosseto/agriturismo-podere-bello",
+        "tags": ["Fino a 3 cani", "Nessun supplemento", "Giardino privato recintato"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Agriturismo biologico nella Maremma toscana, vicino alle Terme di Saturnia e ai "
+            "borghi di Sorano e Sovana. Secondo la fonte pubblica consultata, ammette cani fino a "
+            "taglia grande (non oltre), massimo 3 per prenotazione, senza supplemento. Ogni "
+            "alloggio ha un giardino privato recintato; su richiesta sono disponibili ciotole, "
+            "dog-sitter e il contatto di un veterinario in zona."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (non XL)"),
+            ("Numero di cani", "Fino a 3 per prenotazione"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Giardino privato recintato per ogni alloggio",
+            "Ciotole su richiesta",
+            "Dog-sitter su richiesta",
+            "Veterinario disponibile in zona",
+        ],
+    },
+    {
+        "slug": "masseria-le-palmentelle",
+        "nome": "Masseria le Palmentelle",
+        "comune": "Lecce, Salento",
+        "regione": "Puglia",
+        "regione_slug": "puglia",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/puglia/lecce/masseria-le-palmentelle",
+        "sito_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/puglia/lecce/masseria-le-palmentelle",
+        "tags": ["Fino a taglia grande", "Un cane a camera", "Supplemento 5€/giorno"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Masseria nel Salento, in provincia di Lecce. Secondo la fonte pubblica consultata, "
+            "accetta cani fino a taglia grande (non oltre), un animale per camera, con un "
+            "supplemento dichiarato di 5€ al giorno. Le unità singole dispongono di giardino o "
+            "déhors recintato privato."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (non XL)"),
+            ("Numero di cani", "1 per camera"),
+            ("Supplemento animali", "5€ al giorno"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Unità con giardino/déhors recintato privato",
+        ],
+    },
 ]
 
 ALL_TAGS = []
