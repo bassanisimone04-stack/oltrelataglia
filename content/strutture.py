@@ -517,6 +517,36 @@ STRUTTURE = [
             "A pochi km dal mare e dal confine sloveno",
         ],
     },
+    {
+        "slug": "agriturismo-le-tre-poiane",
+        "nome": "Agriturismo Le Tre Poiane",
+        "comune": "Penne (Pescara)",
+        "regione": "Abruzzo",
+        "regione_slug": "abruzzo",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/abruzzo/pescara/le-tre-poiane",
+        "sito_url": "https://www.letrepoiane.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento", "Accesso ristorante"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Azienda agricola biologica di 11 ettari sulle colline del pescarese, a circa 250 "
+            "metri di altitudine, a Penne. Secondo la fonte pubblica consultata, ammette cani di "
+            "ogni taglia — più di uno a prenotazione — senza alcun supplemento, con accesso al "
+            "punto ristoro interno. La piscina della struttura affaccia sulla Majella e sulle "
+            "valli circostanti."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di uno, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso al punto ristoro interno",
+            "Piscina con vista sulla Majella",
+            "Azienda agricola biologica di 11 ettari",
+        ],
+    },
 ]
 
 ALL_TAGS = []
