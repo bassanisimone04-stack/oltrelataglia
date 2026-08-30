@@ -171,7 +171,7 @@ def build():
     style_block = extract(home_src, "<style>", "</style>")
     header_block = nestify_links(extract(home_src, '<header id="hd">', "</header>"))
     footer_block = nestify_links(extract(home_src, "<footer>", "</footer>"))
-    header_script = extract(home_src, "<script>", "</script>")  # sticky header + scroll reveal
+    header_script = extract(home_src, "<script>\n(function(){", "</script>")  # sticky header + scroll reveal
 
     article_css = """
   .article-hero{ padding:150px 0 40px; border-bottom:1px solid var(--line); }

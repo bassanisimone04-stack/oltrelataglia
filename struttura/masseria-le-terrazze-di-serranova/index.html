@@ -7,9 +7,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
-<title>Masseria Le Terrazze di Serranova — cani fino a taglia media ammessi | Taglia Libera</title>
+<title>Masseria Le Terrazze di Serranova — taglia media | Taglia Libera</title>
 <meta name="description" content="Masseria nell&#x27;entroterra di Carovigno (Brindisi), in Puglia. Secondo le fonti pubbliche consultate, accoglie cani fino a 30 kg — un cane di taglia grande…">
-<meta property="og:title" content="Masseria Le Terrazze di Serranova — cani fino a taglia media ammessi | Taglia Libera">
+<meta property="og:title" content="Masseria Le Terrazze di Serranova — taglia media | Taglia Libera">
 <meta property="og:description" content="Masseria nell&#x27;entroterra di Carovigno (Brindisi), in Puglia. Secondo le fonti pubbliche consultate, accoglie cani fino a 30 kg — un cane di taglia grande…">
 <meta property="og:type" content="place">
 <meta property="og:url" content="https://www.taglialibera.it/struttura/masseria-le-terrazze-di-serranova/">
@@ -546,6 +546,42 @@
   ]
 }
 </script>
-<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var hd = document.getElementById("hd");
+  function onScroll(){ hd.classList.toggle("stuck", window.scrollY > 24); }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive:true });
+
+  var themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function(){
+      var root = document.documentElement;
+      var current = root.getAttribute("data-theme");
+      var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var isDark = current ? current === "dark" : systemDark;
+      var next = isDark ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch(e){}
+    });
+  }
+
+  var items = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin:"0px 0px -12% 0px", threshold:0.08 });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+})();
+</script>
 </body>
 </html>

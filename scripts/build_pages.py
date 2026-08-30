@@ -176,7 +176,7 @@ def build():
     style_block = extract(home_src, "<style>", "</style>")
     header_block = nestify_links(extract(home_src, '<header id="hd">', "</header>"))
     footer_block = nestify_links(extract(home_src, "<footer>", "</footer>"))
-    header_script = extract(home_src, "<script>", "</script>")
+    header_script = extract(home_src, "<script>\n(function(){", "</script>")
 
     pages = {}
 
@@ -329,7 +329,7 @@ def build():
     # ---------- Calcolatore taglia cane ----------
     pages["calcolatore-taglia-cane"] = {
         "title": "Calcolatore taglia cane: piccola, media, grande, gigante | Taglia Libera",
-        "description": "Inserisci il peso del tuo cane in kg e scopri se rientra in taglia piccola, media, grande o gigante secondo la classificazione più usata dalle strutture pet friendly.",
+        "description": "Inserisci il peso del tuo cane in kg e scopri se rientra in taglia piccola, media, grande o gigante secondo le fasce usate in questa directory.",
         "extra_css": CALC_CSS,
         "extra_script": CALC_SCRIPT,
         "body": """

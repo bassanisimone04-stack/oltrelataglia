@@ -67,6 +67,31 @@ TAGLIA_LABEL = {
     "media": "cani fino a taglia media ammessi",
 }
 
+# Versione compatta usata solo nel <title>: la versione lunga sopra, con
+# nomi struttura reali di 25-35 caratteri, sforava spesso i 60-65 caratteri
+# raccomandati per i risultati di ricerca (Google tronca il resto).
+TAGLIA_LABEL_SHORT = {
+    "ogni": "ogni taglia",
+    "gigante": "taglia gigante",
+    "grande": "taglia grande",
+    "media": "taglia media",
+}
+
+
+def build_seo_title(nome, taglia_bucket, limit=65):
+    """Costruisce il <title> di una scheda struttura, provando prima la
+    forma descrittiva e degradando verso forme piu' corte solo se serve a
+    stare sotto il limite — non tronca mai a meta' parola."""
+    label = TAGLIA_LABEL.get(taglia_bucket, "cani grandi ammessi")
+    full = f"{nome} — {label} | Taglia Libera"
+    if len(full) <= limit:
+        return full
+    short_label = TAGLIA_LABEL_SHORT.get(taglia_bucket, "cani grandi")
+    short = f"{nome} — {short_label} | Taglia Libera"
+    if len(short) <= limit:
+        return short
+    return f"{nome} | Taglia Libera"
+
 
 def truncate_desc(text, limit=155):
     """Accorcia una descrizione alla parola intera piu' vicina al limite,
@@ -83,7 +108,7 @@ def build():
     style_block = extract(home_src, "<style>", "</style>")
     header_block = nestify_links(extract(home_src, '<header id="hd">', "</header>"))
     footer_block = nestify_links(extract(home_src, "<footer>", "</footer>"))
-    header_script = extract(home_src, "<script>", "</script>")
+    header_script = extract(home_src, "<script>\n(function(){", "</script>")
 
     detail_css = """
   .det-hero{ padding:150px 0 40px; border-bottom:1px solid var(--line); }
@@ -150,8 +175,7 @@ def build():
         servizi_html = "".join(f"<li>{html.escape(sv)}</li>" for sv in st["servizi"])
         tags_html = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
 
-        taglia_label = TAGLIA_LABEL.get(st.get("taglia_bucket"), "cani grandi ammessi")
-        seo_title = f"{st['nome']} — {taglia_label} | Taglia Libera"
+        seo_title = build_seo_title(st['nome'], st.get("taglia_bucket"))
         meta_desc = truncate_desc(st['descrizione'], 155)
         page = f"""<!DOCTYPE html>
 <html lang="it">
