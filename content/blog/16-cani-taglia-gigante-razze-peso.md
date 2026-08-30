@@ -48,3 +48,6 @@ Dipende dal singolo cane: il peso tipico (40-50 kg) è proprio a cavallo tra le 
 
 **Le strutture verificano il peso reale del cane all'arrivo?**
 Non ne abbiamo trovato traccia in nessuna delle fonti consultate per questa directory: la classificazione dichiarata dalla struttura è generalmente basata sulla parola del proprietario al momento della prenotazione, non su una pesata all'arrivo.
+
+**I cani di taglia gigante hanno un'aspettativa di vita più breve?**
+In generale sì: le razze giganti tendono ad avere un'aspettativa di vita più breve rispetto alle razze piccole, un fenomeno noto in medicina veterinaria legato alla velocità di crescita e all'usura di cuore e articolazioni. Le cifre esatte variano molto da razza a razza e da singolo cane.

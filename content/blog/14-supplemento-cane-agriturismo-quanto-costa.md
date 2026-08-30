@@ -39,3 +39,6 @@ Non sempre: molte strutture applicano la stessa cifra indipendentemente dalla ta
 
 **Conviene scegliere solo strutture senza supplemento?**
 Non necessariamente: un supplemento dichiarato in modo chiaro è meglio di una struttura che non ne parla affatto e poi lo applica a sorpresa all'arrivo. La trasparenza conta più dell'importo in sé.
+
+**È legale che una struttura faccia pagare un supplemento per il cane?**
+Sì, non c'è una norma che lo vieti: è una scelta commerciale della singola struttura, non un obbligo né un divieto di legge. Quello che conta davvero è che sia dichiarato in modo chiaro prima della prenotazione, non applicato a sorpresa al momento del conto.

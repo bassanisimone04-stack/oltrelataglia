@@ -33,3 +33,6 @@ Dipende dalla struttura: molte pongono un limite di 2-4 cani, ma il Casale Civet
 
 **Le spiagge marchigiane sono adatte a un cane gigante?**
 Alcune sì, ma le regole cambiano da Comune a Comune e non c'è una normativa regionale unica. Vale la pena verificare l'ordinanza specifica prima di considerare l'accesso un diritto acquisito.
+
+**Il Casale Civetta è vicino al mare?**
+Sì, si trova a Trecastelli, tra il mare Adriatico vicino Senigallia e il borgo medievale di Corinaldo — comodo per alternare giornate in collina e al mare, verificando comunque le regole di accesso alla spiaggia del Comune specifico.

@@ -31,3 +31,6 @@ Al momento uno solo, nel Monferrato torinese. Continuiamo a cercare, ma aggiungi
 
 **Un agriturismo vitivinicolo è adatto a un cane gigante?**
 Può esserlo, per lo spazio aperto che offre, ma verifica sempre se c'è un'area realmente recintata: un vigneto aperto non è la stessa cosa di un giardino delimitato dove il cane può stare libero senza sorveglianza costante.
+
+**Meglio le Langhe o il Monferrato per una vacanza con un cane grande in Piemonte?**
+Non abbiamo ancora abbastanza strutture verificate in entrambe le zone per un confronto diretto — al momento l'unica struttura verificata in questa directory è nel Monferrato torinese. Dal punto di vista del territorio, sia le Langhe sia il Monferrato offrono terreno aperto e sentieri comodi per lunghe camminate.

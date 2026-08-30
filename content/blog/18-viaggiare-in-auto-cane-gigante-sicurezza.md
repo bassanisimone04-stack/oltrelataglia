@@ -41,3 +41,6 @@ Dipende dal modello: solo alcune imbracature sono state testate con crash-test r
 
 **Cosa rischia chi viaggia con un cane senza sistema di contenimento?**
 Oltre al rischio concreto in caso di incidente, l'articolo 169 del Codice della Strada prevede una sanzione amministrativa per il trasporto di animali che compromette la sicurezza di guida. L'importo esatto può variare ed è soggetto ad aggiornamenti normativi: vale la pena verificarlo su una fonte ufficiale aggiornata prima di considerarlo un dato definitivo.
+
+**Come abituare un cane grande a viaggi in auto lunghi?**
+Con gradualità: parti da tragitti brevi e frequenti prima di affrontare un viaggio lungo, associa l'auto a esperienze positive e non solo al veterinario, e usa fin da subito il sistema di ancoraggio che utilizzerai nei viaggi più lunghi, così il cane lo associa alla normalità del viaggiare.

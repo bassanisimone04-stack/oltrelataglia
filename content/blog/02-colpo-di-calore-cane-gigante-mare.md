@@ -47,3 +47,6 @@ Sì: il pelo scuro assorbe più radiazione solare. Non significa evitare il sole
 
 **I tappetini rinfrescanti funzionano davvero o sono solo marketing?**
 Quelli a gel autorinfrescante funzionano per principio fisico reale (si attivano con la pressione e rilasciano il calore accumulato), ma vanno reintegrati periodicamente all'ombra per tornare efficaci — non sono una soluzione "infinita" per tutta la giornata.
+
+**Quali sono i primi segnali di un colpo di calore nel cane, e cosa faccio subito?**
+Respiro molto accelerato e rumoroso che non si calma a riposo, gengive e lingua che diventano più scure o bluastre, disorientamento, difficoltà ad alzarsi, vomito. Se compaiono, sposta subito il cane all'ombra, bagnalo con acqua fresca (non ghiacciata) su zampe, addome e collo, e contatta immediatamente un veterinario: è un'emergenza medica, non qualcosa da aspettare che passi.

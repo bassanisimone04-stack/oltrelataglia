@@ -37,3 +37,6 @@ Dipende soprattutto da cosa cerchi: il Trasimeno ha in genere meno affollamento 
 
 **I laghi hanno le stesse restrizioni del mare per l'accesso dei cani?**
 Non necessariamente: le regole cambiano da Comune a Comune anche sui laghi, ma in generale la pressione normativa è minore rispetto a molte spiagge marine molto frequentate. Vale comunque la pena verificare le ordinanze locali prima di partire.
+
+**Meglio il lago o il mare per un cane gigante in estate?**
+Il lago offre in genere meno affollamento e, spesso, un accesso all'acqua più semplice rispetto al mare — un vantaggio pratico soprattutto per un cane che soffre il caldo. Non è comunque una regola universale: le regole di accesso dipendono sempre dal Comune specifico, sia al lago sia al mare.

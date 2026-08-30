@@ -41,3 +41,6 @@ Nella nostra esperienza di ricerca sì, tendenzialmente: molti hotel applicano u
 
 **Un B&B può essere più adatto di un hotel per un cane gigante?**
 Può esserlo, se il gestore ha esperienza con cani di taglia grande e offre spazi esterni adeguati — ma essendo una scelta individuale del proprietario, non è una regola generale della categoria. Vale la pena chiedere direttamente prima di prenotare.
+
+**Perché un agriturismo offre più spesso le condizioni migliori per un cane gigante?**
+Perché nella nostra ricerca è la categoria dove più spesso il terreno aperto e le aree sgambamento o recintate fanno parte del progetto della struttura, non un'eccezione tollerata. Non è comunque una garanzia automatica: verifica sempre se l'area è davvero recintata, non solo "spazio intorno".

@@ -37,3 +37,6 @@ Nella maggior parte dei casi sì, secondo l'art. 2052 del Codice Civile, salvo c
 
 **Un'assicurazione RC cani copre anche i danni causati in vacanza, fuori dalla mia regione?**
 Generalmente sì, le polizze RC hanno validità su tutto il territorio nazionale (e spesso anche in altri paesi europei), ma va sempre verificato nelle condizioni specifiche della polizza scelta, non dato per scontato.
+
+**Quanto costa una polizza RC dedicata per un cane di taglia grande?**
+Varia molto in base alla compagnia, al massimale scelto e a volte alla razza del cane — non esiste un prezzo di riferimento univoco che si possa dare in generale. Conviene richiedere preventivi comparativi a più assicurazioni prima di scegliere.

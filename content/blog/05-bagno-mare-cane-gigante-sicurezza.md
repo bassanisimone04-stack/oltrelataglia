@@ -46,3 +46,6 @@ No. Forzare un cane grande a entrare in acqua quando esita aumenta il rischio di
 
 **Quali razze grandi sono generalmente più a loro agio in acqua?**
 Terranova, Labrador di taglia grande e alcuni cani da pastore tendono ad avere una predisposizione naturale al nuoto. Molossoidi come Mastino Napoletano o Dogue de Bordeaux, per struttura fisica, faticano spesso di più: non è una regola assoluta per ogni singolo cane, ma un elemento in più da tenere presente la prima volta.
+
+**Quando ha davvero senso un salvagente per un cane di taglia grande o gigante?**
+In quattro situazioni soprattutto: cani anziani con meno forza muscolare di un tempo, razze massicce poco portate al nuoto (molti molossoidi), mare mosso o con corrente, e il primo approccio all'acqua di un cane adulto che non ha mai nuotato. Cerca un modello con una maniglia robusta sul dorso: è l'unico modo realistico di intervenire con un cane di 50-70 kg.

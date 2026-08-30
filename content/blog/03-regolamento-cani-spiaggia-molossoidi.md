@@ -56,3 +56,6 @@ No, va inteso il contrario: in assenza di un'esplicita apertura, la prassi prude
 
 **La museruola è sempre obbligatoria per un cane di taglia grande?**
 Non ovunque per legge, ma è quasi sempre richiesta "al seguito" nelle ordinanze locali, e spesso pretesa di fatto dagli stabilimenti anche dove non è un obbligo normativo. Portarla sempre con sé evita discussioni inutili.
+
+**Quali documenti devo avere con me per portare il cane in spiaggia?**
+Il libretto sanitario aggiornato con le vaccinazioni in corso di validità, la prova dell'iscrizione all'anagrafe canina e del microchip (obbligatorio per legge in Italia), e un contatto rapido del veterinario di fiducia. Sono richiesti a campione da chi gestisce spiagge o stabilimenti in caso di controllo.

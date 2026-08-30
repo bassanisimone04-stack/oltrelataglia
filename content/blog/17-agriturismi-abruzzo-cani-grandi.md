@@ -33,3 +33,6 @@ No, secondo la fonte pubblica consultata non applica alcun supplemento per gli a
 
 **Quanti agriturismi verificati ci sono in Abruzzo in questa directory?**
 Al momento uno, sulle colline pescaresi vicino a Penne. Continuiamo a cercare altre strutture con fonti pubbliche altrettanto specifiche.
+
+**L'Agriturismo Le Tre Poiane è vicino ai parchi nazionali di Gran Sasso o Majella?**
+È sulle colline pescaresi vicino a Penne, non all'interno dei due parchi, ma la zona è una base comoda per raggiungerli in giornata. La fonte non dichiara una distanza esatta: verifica i tempi di percorrenza prima di organizzare un'escursione.

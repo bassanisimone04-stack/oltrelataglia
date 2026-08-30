@@ -43,3 +43,6 @@ Non sempre, ma varia molto da struttura a struttura. Le due che abbiamo raccolto
 
 **Meglio il Lago Trasimeno o la zona di Perugia città per un cane grande?**
 Dipende da cosa cerchi: il Trasimeno offre più spazio aperto e accesso all'acqua, mentre la zona collinare intorno a Perugia è più adatta a chi vuole camminate lunghe nella natura senza la necessità di un lago. Entrambe le strutture che citiamo permettono di scegliere in base a questa preferenza.
+
+**Gli agriturismi umbri citati hanno un giardino o un'area recintata per i cani?**
+Sì, entrambe le strutture verificate la dichiarano: l'EcoResort Il Cantico della Natura ha un'area sgambamento recintata e unità con giardino o déhors privato, mentre l'Agriturismo Casale degli Olmi ha un appartamento a piano terra con zona recintata dedicata.

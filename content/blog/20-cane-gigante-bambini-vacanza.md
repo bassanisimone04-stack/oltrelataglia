@@ -37,3 +37,6 @@ Non necessariamente per temperamento, ma richiede più attenzione nella gestione
 
 **Meglio evitare strutture con animazione per bambini se viaggio con un cane gigante?**
 Non è una regola fissa, ma un ambiente molto affollato e rumoroso richiede più gestione attiva da parte tua. Se il tuo cane non è abituato a contesti simili, vale la pena valutare strutture con spazi più tranquilli o comunque pianificare momenti di pausa lontano dal caos.
+
+**È vero che alcune razze di taglia gigante sono naturalmente più adatte ai bambini?**
+Il temperamento dipende più dall'educazione e dal singolo cane che dalla razza o dalla taglia — generalizzare su un'intera razza rischia di creare false sicurezze o pregiudizi ingiusti. Quello che cambia con la taglia è la gestione fisica necessaria, non l'affidabilità caratteriale.

@@ -45,3 +45,6 @@ No, la normativa italiana sui documenti sanitari non distingue in base alla tagl
 
 **Cosa succede se il libretto sanitario non è aggiornato?**
 Dipende dal contesto: una struttura può rifiutare l'accesso se non riesce a verificare le vaccinazioni richieste, e in caso di controllo stradale o sanitario mancare la documentazione può comportare sanzioni. Vale sempre la pena sistemarlo prima di partire, non durante il viaggio.
+
+**Serve il passaporto per il cane se viaggio tra regioni italiane?**
+No, il passaporto europeo per animali non serve per gli spostamenti all'interno del territorio italiano — basta avere in regola microchip, iscrizione all'anagrafe canina e libretto sanitario aggiornato. Il passaporto diventa necessario solo se esci dai confini nazionali.

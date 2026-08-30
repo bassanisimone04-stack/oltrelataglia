@@ -31,3 +31,6 @@ La fonte pubblica consultata specifica "fino a taglia grande", senza menzionare 
 
 **Ci sono altre strutture verificate in Friuli Venezia Giulia in questa directory?**
 Al momento una sola, nel Carso triestino. Continuiamo a cercare, ma aggiungiamo solo strutture con una fonte che dichiari esplicitamente le condizioni sui cani grandi.
+
+**L'Agriturismo Colja Jozko è vicino al mare?**
+Sì, si trova nel Carso triestino a pochi chilometri sia dal mare di Trieste sia dal confine con la Slovenia, secondo quanto dichiarato dalla struttura stessa.

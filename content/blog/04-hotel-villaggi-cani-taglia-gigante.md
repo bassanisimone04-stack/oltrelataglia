@@ -47,3 +47,6 @@ Dipende più dallo spazio e dai ritmi che dall'animazione in sé: un cane grande
 
 **Meglio un hotel in centro o una struttura in campagna per un cane di taglia gigante?**
 Non c'è una risposta universale, ma un cane grande beneficia quasi sempre di più spazio libero all'aperto: agriturismi e strutture in campagna, quando dichiarano un giardino recintato, tendono a offrire un'esperienza più comoda rispetto a un hotel urbano con solo una breve uscita su marciapiede.
+
+**Come faccio a sapere se un hotel applica davvero un supplemento per un cane grande?**
+Chiedilo esplicitamente per iscritto prima di prenotare, con la cifra esatta — non fermarti a un generico "sì, accettiamo animali". Gli hotel che accolgono cani giganti senza supplemento o limite di taglia esistono, ma sono una minoranza: nella nostra ricerca compaiono più spesso come "resort" o "villaggio" con spazi esterni ampi, non come hotel cittadini.

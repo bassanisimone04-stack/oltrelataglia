@@ -48,3 +48,6 @@ Non necessariamente. Una spiaggia libera dà più spazio in assoluto, ma zero om
 
 **Se lo stabilimento non risponde alle domande scritte, meglio evitarlo?**
 È un segnale d'allarme ragionevole, sì. Non significa che la spiaggia sia inadatta, ma che nessuno ha ancora pensato in modo specifico a chi arriva con un cane grande — e quindi la sorpresa, buona o cattiva, la scopri sul posto.
+
+**Potete darmi un elenco di spiagge specifiche per cani di taglia grande?**
+Non ancora — come spieghiamo in questo articolo, non pubblichiamo nomi di spiagge finché non abbiamo una verifica diretta e scritta delle piazzole XXL, per non ripetere l'errore dei tanti elenchi generici già in circolazione. Il metodo sopra (le domande da fare, i segnali da cercare) funziona nel frattempo ovunque tu stia guardando.

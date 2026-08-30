@@ -43,3 +43,6 @@ Non necessariamente in sé — a volte è solo una risposta lenta — ma se il s
 
 **Vale la pena fare queste domande anche a strutture già "verificate" da un portale?**
 Sì, sempre. Una verifica, anche seria, fotografa un momento nel tempo: regole e condizioni possono cambiare da una stagione all'altra, e la conferma scritta più recente resta la tua garanzia migliore.
+
+**L'hotel o l'agriturismo forniscono ciotole e cuccia adatte a un cane grande?**
+Raramente in modo automatico: molte strutture hanno ciotole pensate per cani piccoli, non per un Alano o un Mastino. Meglio chiederlo esplicitamente insieme alle altre domande, o portare le proprie — ne parliamo anche nella guida agli hotel senza limiti di peso.

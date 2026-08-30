@@ -43,3 +43,6 @@ Dipende più dalla razza e dall'allenamento che dalla taglia in sé, ma un cane 
 
 **Le baite di montagna hanno di solito un'area recintata per i cani?**
 Non è la norma come al mare — la maggior parte offre spazio aperto non recintato, spesso già circondato dalla natura circostante. Se serve un'area effettivamente delimitata, è una delle domande da fare esplicitamente prima di prenotare.
+
+**Ci sono divieti per i cani nei parchi naturali di montagna?**
+Dipende dall'area protetta specifica — molte richiedono comunque il guinzaglio, soprattutto vicino a zone di pascolo attivo, indipendentemente dall'affidabilità del singolo cane. Verifica sempre il regolamento del parco che attraverserai prima di partire, non darlo per scontato dal fatto che il sentiero sia pubblico.
