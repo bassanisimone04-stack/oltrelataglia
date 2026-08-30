@@ -200,8 +200,8 @@ def build():
 <meta property="og:title" content="{html.escape(title_seo)}">
 <meta property="og:description" content="{html.escape(meta_desc)}">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.oltrelataglia.it/blog/{slug}/">
-<link rel="canonical" href="https://www.oltrelataglia.it/blog/{slug}/">
+<meta property="og:url" content="https://www.taglialibera.it/blog/{slug}/">
+<link rel="canonical" href="https://www.taglialibera.it/blog/{slug}/">
 {style_block}
 <style>{article_css}</style>
 </head>
@@ -240,8 +240,8 @@ def build():
     "headline": h1,
     "description": meta_desc,
     "inLanguage": "it-IT",
-    "url": f"https://www.oltrelataglia.it/blog/{slug}/",
-    "publisher": {"@type": "Organization", "name": "Oltre la Taglia"},
+    "url": f"https://www.taglialibera.it/blog/{slug}/",
+    "publisher": {"@type": "Organization", "name": "Taglia Libera"},
 }, ensure_ascii=False, indent=2)}
 </script>
 
@@ -250,9 +250,9 @@ def build():
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.oltrelataglia.it/"},
-        {"@type": "ListItem", "position": 2, "name": "Guide", "item": "https://www.oltrelataglia.it/blog/"},
-        {"@type": "ListItem", "position": 3, "name": h1, "item": f"https://www.oltrelataglia.it/blog/{slug}/"},
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taglialibera.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Guide", "item": "https://www.taglialibera.it/blog/"},
+        {"@type": "ListItem", "position": 3, "name": h1, "item": f"https://www.taglialibera.it/blog/{slug}/"},
     ],
 }, ensure_ascii=False, indent=2)}
 </script>
@@ -299,9 +299,9 @@ def build():
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guide per viaggiare con cani grandi | Oltre la Taglia</title>
+<title>Guide per viaggiare con cani grandi | Taglia Libera</title>
 <meta name="description" content="Guide pratiche per chi viaggia con cani di taglia grande e gigante: spiagge, mare, normativa, strutture pet friendly senza limiti di peso.">
-<link rel="canonical" href="https://www.oltrelataglia.it/blog/">
+<link rel="canonical" href="https://www.taglialibera.it/blog/">
 {style_block}
 <style>{article_css}
   .blog-index-grid{{ display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--line); border-top:none; }}

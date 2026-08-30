@@ -109,7 +109,7 @@ def build():
         tags_html = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
 
         taglia_label = TAGLIA_LABEL.get(st.get("taglia_bucket"), "cani grandi ammessi")
-        seo_title = f"{st['nome']} — {taglia_label} | Oltre la Taglia"
+        seo_title = f"{st['nome']} — {taglia_label} | Taglia Libera"
         meta_desc = truncate_desc(st['descrizione'], 155)
         page = f"""<!DOCTYPE html>
 <html lang="it">
@@ -121,8 +121,8 @@ def build():
 <meta property="og:title" content="{html.escape(seo_title)}">
 <meta property="og:description" content="{html.escape(meta_desc)}">
 <meta property="og:type" content="place">
-<meta property="og:url" content="https://www.oltrelataglia.it/struttura/{st['slug']}/">
-<link rel="canonical" href="https://www.oltrelataglia.it/struttura/{st['slug']}/">
+<meta property="og:url" content="https://www.taglialibera.it/struttura/{st['slug']}/">
+<link rel="canonical" href="https://www.taglialibera.it/struttura/{st['slug']}/">
 {style_block}
 <style>{detail_css}</style>
 </head>
@@ -163,9 +163,9 @@ def build():
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.oltrelataglia.it/"},
-        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.oltrelataglia.it/cerca/"},
-        {"@type": "ListItem", "position": 3, "name": st["nome"], "item": f"https://www.oltrelataglia.it/struttura/{st['slug']}/"},
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taglialibera.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.taglialibera.it/cerca/"},
+        {"@type": "ListItem", "position": 3, "name": st["nome"], "item": f"https://www.taglialibera.it/struttura/{st['slug']}/"},
     ],
 }, ensure_ascii=False, indent=2)}
 </script>
@@ -260,9 +260,9 @@ def build():
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cerca hotel e agriturismi per cani grandi | Oltre la Taglia</title>
+<title>Cerca hotel e agriturismi per cani grandi | Taglia Libera</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
-<link rel="canonical" href="https://www.oltrelataglia.it/cerca/">
+<link rel="canonical" href="https://www.taglialibera.it/cerca/">
 {style_block}
 <style>{cerca_css}
   .cerca-faq{{ padding-block:70px; border-top:1px solid var(--line); background:var(--surface); }}
@@ -319,8 +319,8 @@ def build():
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.oltrelataglia.it/"},
-        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.oltrelataglia.it/cerca/"},
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taglialibera.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.taglialibera.it/cerca/"},
     ],
 }, ensure_ascii=False, indent=2)}
 </script>

@@ -1,6 +1,6 @@
 ---
 slug: spiagge-cani-taglia-grande-gigante
-titolo_seo: "Spiagge per cani taglia grande | Oltre la Taglia"
+titolo_seo: "Spiagge per cani taglia grande | Taglia Libera"
 meta_description: "Come riconoscere una spiaggia adatta a un Alano o un San Bernardo: spazio vitale, distanza tra ombrelloni, cosa chiedere prima di prenotare."
 keyword_principale: spiagge per cani taglia grande
 keyword_correlate: [dog beach spazi grandi, stabilimenti balneari cani oltre 40 kg, spiagge per alani e san bernardo]

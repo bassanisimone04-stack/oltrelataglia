@@ -16,7 +16,7 @@ import build_strutture
 import build_pages
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_URL = "https://www.oltrelataglia.it"
+BASE_URL = "https://www.taglialibera.it"
 
 
 def write_sitemap(blog_slugs, struttura_slugs, static_slugs):

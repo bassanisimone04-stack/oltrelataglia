@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.oltrelataglia.it/sitemap.xml
+Sitemap: https://www.taglialibera.it/sitemap.xml

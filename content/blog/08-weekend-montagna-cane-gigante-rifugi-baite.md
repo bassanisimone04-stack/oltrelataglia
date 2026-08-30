@@ -1,6 +1,6 @@
 ---
 slug: weekend-montagna-cane-gigante-rifugi-baite
-titolo_seo: "Weekend in montagna con un cane gigante | Oltre la Taglia"
+titolo_seo: "Weekend in montagna con un cane gigante | Taglia Libera"
 meta_description: "Guinzaglio sui sentieri, accesso al ristorante, supplementi di pulizia: cosa cambia davvero in un rifugio o una baita di montagna con un cane di taglia gigante."
 keyword_principale: rifugi baite cani grandi montagna
 keyword_correlate: [sentieri cani taglia gigante, cane in rifugio di montagna, weekend montagna con il cane]

@@ -1,4 +1,4 @@
-# Oltre la Taglia
+# Taglia Libera
 
 Directory-blog italiana di alloggi pet-friendly (hotel, B&B, agriturismi) per
 cani di taglia grande e gigante, senza restrizioni di taglia o numero di

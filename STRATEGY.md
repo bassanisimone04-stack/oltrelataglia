@@ -1,9 +1,9 @@
-# Oltre la Taglia — Directory-Blog per Alloggi Pet-Friendly Senza Restrizioni
+# Taglia Libera — Directory-Blog per Alloggi Pet-Friendly Senza Restrizioni
 
 > **Nicchia**: hotel, B&B e agriturismi italiani che accettano cani di taglia
 > grande/gigante e/o più di un cane, senza le limitazioni tipiche del
 > "pet-friendly generico" (1 cane, max 10kg).
-> **Nome**: **Oltre la Taglia** (dominio `oltrelataglia.it`) — payoff:
+> **Nome**: **Taglia Libera** (dominio `taglialibera.it`) — payoff:
 > *"Il tuo cane, senza taglia, senza limiti."*
 > Nomi alternativi valutati: CaniGrandi.it (troppo simile a un exact-match
 > domain, poco protetto/proteggibile), DogSizeFree, SenzaTaglia. "Cani
@@ -157,7 +157,7 @@ vettoriali piatte delle versioni precedenti.
 - Fotografia: cani di **taglia grande/gigante reali** (mai stock con Chihuahua
   in borsetta — è l'errore numero uno che allontana il target). Foto
   luminose, ambienti open air, aree verdi, spiagge.
-- Badge distintivo ricorrente: "✅ Verificato Oltre la Taglia — nessun limite di
+- Badge distintivo ricorrente: "✅ Verificato Taglia Libera — nessun limite di
   taglia" da usare su card, hero, meta immagini social.
 
 ### 1.4 Principi UX
@@ -180,7 +180,7 @@ vettoriali piatte delle versioni precedenti.
 
 ### 2.1 Header (sticky)
 
-Logo "Oltre la Taglia 🐾" — menu: `Cerca alloggi` · `Blog & Guide` · `Per le
+Logo "Taglia Libera 🐾" — menu: `Cerca alloggi` · `Blog & Guide` · `Per le
 strutture` · `Chi siamo` — CTA secondaria a destra: **"Inserisci la tua
 struttura"** (bottone outline azzurro).
 
@@ -318,12 +318,12 @@ strutture` (Come funziona, Linee guida verifica, Login proprietari) ·
 
 ### 3.1 Title tag (≤60 caratteri)
 
-> `Hotel e B&B per Cani Grandi Senza Limiti | Oltre la Taglia`
+> `Hotel e B&B per Cani Grandi Senza Limiti | Taglia Libera`
 (56 caratteri — include keyword transazionale "hotel per cani grandi" + brand)
 
 Varianti A/B testabili:
 - `Alloggi Pet Friendly per Cani Grandi, Senza Taglia` (52 car.)
-- `Hotel Pet Friendly Senza Limiti di Taglia | Oltre la Taglia` (58 car.)
+- `Hotel Pet Friendly Senza Limiti di Taglia | Taglia Libera` (58 car.)
 
 ### 3.2 Meta description (≤155 caratteri)
 
@@ -332,7 +332,7 @@ Varianti A/B testabili:
 
 ### 3.3 URL
 
-`https://www.oltrelataglia.it/` (dominio) — struttura URL consigliata per le
+`https://www.taglialibera.it/` (dominio) — struttura URL consigliata per le
 sezioni interne, tutte in italiano e keyword-friendly:
 
 - `/cerca` — motore di ricerca/listing principale
@@ -385,11 +385,11 @@ Combinazione consigliata per la home:
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Oltre la Taglia",
-  "url": "https://www.oltrelataglia.it/",
+  "name": "Taglia Libera",
+  "url": "https://www.taglialibera.it/",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://www.oltrelataglia.it/cerca?q={search_term_string}",
+    "target": "https://www.taglialibera.it/cerca?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -406,7 +406,7 @@ Combinazione consigliata per la home:
     {
       "@type": "ListItem",
       "position": 1,
-      "url": "https://www.oltrelataglia.it/struttura/nome-struttura"
+      "url": "https://www.taglialibera.it/struttura/nome-struttura"
     }
   ]
 }
@@ -442,8 +442,8 @@ Testi pronti all'uso, ottimizzati per ricerca vocale (domande colloquiali,
 risposte dirette nelle prime 1–2 frasi, dettaglio a seguire) e per People
 Also Ask. Da marcare con `FAQPage` schema.
 
-**1. Le strutture su Oltre la Taglia accettano davvero cani di qualsiasi taglia?**
-Sì. A differenza dei portali generalisti, su Oltre la Taglia pubblichiamo solo
+**1. Le strutture su Taglia Libera accettano davvero cani di qualsiasi taglia?**
+Sì. A differenza dei portali generalisti, su Taglia Libera pubblichiamo solo
 strutture che abbiamo verificato accettare cani di taglia grande (25–45 kg)
 e gigante (oltre 45 kg), come Alani, Pastori del Caucaso, San Bernardo o
 Mastini. Per ogni struttura indichiamo chiaramente la taglia massima
@@ -457,7 +457,7 @@ subito solo queste opzioni: il numero massimo di animali è sempre indicato
 nella scheda struttura.
 
 **3. Ci sono supplementi nascosti da pagare al check-in?**
-No, se prenoti tramite una struttura verificata Oltre la Taglia il costo per il
+No, se prenoti tramite una struttura verificata Taglia Libera il costo per il
 soggiorno con animali è sempre indicato in modo trasparente nella scheda,
 prima della prenotazione. Alcune strutture applicano un piccolo supplemento
 di pulizia forfettario (non "per cane"), altre non applicano alcun
@@ -498,7 +498,7 @@ Ogni struttura viene contattata direttamente dal nostro team (telefono o
 email) per confermare quattro punti: taglia massima ammessa, numero massimo
 di animali, eventuali supplementi/cauzioni e accesso agli spazi comuni.
 Solo dopo questa verifica la struttura entra nella directory con il badge
-"Verificato Oltre la Taglia". Le informazioni vengono aggiornate periodicamente
+"Verificato Taglia Libera". Le informazioni vengono aggiornate periodicamente
 e ogni utente può segnalarci discrepanze trovate sul posto.
 
 **9. Cosa succede se al check-in la struttura applica regole diverse da quelle indicate sul sito?**
@@ -508,7 +508,7 @@ confermata, aggiorniamo immediatamente la scheda o rimuoviamo il badge
 "Verificato". La trasparenza delle informazioni è il cuore del nostro
 servizio, quindi ogni segnalazione viene gestita con priorità.
 
-**10. Il servizio di ricerca su Oltre la Taglia è gratuito?**
+**10. Il servizio di ricerca su Taglia Libera è gratuito?**
 Sì, la ricerca, la consultazione delle schede e delle guide del blog sono
 completamente gratuite per chi viaggia. Il nostro modello si basa sulla
 collaborazione con le strutture ricettive, che possono richiedere

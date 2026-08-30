@@ -11,7 +11,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HOME = os.path.join(ROOT, "mockup", "home.html")
 
-CONTACT_EMAIL = "bassanisimone04+oltrelataglia@gmail.com"  # alias "+": recapita nella stessa inbox, mostrato diverso sul sito
+CONTACT_EMAIL = "bassanisimone04+taglialibera@gmail.com"  # alias "+": recapita nella stessa inbox, mostrato diverso sul sito
 
 
 def extract(src, start_marker, end_marker):
@@ -50,7 +50,7 @@ def page_shell(style_block, header_block, footer_block, header_script, title, de
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<link rel="canonical" href="https://www.oltrelataglia.it/{path}">
+<link rel="canonical" href="https://www.taglialibera.it/{path}">
 {style_block}
 <style>{PAGE_CSS}</style>
 </head>
@@ -80,8 +80,8 @@ def build():
 
     # ---------- Chi siamo ----------
     pages["chi-siamo"] = {
-        "title": "Chi siamo | Oltre la Taglia",
-        "description": "Come e perché nasce Oltre la Taglia: un progetto indipendente, non affiliato alle strutture segnalate, che verifica a mano ogni scheda.",
+        "title": "Chi siamo | Taglia Libera",
+        "description": "Come e perché nasce Taglia Libera: un progetto indipendente, non affiliato alle strutture segnalate, che verifica a mano ogni scheda.",
         "body": """
   <section class="static-hero">
     <div class="wrap">
@@ -91,8 +91,8 @@ def build():
   </section>
   <article class="wrap">
     <div class="static-body">
-      <h2>Perché esiste Oltre la Taglia</h2>
-      <p>Chi ha un cane di taglia grande o gigante conosce il problema: la maggior parte dei filtri "pet friendly" è pensata per cani piccoli, e scoprire che una struttura ha un limite di peso non dichiarato capita spesso solo all'arrivo. Oltre la Taglia nasce per raccogliere, in un unico posto, strutture che dichiarano esplicitamente di accogliere cani grandi, giganti o più di uno insieme — con la fonte del dato sempre citata.</p>
+      <h2>Perché esiste Taglia Libera</h2>
+      <p>Chi ha un cane di taglia grande o gigante conosce il problema: la maggior parte dei filtri "pet friendly" è pensata per cani piccoli, e scoprire che una struttura ha un limite di peso non dichiarato capita spesso solo all'arrivo. Taglia Libera nasce per raccogliere, in un unico posto, strutture che dichiarano esplicitamente di accogliere cani grandi, giganti o più di uno insieme — con la fonte del dato sempre citata.</p>
       <h2>Chi lo cura</h2>
       <p>Il progetto è curato in modo indipendente da una singola persona, non da un'azienda o un'agenzia. Non è un portale di prenotazione e non incassa commissioni sulle prenotazioni: ogni scheda rimanda al sito ufficiale della struttura o alla fonte pubblica da cui arriva il dato.</p>
       <h2>Come lavoriamo</h2>
@@ -112,7 +112,7 @@ def build():
 
     # ---------- Contatti ----------
     pages["contatti"] = {
-        "title": "Contatti | Oltre la Taglia",
+        "title": "Contatti | Taglia Libera",
         "description": "Come contattarci per segnalare una struttura, correggere un dato o proporre una nuova scheda per la directory.",
         "body": f"""
   <section class="static-hero">
@@ -142,8 +142,8 @@ def build():
 
     # ---------- Privacy ----------
     pages["privacy"] = {
-        "title": "Privacy | Oltre la Taglia",
-        "description": "Informativa sul trattamento dei dati personali di Oltre la Taglia ai sensi del Regolamento UE 2016/679 (GDPR).",
+        "title": "Privacy | Taglia Libera",
+        "description": "Informativa sul trattamento dei dati personali di Taglia Libera ai sensi del Regolamento UE 2016/679 (GDPR).",
         "body": f"""
   <section class="static-hero">
     <div class="wrap">
@@ -153,13 +153,13 @@ def build():
   </section>
   <article class="wrap">
     <div class="static-body">
-      <p>Ultimo aggiornamento: questa pagina descrive come Oltre la Taglia tratta i dati personali di chi visita il sito, ai sensi del Regolamento (UE) 2016/679 (GDPR).</p>
+      <p>Ultimo aggiornamento: questa pagina descrive come Taglia Libera tratta i dati personali di chi visita il sito, ai sensi del Regolamento (UE) 2016/679 (GDPR).</p>
 
       <h2>Titolare del trattamento</h2>
-      <p>Oltre la Taglia è un progetto indipendente curato da una persona fisica, senza partita IVA. Per qualsiasi richiesta relativa ai dati personali, il titolare del trattamento è contattabile all'indirizzo <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>.</p>
+      <p>Taglia Libera è un progetto indipendente curato da una persona fisica, senza partita IVA. Per qualsiasi richiesta relativa ai dati personali, il titolare del trattamento è contattabile all'indirizzo <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>.</p>
 
       <h2>Il sito non usa cookie di profilazione</h2>
-      <p>Oltre la Taglia non installa cookie di profilazione, non usa strumenti di analisi del traffico (come Google Analytics) e non effettua tracciamento pubblicitario. Non ci sono form che raccolgono dati se non l'eventuale email che ci scrivi.</p>
+      <p>Taglia Libera non installa cookie di profilazione, non usa strumenti di analisi del traffico (come Google Analytics) e non effettua tracciamento pubblicitario. Non ci sono form che raccolgono dati se non l'eventuale email che ci scrivi.</p>
 
       <h2>Dati raccolti automaticamente dal fornitore di hosting</h2>
       <p>Il sito è ospitato tramite <strong>Vercel Inc.</strong> Come qualsiasi servizio di hosting, per motivi tecnici e di sicurezza il fornitore registra automaticamente alcuni dati di connessione (indirizzo IP, tipo di browser, data e ora della richiesta) nei log di sistema, per il tempo strettamente necessario a garantire il funzionamento e la sicurezza del servizio. Questi dati non vengono usati da noi per identificare i visitatori. Per maggiori informazioni: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">informativa privacy di Vercel</a>.</p>
@@ -185,8 +185,8 @@ def build():
 
     # ---------- Termini ----------
     pages["termini"] = {
-        "title": "Termini e condizioni | Oltre la Taglia",
-        "description": "Termini e condizioni d'uso del sito Oltre la Taglia: cosa offre il sito, i suoi limiti e le responsabilità sui contenuti.",
+        "title": "Termini e condizioni | Taglia Libera",
+        "description": "Termini e condizioni d'uso del sito Taglia Libera: cosa offre il sito, i suoi limiti e le responsabilità sui contenuti.",
         "body": """
   <section class="static-hero">
     <div class="wrap">
@@ -196,8 +196,8 @@ def build():
   </section>
   <article class="wrap">
     <div class="static-body">
-      <h2>Cos'è Oltre la Taglia</h2>
-      <p>Oltre la Taglia è una directory informativa indipendente di strutture ricettive che, secondo fonti pubbliche consultate, accolgono cani di taglia grande o gigante. Il sito non è un portale di prenotazione: non gestisce prenotazioni, pagamenti né contratti tra utenti e strutture, e non incassa commissioni.</p>
+      <h2>Cos'è Taglia Libera</h2>
+      <p>Taglia Libera è una directory informativa indipendente di strutture ricettive che, secondo fonti pubbliche consultate, accolgono cani di taglia grande o gigante. Il sito non è un portale di prenotazione: non gestisce prenotazioni, pagamenti né contratti tra utenti e strutture, e non incassa commissioni.</p>
 
       <h2>Natura delle informazioni pubblicate</h2>
       <p>Le informazioni su ogni struttura provengono da fonti pubbliche esplicitamente citate in ciascuna scheda (sito ufficiale della struttura o portale specializzato). Non tutte le informazioni sono state verificate telefonicamente con la struttura: quando è così, lo indichiamo in modo esplicito. Le condizioni sugli animali (taglia massima, numero di cani, supplementi) possono cambiare nel tempo per decisione della struttura: prima di prenotare, verifica sempre le condizioni attuali direttamente con la struttura.</p>
@@ -209,7 +209,7 @@ def build():
       <p>Il sito contiene link a siti ufficiali di strutture ricettive e a fonti pubbliche terze. Non abbiamo controllo su questi siti e non siamo responsabili dei loro contenuti, delle loro politiche sulla privacy o delle transazioni che vi si svolgono.</p>
 
       <h2>Proprietà dei contenuti</h2>
-      <p>Testi, struttura e design del sito Oltre la Taglia sono di proprietà del progetto, salvo i contenuti espressamente attribuiti a fonti terze (dati citati dalle strutture, fotografie con relativa licenza). La riproduzione non autorizzata dei contenuti originali non è consentita senza permesso.</p>
+      <p>Testi, struttura e design del sito Taglia Libera sono di proprietà del progetto, salvo i contenuti espressamente attribuiti a fonti terze (dati citati dalle strutture, fotografie con relativa licenza). La riproduzione non autorizzata dei contenuti originali non è consentita senza permesso.</p>
 
       <h2>Segnalazioni e correzioni</h2>
       <p>Se sei il gestore di una struttura segnalata e ritieni che un dato non sia più corretto, o se vuoi segnalare un errore, scrivi a <a href="/contatti/">Contatti</a>: le correzioni vengono valutate e applicate il prima possibile.</p>
