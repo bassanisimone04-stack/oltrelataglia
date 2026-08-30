@@ -39,7 +39,7 @@ Una struttura che ha davvero pensato ai cani grandi di solito offre, o è dispos
 
 ## Come continua questa selezione
 
-Le strutture che pubblichiamo in questa directory arrivano da fonti pubbliche citate — il sito ufficiale della struttura o un portale specializzato — con link diretto, così puoi verificare tu stesso prima di scrivere. Non promettiamo una verifica telefonica che non abbiamo ancora fatto: il percorso completo, passaggio per passaggio, è descritto in [Come funziona](/#come).
+Le strutture che pubblichiamo in questa directory arrivano da fonti pubbliche citate — il sito ufficiale della struttura o un portale specializzato — con link diretto, così puoi verificare tu stesso prima di scrivere. Non promettiamo una verifica telefonica che non abbiamo ancora fatto: il metodo è descritto in [Chi siamo](/chi-siamo/).
 
 ## Domande frequenti
 

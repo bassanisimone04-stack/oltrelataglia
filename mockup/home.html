@@ -306,14 +306,6 @@
   .post p{ font-size:14px; }
   .post .arrow{ margin-top:auto; font-size:19px; color:var(--klein-text); }
 
-  /* ── Come funziona ───────────────────────────── */
-  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-  @media (max-width:860px){ .steps{ grid-template-columns:1fr; } }
-  .step{ background:var(--paper); padding:36px 30px; display:flex; flex-direction:column; gap:14px; }
-  .step-n{ font-family:'Martian Mono',monospace; font-weight:500; font-size:11px; color:var(--klein-text); font-variant-numeric:tabular-nums; }
-  .step h3{ font-size:21px; font-weight:600; letter-spacing:-0.02em; line-height:1.15; }
-  .step p{ font-size:14.5px; }
-
   /* ── FAQ ─────────────────────────────────────── */
   .faq{ border-top:1px solid var(--line); }
   .faq details{ border-bottom:1px solid var(--line); }
@@ -333,7 +325,7 @@
 
   /* ── Footer ──────────────────────────────────── */
   footer{ padding-block:60px 34px; border-top:1px solid var(--line); }
-  .foot{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:34px; }
+  .foot{ display:grid; grid-template-columns:2fr 1fr 1fr; gap:34px; }
   @media (max-width:760px){ .foot{ grid-template-columns:1fr 1fr; } }
   .foot h4{ margin:0 0 16px; font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px; text-transform:uppercase; color:var(--ink-2); }
   .foot ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
@@ -643,43 +635,6 @@
   </section>
 
   <!-- COME FUNZIONA -->
-  <section class="sec" id="come">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <div>
-          <p class="lbl">Come funziona</p>
-          <h2>Tre passaggi, prima che una struttura finisca qui dentro.</h2>
-        </div>
-      </div>
-      <div class="steps rv">
-        <div class="step">
-          <span class="step-n">01</span>
-          <h3>Chiediamo per iscritto</h3>
-          <p>Contattiamo la struttura su quattro punti soli: taglia massima ammessa, numero di
-          animali, supplementi e cauzione, accesso agli spazi comuni.</p>
-        </div>
-        <div class="step">
-          <span class="step-n">02</span>
-          <h3>Pubblichiamo la risposta</h3>
-          <p>Quello che ci rispondono finisce nella scheda così com'è. Se un dato non ce lo danno,
-          resta vuoto: non lo stimiamo e non lo arrotondiamo.</p>
-        </div>
-        <div class="step">
-          <span class="step-n">03</span>
-          <h3>Correggiamo con voi</h3>
-          <p>Se al check-in trovi regole diverse, ce lo segnali: controlliamo con la struttura e
-          aggiorniamo la scheda. È l'unico modo perché la promessa regga.</p>
-        </div>
-      </div>
-      <p class="rv" style="--d:120ms; margin-top:28px; max-width:70ch; font-size:14px;">
-        <strong style="color:var(--ink);">A che punto siamo oggi:</strong> le tre strutture qui sopra
-        non hanno ancora fatto questo percorso — le loro schede arrivano da fonti pubbliche citate,
-        non da una nostra richiesta diretta per iscritto. È il processo che stiamo introducendo da
-        qui in avanti, struttura per struttura.
-      </p>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section class="sec" id="faq" style="background:var(--surface-2);">
     <div class="wrap">
@@ -790,10 +745,6 @@
       <div>
         <h4>Esplora</h4>
         <ul><li><a href="#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="#strutture">Destinazioni</a></li></ul>
-      </div>
-      <div>
-        <h4>Per le strutture</h4>
-        <ul><li><a href="#come">Come funziona</a></li><li><a href="#come">Linee guida di verifica</a></li></ul>
       </div>
       <div>
         <h4>Progetto</h4>

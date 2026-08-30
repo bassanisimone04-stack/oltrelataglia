@@ -99,7 +99,7 @@ def build():
       <h2>Chi lo cura</h2>
       <p>Il progetto è curato in modo indipendente da una singola persona, non da un'azienda o un'agenzia. Non è un portale di prenotazione e non incassa commissioni sulle prenotazioni: ogni scheda rimanda al sito ufficiale della struttura o alla fonte pubblica da cui arriva il dato.</p>
       <h2>Come lavoriamo</h2>
-      <p>Ogni struttura viene aggiunta a mano dopo aver trovato una fonte pubblica verificabile — il sito ufficiale della struttura o un portale specializzato — che dichiari esplicitamente le condizioni sui cani. Se un dato chiave (come la taglia massima ammessa) non è confermabile, la struttura non viene aggiunta, anche se altrove risulta "pet friendly" in modo generico. Il metodo è descritto anche nella sezione <a href="/#come">Come funziona</a> della home e nelle <a href="/cerca/">domande frequenti della ricerca</a>.</p>
+      <p>Ogni struttura viene aggiunta a mano dopo aver trovato una fonte pubblica verificabile — il sito ufficiale della struttura o un portale specializzato — che dichiari esplicitamente le condizioni sui cani. Se un dato chiave (come la taglia massima ammessa) non è confermabile, la struttura non viene aggiunta, anche se altrove risulta "pet friendly" in modo generico. Altri dettagli sul metodo sono nelle <a href="/cerca/">domande frequenti della ricerca</a>.</p>
       <h2>Cosa NON siamo</h2>
       <ul>
         <li>Non siamo affiliati a nessuna delle strutture segnalate.</li>

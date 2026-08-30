@@ -38,7 +38,7 @@ Chi gestisce lo stabilimento, se lo spazio c'è, di solito è felice di dirtelo 
 
 ## Regione per regione: cosa sappiamo e cosa no, onestamente
 
-Non pubblichiamo ancora una mappa di spiagge verificate: sarebbe facile scrivere dieci nomi trovati con una ricerca veloce, ma sarebbe esattamente il tipo di dato non verificato che su questo sito non vogliamo mettere. Quello che stiamo costruendo, struttura per struttura, è descritto in [Come funziona](/#come) — e quando avremo una prima selezione di spiagge con piazzole XXL confermate per iscritto, questa guida verrà aggiornata con i nomi reali, la fonte e il link diretto.
+Non pubblichiamo ancora una mappa di spiagge verificate: sarebbe facile scrivere dieci nomi trovati con una ricerca veloce, ma sarebbe esattamente il tipo di dato non verificato che su questo sito non vogliamo mettere. Il metodo con cui aggiungiamo ogni struttura, una alla volta, è descritto in [Chi siamo](/chi-siamo/) — e quando avremo una prima selezione di spiagge con piazzole XXL confermate per iscritto, questa guida verrà aggiornata con i nomi reali, la fonte e il link diretto.
 
 Nel frattempo, il metodo sopra funziona ovunque tu stia guardando: in Liguria come in Puglia, la domanda giusta fatta prima vale più di qualsiasi elenco.
 
