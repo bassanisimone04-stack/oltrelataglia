@@ -608,6 +608,185 @@ STRUTTURE = [
     },
 ]
 
+STRUTTURE += [
+    {
+        "slug": "hotel-ville-bianchi",
+        "nome": "Hotel Ville Bianchi",
+        "comune": "Grado (Gorizia)",
+        "regione": "Friuli-Venezia Giulia",
+        "regione_slug": "friuli-venezia-giulia",
+        "fonte_nome": "villebianchi.com",
+        "fonte_url": "https://www.villebianchi.com/pet-friendly/",
+        "sito_url": "https://www.villebianchi.com/",
+        "tags": ["Fino a taglia grande", "Supplemento 20€/notte"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Hotel 4 stelle con appartamenti sul mare a Grado, Friuli-Venezia Giulia. Secondo la "
+            "fonte pubblica consultata (il sito ufficiale), ammette cani di taglia grande fino a "
+            "40 kg, ben educati, con un supplemento di 20€ a notte. L'accesso al ristorante non è "
+            "consentito agli animali. La struttura fornisce un kit di benvenuto per il cane e ha "
+            "un'ampia area sgambamento ombreggiata."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (40 kg)"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "20€ a notte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Kit di benvenuto per il cane",
+            "Ampia area sgambamento ombreggiata",
+            "Accesso al mare",
+            "Non ammessi nell'area ristorante",
+        ],
+    },
+    {
+        "slug": "casa-mori",
+        "nome": "Casa Mori",
+        "comune": "Certaldo (Firenze)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "casamori.com",
+        "fonte_url": "https://www.casamori.com/",
+        "sito_url": "https://www.casamori.com/",
+        "tags": ["Ogni taglia", "Accesso ovunque", "Veterinario in loco"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo ricavato dalla ristrutturazione di un fienile del Seicento, nella "
+            "campagna a circa 6 km da Certaldo, in provincia di Firenze, Toscana. Secondo la "
+            "fonte pubblica consultata (il sito ufficiale), ammette cani di ogni taglia con "
+            "accesso a tutti gli spazi della struttura. Uno dei proprietari è veterinario, con "
+            "disponibilità di assistenza in loco."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Non specificato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso a tutti gli spazi della struttura",
+            "Uno dei proprietari è veterinario",
+            "Nella campagna a 6 km da Certaldo",
+        ],
+    },
+    {
+        "slug": "hotel-imperiale-bellaria",
+        "nome": "Hotel Imperiale",
+        "comune": "Bellaria-Igea Marina (Rimini)",
+        "regione": "Emilia-Romagna",
+        "regione_slug": "emilia-romagna",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/hotel/italia/emilia-romagna/rimini/hotel-imperiale",
+        "sito_url": "https://www.hotelimperialebellaria.it/",
+        "tags": ["Fino a taglia grande", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Hotel sul mare a Bellaria-Igea Marina, in provincia di Rimini, Emilia-Romagna. "
+            "Secondo la fonte pubblica consultata, ammette cani fino a taglia grande (non "
+            "gigante), anche più di uno a prenotazione, senza alcun supplemento. La struttura "
+            "offre un kit di benvenuto, un giardino e un'area dedicata sulla spiaggia a pochi "
+            "metri dall'hotel."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (non gigante)"),
+            ("Numero di cani", "Più di uno, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Kit di benvenuto per il cane",
+            "Giardino con angolo ciotole",
+            "Area dedicata in spiaggia a pochi metri dall'hotel",
+        ],
+    },
+    {
+        "slug": "bb-hotel-arezzo",
+        "nome": "B&B Hotel Arezzo",
+        "comune": "Arezzo",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/hotel/italia/toscana/arezzo/hotel-bb-arezzo",
+        "sito_url": "https://www.hotel-bb.com/it/hotel/arezzo",
+        "tags": ["Fino a taglia grande", "Supplemento 5€/notte"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Hotel della catena B&B Hotels a circa 3 km dal centro di Arezzo, Toscana. Secondo la "
+            "fonte pubblica consultata, ammette cani di ogni razza fino a taglia grande, con un "
+            "supplemento di 5€ a notte per animale, fino a un massimo di 2 cani per camera."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande"),
+            ("Numero di cani", "Fino a 2 per camera"),
+            ("Supplemento animali", "5€ a notte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "A 3 km dal centro di Arezzo",
+            "Vicino al centro fieristico",
+        ],
+    },
+    {
+        "slug": "ai-pozzi-village-resort",
+        "nome": "Ai Pozzi Village Resort & SPA",
+        "comune": "Loano (Savona)",
+        "regione": "Liguria",
+        "regione_slug": "liguria",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/villaggi-vacanze-resort/italia/liguria/savona/ai-pozzi-village",
+        "sito_url": "https://www.aipozzivillage.com/",
+        "tags": ["Ogni taglia", "Supplemento 15€/giorno"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel e residence con SPA a Loano, sulla Riviera delle Palme, Liguria. Secondo la "
+            "fonte pubblica consultata, ammette cani di ogni taglia con un supplemento di 15€ al "
+            "giorno per animale, senza costi di pulizia aggiuntivi. Kit di benvenuto con ciotole "
+            "e snack, area cani dedicata con sabbia per il gioco."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "15€ al giorno"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Kit di benvenuto con ciotole e snack",
+            "Area cani dedicata con sabbia per il gioco",
+            "SPA in struttura",
+        ],
+    },
+    {
+        "slug": "villaggio-di-giuele",
+        "nome": "Il Villaggio di GiuEle",
+        "comune": "Finale Ligure (Savona)",
+        "regione": "Liguria",
+        "regione_slug": "liguria",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/villaggi-vacanze-resort/italia/liguria/savona/il-villaggio-di-giuele",
+        "sito_url": "https://www.ilvillaggiodigiuele.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Villaggio residence immerso nella macchia mediterranea a Finale Ligure, Savona, "
+            "Liguria. Secondo la fonte pubblica consultata, ammette cani di ogni taglia, anche "
+            "più di tre per cliente, senza alcun supplemento. La struttura ha convenzioni con "
+            "diverse spiagge pet friendly della zona di Finale Ligure."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di tre, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Convenzioni con spiagge pet friendly locali",
+            "Ciotole per acqua e cibo su richiesta",
+            "Due piscine, centro equestre di fronte",
+        ],
+    },
+]
+
 ALL_TAGS = []
 for _s in STRUTTURE:
     for _t in _s["tags"]:
