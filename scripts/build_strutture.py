@@ -12,6 +12,7 @@ Riusa <style>/header/footer di mockup/home.html, come scripts/build_blog.py.
 import os
 import sys
 import html
+import json
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/../content")
 from strutture import STRUTTURE, ALL_TAGS  # noqa: E402
@@ -127,6 +128,38 @@ def build():
 </main>
 
 {footer_block}
+
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.oltrelataglia.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.oltrelataglia.it/cerca/"},
+        {"@type": "ListItem", "position": 3, "name": st["nome"], "item": f"https://www.oltrelataglia.it/struttura/{st['slug']}/"},
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
+
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": st["nome"],
+    "description": st["descrizione"],
+    "url": st["sito_url"],
+    "sameAs": [st["fonte_url"]],
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": st["comune"],
+        "addressRegion": st["regione"],
+        "addressCountry": "IT",
+    },
+    "additionalProperty": [
+        {"@type": "PropertyValue", "name": k, "value": v} for k, v in st["fatti"]
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
 {header_script}
 """
         out_dir = os.path.join(ROOT, "struttura", st["slug"])
@@ -155,19 +188,58 @@ def build():
         <span class="stay-go">Vedi la scheda →</span>
       </a>''')
 
+    cerca_faq = [
+        (
+            f"Perché ci sono solo {len(STRUTTURE)} strutture e non centinaia?",
+            "Perché ognuna viene aggiunta a mano, con la fonte controllata prima di pubblicarla — "
+            "non importiamo automaticamente elenchi da altri portali. Cresce più lentamente di una "
+            "directory aggregata, ma ogni scheda che vedi corrisponde a una verifica fatta davvero.",
+        ),
+        (
+            "Da dove vengono i dati di ogni struttura?",
+            "Da fonti pubbliche — il sito ufficiale della struttura o un portale specializzato — "
+            "sempre linkate nella scheda. Non è ancora una verifica telefonica diretta: il "
+            "percorso completo è descritto nella sezione \"Come funziona\" della home.",
+        ),
+        (
+            "Cosa intendete esattamente per taglia \"grande\" e \"gigante\"?",
+            "Taglia grande indica indicativamente 25–45 kg, gigante oltre i 45 kg. Quando una "
+            "struttura dichiara \"ogni taglia\" senza specificare un tetto, lo riportiamo così "
+            "com'è, senza tradurlo in un numero che la fonte non ha dato.",
+        ),
+        (
+            "Posso fidarmi del filtro \"Nessun supplemento\"?",
+            "Riflette quello che la fonte dichiarava al momento in cui abbiamo raccolto il dato. "
+            "Le condizioni possono cambiare da una stagione all'altra: vale sempre la pena "
+            "confermarlo con la struttura prima di prenotare, non solo fidarsi del filtro.",
+        ),
+        (
+            "Perché non ci sono prezzi o valutazioni nelle schede?",
+            "Perché non li abbiamo verificati. Un prezzo o un punteggio inventato sarebbe peggio "
+            "di nessun dato: meglio una scheda incompleta che una scheda sbagliata.",
+        ),
+    ]
+    cerca_faq_html = "".join(
+        f'<details{" open" if i == 0 else ""}><summary>{html.escape(q)}<span class="plus">+</span></summary><p>{html.escape(a)}</p></details>'
+        for i, (q, a) in enumerate(cerca_faq)
+    )
+
     cerca_page = f"""<title>Cerca alloggi</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
 <link rel="canonical" href="https://www.oltrelataglia.it/cerca/">
 {style_block}
-<style>{cerca_css}</style>
+<style>{cerca_css}
+  .cerca-faq{{ padding-block:70px; border-top:1px solid var(--line); background:var(--surface); }}
+  .cerca-faq .faq{{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }}
+</style>
 
 {header_block}
 
 <main id="top">
   <section class="cerca-hero">
     <div class="wrap">
-      <p class="lbl">Cerca</p>
-      <h1>Le strutture reali di questa directory.</h1>
+      <p class="lbl"><a href="/" style="text-decoration:none; color:var(--ink-2);">Home</a> / Cerca</p>
+      <h1 style="margin-top:10px;">Le strutture reali di questa directory.</h1>
       <p style="margin-top:16px; max-width:60ch; font-size:16px; color:var(--ink-2);">
         Sono {len(STRUTTURE)}, non 500: crescono una alla volta, verificata scheda per scheda.
         Filtra per quello che conta davvero con un cane grande.
@@ -192,9 +264,39 @@ def build():
       <div class="no-results" id="no-results">Nessuna struttura corrisponde a questi filtri. Prova ad azzerarli — la directory è ancora piccola.</div>
     </div>
   </div>
+
+  <section class="cerca-faq">
+    <div class="wrap">
+      <p class="lbl" style="margin-bottom:10px; text-align:center;">Domande frequenti</p>
+      <h2 style="text-align:center; font-size:clamp(24px,3vw,34px); margin-bottom:34px;">Come funziona questa ricerca.</h2>
+      <div class="faq">{cerca_faq_html}</div>
+    </div>
+  </section>
 </main>
 
 {footer_block}
+
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.oltrelataglia.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.oltrelataglia.it/cerca/"},
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
+
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+        for q, a in cerca_faq
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
 {header_script}
 <script>
 (function(){{

@@ -12,6 +12,7 @@ serve un parser generico.
 import re
 import html
 import glob
+import json
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -59,6 +60,14 @@ def inline_md(text):
     text = re.sub(r"\[(.+?)\]\((.+?)\)", r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
     text = text.replace("&amp;nbsp;", "&nbsp;")  # &nbsp; nel sorgente non va sfuggito due volte
     return text
+
+
+def plain_md(text):
+    """Come inline_md, ma per il JSON-LD: niente tag, solo testo — i link
+    diventano il loro anchor text, il resto non va scappato per l'HTML."""
+    text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+    text = re.sub(r"\[(.+?)\]\(.+?\)", r"\1", text)
+    return text.replace("&nbsp;", " ").strip()
 
 
 def render_body(body):
@@ -140,7 +149,7 @@ def render_body(body):
         out.append(f"<p>{inline_md(' '.join(para))}</p>")
 
     flush_faq()
-    return h1, "\n".join(out)
+    return h1, "\n".join(out), faq_items
 
 
 def build():
@@ -171,7 +180,7 @@ def build():
     for md_path in sorted(glob.glob(os.path.join(BLOG_SRC, "0*.md"))):
         raw = open(md_path, encoding="utf-8").read()
         fm, body = parse_frontmatter(raw)
-        h1, body_html = render_body(body)
+        h1, body_html, faq_items = render_body(body)
         slug = fm["slug"]
         title_seo = fm["titolo_seo"]
         meta_desc = fm["meta_description"]
@@ -216,17 +225,40 @@ def build():
 {footer_block}
 
 <script type="application/ld+json">
-{{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": {html.escape(h1)!r},
-  "description": {meta_desc!r},
-  "inLanguage": "it-IT",
-  "url": "https://www.oltrelataglia.it/blog/{slug}/",
-  "publisher": {{ "@type": "Organization", "name": "Oltre la Taglia" }}
-}}
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": h1,
+    "description": meta_desc,
+    "inLanguage": "it-IT",
+    "url": f"https://www.oltrelataglia.it/blog/{slug}/",
+    "publisher": {"@type": "Organization", "name": "Oltre la Taglia"},
+}, ensure_ascii=False, indent=2)}
 </script>
 
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.oltrelataglia.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Guide", "item": "https://www.oltrelataglia.it/blog/"},
+        {"@type": "ListItem", "position": 3, "name": h1, "item": f"https://www.oltrelataglia.it/blog/{slug}/"},
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
+{("" if not faq_items else '''
+<script type="application/ld+json">
+''' + json.dumps({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type": "Question", "name": plain_md(q), "acceptedAnswer": {"@type": "Answer", "text": plain_md(a)}}
+        for q, a in faq_items
+    ],
+}, ensure_ascii=False, indent=2) + '''
+</script>
+''')}
 {header_script}
 """
         out_dir = os.path.join(OUT_BLOG_DIR, slug)

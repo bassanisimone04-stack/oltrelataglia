@@ -333,6 +333,37 @@ STRUTTURE = [
             "Vicino al Lago di Garda",
         ],
     },
+    {
+        "slug": "agriturismo-delizia-deste",
+        "nome": "Agriturismo Delizia d'Este",
+        "comune": "Ferrara",
+        "regione": "Emilia-Romagna",
+        "regione_slug": "emilia-romagna",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/emilia-romagna/ferrara/agriturismo-delizia-d-este",
+        "sito_url": "https://www.deliziadeste.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento", "Piscina e laghetto per cani"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo a pochi chilometri da Ferrara, con un parco recintato di 2 ettari "
+            "attrezzato apposta per i cani. Secondo la fonte pubblica consultata, ammette cani di "
+            "ogni taglia, anche più di uno per prenotazione, senza supplemento. Dispone di una "
+            "piscina ad uso condiviso cani-umani, un laghetto dedicato al nuoto dei cani e "
+            "un'area di lavaggio self-service."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia"),
+            ("Numero di cani", "Più di uno, nessun limite specificato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Parco recintato di 2 ettari",
+            "Piscina ad uso condiviso cani-umani",
+            "Laghetto dedicato al nuoto dei cani",
+            "Area di lavaggio self-service per cani",
+        ],
+    },
 ]
 
 ALL_TAGS = []
