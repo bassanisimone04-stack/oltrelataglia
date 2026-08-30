@@ -485,6 +485,38 @@ STRUTTURE = [
             "Animali ammessi a condizione di essere sorvegliati",
         ],
     },
+    {
+        "slug": "agriturismo-colja-jozko",
+        "nome": "Agriturismo Colja Jozko",
+        "comune": "Samatorza, Sgonico (Trieste)",
+        "regione": "Friuli-Venezia Giulia",
+        "regione_slug": "friuli-venezia-giulia",
+        "fonte_nome": "zampavacanza.it",
+        "fonte_url": "https://www.zampavacanza.it/struttura-animali-ammessi/2729",
+        "sito_url": "https://www.coljajozko.it/",
+        "tags": ["Fino a taglia grande", "Area sgambamento", "Accesso ristorante"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Azienda agricola nel Carso triestino, a Samatorza (Sgonico), a pochi chilometri dal "
+            "mare e dal confine con la Slovenia, nella Denominazione di Origine Controllata "
+            "Friuli Carso. Secondo la fonte pubblica consultata, ammette cani fino a taglia "
+            "grande, con area sgambamento dedicata, accesso al ristorante interno e percorsi "
+            "pensati per le passeggiate con il cane. Supplemento e numero massimo di animali per "
+            "prenotazione non sono specificati nella fonte consultata."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (25–45 kg)"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Non specificato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Area sgambamento dedicata ai cani",
+            "Accesso al ristorante interno",
+            "Percorsi per passeggiate con il cane",
+            "A pochi km dal mare e dal confine sloveno",
+        ],
+    },
 ]
 
 ALL_TAGS = []
