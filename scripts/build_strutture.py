@@ -119,6 +119,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{html.escape(seo_title)}</title>
 <meta name="description" content="{html.escape(meta_desc)}">
 <meta property="og:title" content="{html.escape(seo_title)}">
@@ -215,6 +216,7 @@ def build():
         tags_attr = "|".join(st["tags"])
         tags_pill = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
         rows_html.append(f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione'].lower())}">
+        <span class="stay-badge">{st['regione_slug'][:2].upper()}</span>
         <div class="stay-main">
           <h3>{html.escape(st['nome'])}</h3>
           <p class="stay-where">{html.escape(st['comune'])} · {html.escape(st['regione'])}</p>
@@ -267,6 +269,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>Cerca hotel e agriturismi per cani grandi | Taglia Libera</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
 <meta property="og:title" content="Cerca hotel e agriturismi per cani grandi | Taglia Libera">
@@ -308,13 +311,16 @@ def build():
       <div class="results-head">
         <div class="results-count" id="results-count"><span>{len(STRUTTURE)}</span> strutture</div>
       </div>
-      <div class="stays-head">
-        <span>Struttura</span>
-        <span>Caratteristiche</span>
-        <span>Scheda</span>
-      </div>
-      <div class="stays" id="stays-list">
+      <div class="stays-table">
+        <div class="stays-head">
+          <span></span>
+          <span>Struttura</span>
+          <span>Caratteristiche</span>
+          <span>Scheda</span>
+        </div>
+        <div class="stays" id="stays-list">
 {chr(10).join(rows_html)}
+        </div>
       </div>
       <div class="no-results" id="no-results">Nessuna struttura corrisponde a questi filtri. Prova ad azzerarli — la directory è ancora piccola.</div>
     </div>

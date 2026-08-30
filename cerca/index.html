@@ -6,6 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <title>Cerca hotel e agriturismi per cani grandi | Taglia Libera</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
 <meta property="og:title" content="Cerca hotel e agriturismi per cani grandi | Taglia Libera">
@@ -100,6 +101,23 @@
   .navlinks a{ text-decoration:none; font-size:14px; font-weight:500; color:var(--ink-2); transition:color .2s ease; }
   .navlinks a:hover{ color:var(--ink); }
   @media (max-width:980px){ .navlinks{ display:none; } }
+
+  .theme-toggle{
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+    width:38px; height:38px; border:1px solid var(--line); background:var(--surface);
+    color:var(--ink); cursor:pointer; transition:border-color .2s ease;
+  }
+  .theme-toggle:hover{ border-color:var(--ink); }
+  .theme-toggle svg{ width:17px; height:17px; }
+  .theme-toggle .icon-moon{ display:none; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{ display:none; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{ display:block; }
+  }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+  :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+  :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 
   /* ── Hero + barra di ricerca ─────────────────── */
   .hero{ position:relative; padding:132px 0 52px; overflow:hidden; }
@@ -239,10 +257,11 @@
   .why-c p{ font-size:14.5px; }
 
   /* ── Strutture ───────────────────────────────── */
-  .stays{ display:flex; flex-direction:column; border-top:1px solid var(--line); }
+  .stays-table{ border:1px solid var(--line); }
+  .stays{ display:flex; flex-direction:column; }
   .stays-head{
-    display:grid; grid-template-columns:1.1fr 1.4fr 96px; gap:24px;
-    padding:0 4px 12px;
+    display:grid; grid-template-columns:52px 1.1fr 1.4fr 96px; gap:20px;
+    padding:14px 16px; background:var(--surface-2); border-bottom:1px solid var(--line);
   }
   .stays-head span{
     font-family:'Martian Mono',monospace; font-weight:500; font-size:10px;
@@ -252,24 +271,32 @@
   @media (max-width:860px){ .stays-head{ display:none; } }
 
   .stay{
-    display:grid; grid-template-columns:1.1fr 1.4fr 96px; gap:24px; align-items:center;
-    padding:20px 4px; border-bottom:1px solid var(--line); text-decoration:none;
+    display:grid; grid-template-columns:52px 1.1fr 1.4fr 96px; gap:20px; align-items:center;
+    padding:18px 16px; border-bottom:1px solid var(--line); text-decoration:none;
     transition:background-color .15s ease;
   }
+  .stay:nth-child(even){ background:color-mix(in srgb, var(--surface-2) 45%, transparent); }
   .stay:hover{ background:var(--surface); }
   @media (max-width:860px){
-    .stay{ grid-template-columns:1fr; gap:10px; align-items:start; }
+    .stay{ grid-template-columns:44px 1fr; gap:14px; align-items:start; padding:18px 4px; }
+  }
+  .stay-badge{
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    background:var(--klein); color:var(--on-klein); flex-shrink:0;
+    font-family:'Martian Mono',monospace; font-weight:600; font-size:11px;
   }
   .stay-main h3{ font-size:17px; font-weight:600; letter-spacing:-0.015em; }
   .stay-where{ margin-top:4px; font-size:13px; }
   .stay-specs{ display:flex; flex-wrap:wrap; gap:6px; }
+  @media (max-width:860px){ .stay-specs{ grid-column:2; } }
   .spec{
     font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px;
-    text-transform:uppercase; padding:5px 9px; border:1px solid var(--line); color:var(--ink);
+    text-transform:uppercase; padding:5px 9px; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--ink);
   }
   .spec-hi{ border-color:var(--klein); color:var(--klein-text); }
   .stay-go{ font-size:13px; font-weight:600; color:var(--klein-text); white-space:nowrap; text-align:right; }
-  @media (max-width:860px){ .stay-go{ text-align:left; } }
+  @media (max-width:860px){ .stay-go{ grid-column:2; text-align:left; } }
 
   .note{
     border-left:2px solid var(--klein); padding:16px 20px; background:var(--surface);
@@ -385,6 +412,10 @@
       <a href="/#guide">Guide</a>
       <a href="/#faq">FAQ</a>
     </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambia tema chiaro/scuro">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a.6.6 0 0 0-.7-.8A9.5 9.5 0 1 0 21.3 15.3a.6.6 0 0 0-.8-.7z"/></svg>
+    </button>
     <a class="btn btn-fill" href="/#cerca">Cerca alloggi <span class="dot"></span></a>
   </div>
 </header>
@@ -412,13 +443,16 @@
       <div class="results-head">
         <div class="results-count" id="results-count"><span>18</span> strutture</div>
       </div>
-      <div class="stays-head">
-        <span>Struttura</span>
-        <span>Caratteristiche</span>
-        <span>Scheda</span>
-      </div>
-      <div class="stays" id="stays-list">
+      <div class="stays-table">
+        <div class="stays-head">
+          <span></span>
+          <span>Struttura</span>
+          <span>Caratteristiche</span>
+          <span>Scheda</span>
+        </div>
+        <div class="stays" id="stays-list">
       <a class="stay" href="/struttura/agriturismo-bellavita/" data-tags="Ogni taglia|Cani illimitati|Nessun supplemento|Piscina per cani" data-regione="toscana">
+        <span class="stay-badge">TO</span>
         <div class="stay-main">
           <h3>Agriturismo Bellavita</h3>
           <p class="stay-where">Lamporecchio, Pistoiese · Toscana</p>
@@ -427,6 +461,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/baita-gorck/" data-tags="Fino a taglia grande|Ammessi al ristorante|Pulizie +10€" data-regione="trentino">
+        <span class="stay-badge">TR</span>
         <div class="stay-main">
           <h3>Baita Gorck</h3>
           <p class="stay-where">Val Rendena, Parco Adamello Brenta · Trentino</p>
@@ -435,6 +470,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/masseria-le-terrazze-di-serranova/" data-tags="Fino a 30 kg|Nessun supplemento|Area sgambamento" data-regione="puglia">
+        <span class="stay-badge">PU</span>
         <div class="stay-main">
           <h3>Masseria Le Terrazze di Serranova</h3>
           <p class="stay-where">Serranova, Carovigno (Brindisi) · Puglia</p>
@@ -443,6 +479,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/ecoresort-il-cantico-della-natura/" data-tags="Ogni taglia|Fino a 4 cani|Nessun supplemento|Area sgambamento recintata" data-regione="umbria">
+        <span class="stay-badge">UM</span>
         <div class="stay-main">
           <h3>EcoResort Il Cantico della Natura</h3>
           <p class="stay-where">Magione (Perugia) · Umbria</p>
@@ -451,6 +488,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-casale-degli-olmi/" data-tags="Ogni taglia|Fino a 2 cani|Nessun supplemento|Unità con zona recintata" data-regione="umbria">
+        <span class="stay-badge">UM</span>
         <div class="stay-main">
           <h3>Agriturismo Casale degli Olmi</h3>
           <p class="stay-where">Perugia · Umbria</p>
@@ -459,6 +497,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/residence-mizar/" data-tags="Fino a taglia grande|Nessun supplemento giornaliero|Vicino a spiaggia per cani|Pulizie 20€ a fine soggiorno" data-regione="liguria">
+        <span class="stay-badge">LI</span>
         <div class="stay-main">
           <h3>Residence Mizar</h3>
           <p class="stay-where">Pietra Ligure (Savona) · Liguria</p>
@@ -467,6 +506,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/podere-il-poggiolo/" data-tags="Taglia gigante ok|Accesso ristorante|50€/animale a settimana" data-regione="toscana">
+        <span class="stay-badge">TO</span>
         <div class="stay-main">
           <h3>Podere il Poggiolo</h3>
           <p class="stay-where">Pontassieve, Chianti Rufina (Firenze) · Toscana</p>
@@ -475,6 +515,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-podere-bello/" data-tags="Fino a 3 cani|Nessun supplemento|Giardino privato recintato" data-regione="toscana">
+        <span class="stay-badge">TO</span>
         <div class="stay-main">
           <h3>Agriturismo Podere Bello</h3>
           <p class="stay-where">Pitigliano, Maremma (Grosseto) · Toscana</p>
@@ -483,6 +524,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/masseria-le-palmentelle/" data-tags="Fino a taglia grande|Un cane a camera|Supplemento 5€/giorno" data-regione="puglia">
+        <span class="stay-badge">PU</span>
         <div class="stay-main">
           <h3>Masseria le Palmentelle</h3>
           <p class="stay-where">Lecce, Salento · Puglia</p>
@@ -491,6 +533,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-il-podere/" data-tags="Ogni taglia|Accesso ristorante|Supplemento 5€/giorno" data-regione="veneto">
+        <span class="stay-badge">VE</span>
         <div class="stay-main">
           <h3>Agriturismo il Podere</h3>
           <p class="stay-where">Vedelago (Treviso) · Veneto</p>
@@ -499,6 +542,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/antico-cascinale-lombardo/" data-tags="Ogni taglia|Quantità illimitata|Gratis oltre 2 notti" data-regione="lombardia">
+        <span class="stay-badge">LO</span>
         <div class="stay-main">
           <h3>Antico Cascinale Lombardo</h3>
           <p class="stay-where">Lonato del Garda (Brescia) · Lombardia</p>
@@ -507,6 +551,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-delizia-deste/" data-tags="Ogni taglia|Più cani ammessi|Nessun supplemento|Piscina e laghetto per cani" data-regione="emilia-romagna">
+        <span class="stay-badge">EM</span>
         <div class="stay-main">
           <h3>Agriturismo Delizia d&#x27;Este</h3>
           <p class="stay-where">Ferrara · Emilia-Romagna</p>
@@ -515,6 +560,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-baglio-don-bartolo/" data-tags="Fino a taglia grande|Accesso ristorante|Pulizie 10€/giorno" data-regione="sicilia">
+        <span class="stay-badge">SI</span>
         <div class="stay-main">
           <h3>Agriturismo Baglio Don Bartolo</h3>
           <p class="stay-where">Castelluzzo, San Vito Lo Capo (Trapani) · Sicilia</p>
@@ -523,6 +569,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-il-cerro-zagarese/" data-tags="Ogni taglia|Supplemento richiesto" data-regione="calabria">
+        <span class="stay-badge">CA</span>
         <div class="stay-main">
           <h3>Agriturismo Il Cerro - Zagarese</h3>
           <p class="stay-where">Fuscaldo (Cosenza) · Calabria</p>
@@ -531,6 +578,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/casale-civetta/" data-tags="Ogni taglia|Più cani ammessi|Accesso piscina" data-regione="marche">
+        <span class="stay-badge">MA</span>
         <div class="stay-main">
           <h3>Casale Civetta</h3>
           <p class="stay-where">Trecastelli (Ancona) · Marche</p>
@@ -539,6 +587,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/monferrato-nel-cuore/" data-tags="Ogni taglia" data-regione="piemonte">
+        <span class="stay-badge">PI</span>
         <div class="stay-main">
           <h3>Monferrato nel Cuore</h3>
           <p class="stay-where">Casalborgone (Torino) · Piemonte</p>
@@ -547,6 +596,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-colja-jozko/" data-tags="Fino a taglia grande|Area sgambamento|Accesso ristorante" data-regione="friuli-venezia giulia">
+        <span class="stay-badge">FR</span>
         <div class="stay-main">
           <h3>Agriturismo Colja Jozko</h3>
           <p class="stay-where">Samatorza, Sgonico (Trieste) · Friuli-Venezia Giulia</p>
@@ -555,6 +605,7 @@
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-le-tre-poiane/" data-tags="Ogni taglia|Più cani ammessi|Nessun supplemento|Accesso ristorante" data-regione="abruzzo">
+        <span class="stay-badge">AB</span>
         <div class="stay-main">
           <h3>Agriturismo Le Tre Poiane</h3>
           <p class="stay-where">Penne (Pescara) · Abruzzo</p>
@@ -562,6 +613,7 @@
         <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Accesso ristorante</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
+        </div>
       </div>
       <div class="no-results" id="no-results">Nessuna struttura corrisponde a questi filtri. Prova ad azzerarli — la directory è ancora piccola.</div>
     </div>
@@ -668,30 +720,7 @@
   ]
 }
 </script>
-<script>
-(function(){
-  "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  var hd = document.getElementById("hd");
-  function onScroll(){ hd.classList.toggle("stuck", window.scrollY > 24); }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive:true });
-
-  var items = document.querySelectorAll(".rv");
-  if (reduce || !("IntersectionObserver" in window)) {
-    items.forEach(function(el){ el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { rootMargin:"0px 0px -12% 0px", threshold:0.08 });
-    items.forEach(function(el){ io.observe(el); });
-  }
-
-})();
-</script>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <script>
 (function(){
   "use strict";

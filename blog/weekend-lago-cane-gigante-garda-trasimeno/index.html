@@ -6,6 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <title>Weekend al lago con un cane gigante: Garda o Trasimeno</title>
 <meta name="description" content="Dove andare in vacanza al lago con un cane di taglia grande o gigante: confronto tra Lago di Garda e Lago Trasimeno, con strutture verificate.">
 <meta property="og:title" content="Weekend al lago con un cane gigante: Garda o Trasimeno">
@@ -101,6 +102,23 @@
   .navlinks a{ text-decoration:none; font-size:14px; font-weight:500; color:var(--ink-2); transition:color .2s ease; }
   .navlinks a:hover{ color:var(--ink); }
   @media (max-width:980px){ .navlinks{ display:none; } }
+
+  .theme-toggle{
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+    width:38px; height:38px; border:1px solid var(--line); background:var(--surface);
+    color:var(--ink); cursor:pointer; transition:border-color .2s ease;
+  }
+  .theme-toggle:hover{ border-color:var(--ink); }
+  .theme-toggle svg{ width:17px; height:17px; }
+  .theme-toggle .icon-moon{ display:none; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{ display:none; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{ display:block; }
+  }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+  :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+  :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 
   /* ── Hero + barra di ricerca ─────────────────── */
   .hero{ position:relative; padding:132px 0 52px; overflow:hidden; }
@@ -240,10 +258,11 @@
   .why-c p{ font-size:14.5px; }
 
   /* ── Strutture ───────────────────────────────── */
-  .stays{ display:flex; flex-direction:column; border-top:1px solid var(--line); }
+  .stays-table{ border:1px solid var(--line); }
+  .stays{ display:flex; flex-direction:column; }
   .stays-head{
-    display:grid; grid-template-columns:1.1fr 1.4fr 96px; gap:24px;
-    padding:0 4px 12px;
+    display:grid; grid-template-columns:52px 1.1fr 1.4fr 96px; gap:20px;
+    padding:14px 16px; background:var(--surface-2); border-bottom:1px solid var(--line);
   }
   .stays-head span{
     font-family:'Martian Mono',monospace; font-weight:500; font-size:10px;
@@ -253,24 +272,32 @@
   @media (max-width:860px){ .stays-head{ display:none; } }
 
   .stay{
-    display:grid; grid-template-columns:1.1fr 1.4fr 96px; gap:24px; align-items:center;
-    padding:20px 4px; border-bottom:1px solid var(--line); text-decoration:none;
+    display:grid; grid-template-columns:52px 1.1fr 1.4fr 96px; gap:20px; align-items:center;
+    padding:18px 16px; border-bottom:1px solid var(--line); text-decoration:none;
     transition:background-color .15s ease;
   }
+  .stay:nth-child(even){ background:color-mix(in srgb, var(--surface-2) 45%, transparent); }
   .stay:hover{ background:var(--surface); }
   @media (max-width:860px){
-    .stay{ grid-template-columns:1fr; gap:10px; align-items:start; }
+    .stay{ grid-template-columns:44px 1fr; gap:14px; align-items:start; padding:18px 4px; }
+  }
+  .stay-badge{
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    background:var(--klein); color:var(--on-klein); flex-shrink:0;
+    font-family:'Martian Mono',monospace; font-weight:600; font-size:11px;
   }
   .stay-main h3{ font-size:17px; font-weight:600; letter-spacing:-0.015em; }
   .stay-where{ margin-top:4px; font-size:13px; }
   .stay-specs{ display:flex; flex-wrap:wrap; gap:6px; }
+  @media (max-width:860px){ .stay-specs{ grid-column:2; } }
   .spec{
     font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px;
-    text-transform:uppercase; padding:5px 9px; border:1px solid var(--line); color:var(--ink);
+    text-transform:uppercase; padding:5px 9px; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--ink);
   }
   .spec-hi{ border-color:var(--klein); color:var(--klein-text); }
   .stay-go{ font-size:13px; font-weight:600; color:var(--klein-text); white-space:nowrap; text-align:right; }
-  @media (max-width:860px){ .stay-go{ text-align:left; } }
+  @media (max-width:860px){ .stay-go{ grid-column:2; text-align:left; } }
 
   .note{
     border-left:2px solid var(--klein); padding:16px 20px; background:var(--surface);
@@ -388,6 +415,10 @@
       <a href="/#guide">Guide</a>
       <a href="/#faq">FAQ</a>
     </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambia tema chiaro/scuro">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a.6.6 0 0 0-.7-.8A9.5 9.5 0 1 0 21.3 15.3a.6.6 0 0 0-.8-.7z"/></svg>
+    </button>
     <a class="btn btn-fill" href="/#cerca">Cerca alloggi <span class="dot"></span></a>
   </div>
 </header>
@@ -535,29 +566,6 @@
 }
 </script>
 
-<script>
-(function(){
-  "use strict";
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  var hd = document.getElementById("hd");
-  function onScroll(){ hd.classList.toggle("stuck", window.scrollY > 24); }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive:true });
-
-  var items = document.querySelectorAll(".rv");
-  if (reduce || !("IntersectionObserver" in window)) {
-    items.forEach(function(el){ el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { rootMargin:"0px 0px -12% 0px", threshold:0.08 });
-    items.forEach(function(el){ io.observe(el); });
-  }
-
-})();
-</script>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 </body>
 </html>
