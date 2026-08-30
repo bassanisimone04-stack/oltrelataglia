@@ -32,6 +32,34 @@ def nestify_links(fragment):
     return re.sub(r'href="#', 'href="/#', fragment)
 
 
+# Coordinate schematiche (0-100 orizzontale, 0-130 verticale) usate solo per
+# posizionare le regioni su una mini-mappa stilizzata dell'Italia: non sono
+# confini geografici reali, solo una disposizione approssimativa nord-sud/
+# ovest-est pensata per essere leggibile a piccola scala.
+REGIONI_MAPPA = [
+    ("valle-d-aosta", "Valle d'Aosta", 18, 10),
+    ("piemonte", "Piemonte", 22, 22),
+    ("lombardia", "Lombardia", 38, 18),
+    ("trentino", "Trentino", 52, 10),
+    ("veneto", "Veneto", 60, 18),
+    ("friuli-venezia-giulia", "Friuli-Venezia Giulia", 72, 15),
+    ("liguria", "Liguria", 25, 34),
+    ("emilia-romagna", "Emilia-Romagna", 48, 32),
+    ("toscana", "Toscana", 36, 46),
+    ("umbria", "Umbria", 48, 48),
+    ("marche", "Marche", 60, 45),
+    ("lazio", "Lazio", 46, 60),
+    ("abruzzo", "Abruzzo", 60, 56),
+    ("molise", "Molise", 64, 64),
+    ("campania", "Campania", 52, 70),
+    ("puglia", "Puglia", 78, 66),
+    ("basilicata", "Basilicata", 64, 76),
+    ("calabria", "Calabria", 60, 92),
+    ("sicilia", "Sicilia", 44, 112),
+    ("sardegna", "Sardegna", 14, 72),
+]
+
+
 TAGLIA_LABEL = {
     "ogni": "cani di ogni taglia ammessi",
     "gigante": "cani di taglia gigante ammessi",
@@ -97,6 +125,20 @@ def build():
   .results-count span{ color:var(--klein-text); }
   .no-results{ display:none; padding:60px 20px; text-align:center; color:var(--ink-2); border:1px solid var(--line); }
   .no-results.show{ display:block; }
+  .map-sec{ border-bottom:1px solid var(--line); padding-block:44px; background:var(--surface-2); }
+  .map-sec .wrap{ display:grid; grid-template-columns:1fr 1.3fr; gap:36px; align-items:center; }
+  @media (max-width:860px){ .map-sec .wrap{ grid-template-columns:1fr; } }
+  .map-sec h2{ font-size:20px; margin-bottom:8px; }
+  .map-sec .map-note{ font-size:14px; color:var(--ink-2); max-width:42ch; }
+  .map-svg-wrap{ display:flex; justify-content:center; }
+  .map-svg-wrap svg{ width:100%; max-width:260px; height:auto; }
+  .map-region circle{ fill:var(--klein); stroke:var(--surface-2); stroke-width:1.4; transition:transform .15s ease, fill .15s ease; transform-origin:center; transform-box:fill-box; cursor:pointer; }
+  .map-region text{ font-family:'Martian Mono',monospace; font-size:6.5px; font-weight:700; fill:var(--on-klein); pointer-events:none; text-anchor:middle; dominant-baseline:central; }
+  .map-region:hover circle, .map-region.active circle{ transform:scale(1.22); fill:var(--klein-text); }
+  .map-region-empty circle{ fill:var(--line); }
+  .map-legend{ display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:18px; }
+  .map-legend button{ font-family:inherit; font-size:13px; background:none; border:1px solid var(--line); padding:6px 12px; cursor:pointer; color:var(--ink-2); }
+  .map-legend button.active{ border-color:var(--klein); color:var(--klein-text); font-weight:700; }
 """
 
     # ---------- pagine struttura ----------
@@ -215,7 +257,7 @@ def build():
     for st in STRUTTURE:
         tags_attr = "|".join(st["tags"])
         tags_pill = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
-        rows_html.append(f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione'].lower())}">
+        rows_html.append(f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione_slug'])}">
         <span class="stay-badge">{st['regione_slug'][:2].upper()}</span>
         <div class="stay-main">
           <h3>{html.escape(st['nome'])}</h3>
@@ -224,6 +266,39 @@ def build():
         <div class="stay-specs">{tags_pill}</div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>''')
+
+    # ---------- mappa regioni per /cerca/ ----------
+    conteggio_regioni = {}
+    for st in STRUTTURE:
+        conteggio_regioni[st["regione_slug"]] = conteggio_regioni.get(st["regione_slug"], 0) + 1
+
+    map_circles = []
+    for slug, nome, x, y in REGIONI_MAPPA:
+        n = conteggio_regioni.get(slug, 0)
+        if n > 0:
+            r = round(3.4 + (n ** 0.5) * 1.7, 1)
+            title = f"{nome}: {n} struttur{'a' if n == 1 else 'e'}"
+            map_circles.append(
+                f'<a class="map-region" href="/cerca/?regione={slug}" data-regione="{slug}" '
+                f'onclick="return selectRegione(\'{slug}\', this)"><title>{html.escape(title)}</title>'
+                f'<circle cx="{x}" cy="{y}" r="{r}"></circle>'
+                f'<text x="{x}" y="{y}">{n}</text></a>'
+            )
+        else:
+            map_circles.append(
+                f'<g class="map-region-empty"><title>{html.escape(nome)}: nessuna struttura ancora</title>'
+                f'<circle cx="{x}" cy="{y}" r="1.8"></circle></g>'
+            )
+    map_svg = (
+        '<svg viewBox="0 0 90 122" xmlns="http://www.w3.org/2000/svg" role="img" '
+        'aria-label="Mappa stilizzata delle regioni italiane con il numero di strutture verificate">'
+        + "".join(map_circles) + "</svg>"
+    )
+    map_legend = "".join(
+        f'<button type="button" data-regione="{slug}" onclick="return selectRegione(\'{slug}\', this)">'
+        f'{html.escape(nome)} <span style="color:var(--klein-text);font-weight:700;">{conteggio_regioni[slug]}</span></button>'
+        for slug, nome, _, _ in REGIONI_MAPPA if conteggio_regioni.get(slug)
+    )
 
     cerca_faq = [
         (
@@ -300,6 +375,22 @@ def build():
     </div>
   </section>
 
+  <section class="map-sec">
+    <div class="wrap">
+      <div>
+        <p class="lbl" style="margin-bottom:8px;">Dove sono</p>
+        <h2>La distribuzione geografica, regione per regione.</h2>
+        <p class="map-note">
+          Ogni cerchio è cliccabile e filtra subito i risultati per regione. Le regioni ancora
+          senza strutture verificate restano come puntini grigi — la mappa cresce insieme alla
+          directory, non è disegnata su dati che non abbiamo.
+        </p>
+        <div class="map-legend">{map_legend}</div>
+      </div>
+      <div class="map-svg-wrap">{map_svg}</div>
+    </div>
+  </section>
+
   <div class="wrap cerca-layout">
     <aside class="filters">
       <h2>Filtra</h2>
@@ -362,13 +453,23 @@ def build():
 <script>
 (function(){{
   "use strict";
+  window.activeRegione = null;
+
+  function setActiveRegioneUI(slug){{
+    document.querySelectorAll('.map-region, .map-legend button').forEach(function(el){{
+      el.classList.toggle('active', !!slug && el.getAttribute('data-regione') === slug);
+    }});
+  }}
+
   window.applyFilters = function applyFilters(){{
     var checked = Array.prototype.slice.call(document.querySelectorAll('.filt-opt input:checked')).map(function(el){{ return el.value; }});
     var rows = document.querySelectorAll('#stays-list .stay');
     var visible = 0;
     rows.forEach(function(row){{
       var tags = (row.getAttribute('data-tags') || '').split('|');
-      var match = checked.length === 0 || checked.some(function(c){{ return tags.indexOf(c) !== -1; }});
+      var matchTag = checked.length === 0 || checked.some(function(c){{ return tags.indexOf(c) !== -1; }});
+      var matchRegione = !window.activeRegione || (row.getAttribute('data-regione') || '').indexOf(window.activeRegione) !== -1;
+      var match = matchTag && matchRegione;
       row.style.display = match ? '' : 'none';
       if (match) visible++;
     }});
@@ -377,7 +478,23 @@ def build():
   }};
   window.resetFilters = function resetFilters(){{
     document.querySelectorAll('.filt-opt input').forEach(function(el){{ el.checked = false; }});
+    window.activeRegione = null;
+    setActiveRegioneUI(null);
     applyFilters();
+    var url = new URL(window.location);
+    url.search = '';
+    history.replaceState(null, '', url);
+    return false;
+  }};
+  window.selectRegione = function selectRegione(slug, el){{
+    window.activeRegione = (window.activeRegione === slug) ? null : slug;
+    setActiveRegioneUI(window.activeRegione);
+    applyFilters();
+    var url = new URL(window.location);
+    if (window.activeRegione) url.searchParams.set('regione', window.activeRegione);
+    else url.searchParams.delete('regione');
+    history.replaceState(null, '', url);
+    if (el) el.blur();
     return false;
   }};
 
@@ -390,9 +507,8 @@ def build():
   }}
   var regione = (params.get('regione') || '').trim().toLowerCase();
   if (regione) {{
-    document.querySelectorAll('#stays-list .stay').forEach(function(row){{
-      if ((row.getAttribute('data-regione') || '').indexOf(regione) === -1) row.style.display = 'none';
-    }});
+    window.activeRegione = regione;
+    setActiveRegioneUI(regione);
   }}
   applyFilters();
 }})();

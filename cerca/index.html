@@ -395,6 +395,20 @@
   .results-count span{ color:var(--klein-text); }
   .no-results{ display:none; padding:60px 20px; text-align:center; color:var(--ink-2); border:1px solid var(--line); }
   .no-results.show{ display:block; }
+  .map-sec{ border-bottom:1px solid var(--line); padding-block:44px; background:var(--surface-2); }
+  .map-sec .wrap{ display:grid; grid-template-columns:1fr 1.3fr; gap:36px; align-items:center; }
+  @media (max-width:860px){ .map-sec .wrap{ grid-template-columns:1fr; } }
+  .map-sec h2{ font-size:20px; margin-bottom:8px; }
+  .map-sec .map-note{ font-size:14px; color:var(--ink-2); max-width:42ch; }
+  .map-svg-wrap{ display:flex; justify-content:center; }
+  .map-svg-wrap svg{ width:100%; max-width:260px; height:auto; }
+  .map-region circle{ fill:var(--klein); stroke:var(--surface-2); stroke-width:1.4; transition:transform .15s ease, fill .15s ease; transform-origin:center; transform-box:fill-box; cursor:pointer; }
+  .map-region text{ font-family:'Martian Mono',monospace; font-size:6.5px; font-weight:700; fill:var(--on-klein); pointer-events:none; text-anchor:middle; dominant-baseline:central; }
+  .map-region:hover circle, .map-region.active circle{ transform:scale(1.22); fill:var(--klein-text); }
+  .map-region-empty circle{ fill:var(--line); }
+  .map-legend{ display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:18px; }
+  .map-legend button{ font-family:inherit; font-size:13px; background:none; border:1px solid var(--line); padding:6px 12px; cursor:pointer; color:var(--ink-2); }
+  .map-legend button.active{ border-color:var(--klein); color:var(--klein-text); font-weight:700; }
 
   .cerca-faq{ padding-block:70px; border-top:1px solid var(--line); background:var(--surface); }
   .cerca-faq .faq{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }
@@ -429,6 +443,22 @@
         Sono 26, non 500: crescono una alla volta, verificata scheda per scheda.
         Filtra per quello che conta davvero con un cane grande.
       </p>
+    </div>
+  </section>
+
+  <section class="map-sec">
+    <div class="wrap">
+      <div>
+        <p class="lbl" style="margin-bottom:8px;">Dove sono</p>
+        <h2>La distribuzione geografica, regione per regione.</h2>
+        <p class="map-note">
+          Ogni cerchio è cliccabile e filtra subito i risultati per regione. Le regioni ancora
+          senza strutture verificate restano come puntini grigi — la mappa cresce insieme alla
+          directory, non è disegnata su dati che non abbiamo.
+        </p>
+        <div class="map-legend"><button type="button" data-regione="piemonte" onclick="return selectRegione('piemonte', this)">Piemonte <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="lombardia" onclick="return selectRegione('lombardia', this)">Lombardia <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="trentino" onclick="return selectRegione('trentino', this)">Trentino <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="veneto" onclick="return selectRegione('veneto', this)">Veneto <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="friuli-venezia-giulia" onclick="return selectRegione('friuli-venezia-giulia', this)">Friuli-Venezia Giulia <span style="color:var(--klein-text);font-weight:700;">2</span></button><button type="button" data-regione="liguria" onclick="return selectRegione('liguria', this)">Liguria <span style="color:var(--klein-text);font-weight:700;">3</span></button><button type="button" data-regione="emilia-romagna" onclick="return selectRegione('emilia-romagna', this)">Emilia-Romagna <span style="color:var(--klein-text);font-weight:700;">2</span></button><button type="button" data-regione="toscana" onclick="return selectRegione('toscana', this)">Toscana <span style="color:var(--klein-text);font-weight:700;">7</span></button><button type="button" data-regione="umbria" onclick="return selectRegione('umbria', this)">Umbria <span style="color:var(--klein-text);font-weight:700;">2</span></button><button type="button" data-regione="marche" onclick="return selectRegione('marche', this)">Marche <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="abruzzo" onclick="return selectRegione('abruzzo', this)">Abruzzo <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="puglia" onclick="return selectRegione('puglia', this)">Puglia <span style="color:var(--klein-text);font-weight:700;">2</span></button><button type="button" data-regione="calabria" onclick="return selectRegione('calabria', this)">Calabria <span style="color:var(--klein-text);font-weight:700;">1</span></button><button type="button" data-regione="sicilia" onclick="return selectRegione('sicilia', this)">Sicilia <span style="color:var(--klein-text);font-weight:700;">1</span></button></div>
+      </div>
+      <div class="map-svg-wrap"><svg viewBox="0 0 90 122" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mappa stilizzata delle regioni italiane con il numero di strutture verificate"><g class="map-region-empty"><title>Valle d&#x27;Aosta: nessuna struttura ancora</title><circle cx="18" cy="10" r="1.8"></circle></g><a class="map-region" href="/cerca/?regione=piemonte" data-regione="piemonte" onclick="return selectRegione('piemonte', this)"><title>Piemonte: 1 struttura</title><circle cx="22" cy="22" r="5.1"></circle><text x="22" y="22">1</text></a><a class="map-region" href="/cerca/?regione=lombardia" data-regione="lombardia" onclick="return selectRegione('lombardia', this)"><title>Lombardia: 1 struttura</title><circle cx="38" cy="18" r="5.1"></circle><text x="38" y="18">1</text></a><a class="map-region" href="/cerca/?regione=trentino" data-regione="trentino" onclick="return selectRegione('trentino', this)"><title>Trentino: 1 struttura</title><circle cx="52" cy="10" r="5.1"></circle><text x="52" y="10">1</text></a><a class="map-region" href="/cerca/?regione=veneto" data-regione="veneto" onclick="return selectRegione('veneto', this)"><title>Veneto: 1 struttura</title><circle cx="60" cy="18" r="5.1"></circle><text x="60" y="18">1</text></a><a class="map-region" href="/cerca/?regione=friuli-venezia-giulia" data-regione="friuli-venezia-giulia" onclick="return selectRegione('friuli-venezia-giulia', this)"><title>Friuli-Venezia Giulia: 2 strutture</title><circle cx="72" cy="15" r="5.8"></circle><text x="72" y="15">2</text></a><a class="map-region" href="/cerca/?regione=liguria" data-regione="liguria" onclick="return selectRegione('liguria', this)"><title>Liguria: 3 strutture</title><circle cx="25" cy="34" r="6.3"></circle><text x="25" y="34">3</text></a><a class="map-region" href="/cerca/?regione=emilia-romagna" data-regione="emilia-romagna" onclick="return selectRegione('emilia-romagna', this)"><title>Emilia-Romagna: 2 strutture</title><circle cx="48" cy="32" r="5.8"></circle><text x="48" y="32">2</text></a><a class="map-region" href="/cerca/?regione=toscana" data-regione="toscana" onclick="return selectRegione('toscana', this)"><title>Toscana: 7 strutture</title><circle cx="36" cy="46" r="7.9"></circle><text x="36" y="46">7</text></a><a class="map-region" href="/cerca/?regione=umbria" data-regione="umbria" onclick="return selectRegione('umbria', this)"><title>Umbria: 2 strutture</title><circle cx="48" cy="48" r="5.8"></circle><text x="48" y="48">2</text></a><a class="map-region" href="/cerca/?regione=marche" data-regione="marche" onclick="return selectRegione('marche', this)"><title>Marche: 1 struttura</title><circle cx="60" cy="45" r="5.1"></circle><text x="60" y="45">1</text></a><g class="map-region-empty"><title>Lazio: nessuna struttura ancora</title><circle cx="46" cy="60" r="1.8"></circle></g><a class="map-region" href="/cerca/?regione=abruzzo" data-regione="abruzzo" onclick="return selectRegione('abruzzo', this)"><title>Abruzzo: 1 struttura</title><circle cx="60" cy="56" r="5.1"></circle><text x="60" y="56">1</text></a><g class="map-region-empty"><title>Molise: nessuna struttura ancora</title><circle cx="64" cy="64" r="1.8"></circle></g><g class="map-region-empty"><title>Campania: nessuna struttura ancora</title><circle cx="52" cy="70" r="1.8"></circle></g><a class="map-region" href="/cerca/?regione=puglia" data-regione="puglia" onclick="return selectRegione('puglia', this)"><title>Puglia: 2 strutture</title><circle cx="78" cy="66" r="5.8"></circle><text x="78" y="66">2</text></a><g class="map-region-empty"><title>Basilicata: nessuna struttura ancora</title><circle cx="64" cy="76" r="1.8"></circle></g><a class="map-region" href="/cerca/?regione=calabria" data-regione="calabria" onclick="return selectRegione('calabria', this)"><title>Calabria: 1 struttura</title><circle cx="60" cy="92" r="5.1"></circle><text x="60" y="92">1</text></a><a class="map-region" href="/cerca/?regione=sicilia" data-regione="sicilia" onclick="return selectRegione('sicilia', this)"><title>Sicilia: 1 struttura</title><circle cx="44" cy="112" r="5.1"></circle><text x="44" y="112">1</text></a><g class="map-region-empty"><title>Sardegna: nessuna struttura ancora</title><circle cx="14" cy="72" r="1.8"></circle></g></svg></div>
     </div>
   </section>
 
@@ -595,7 +625,7 @@
         <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
-      <a class="stay" href="/struttura/agriturismo-colja-jozko/" data-tags="Fino a taglia grande|Area sgambamento|Accesso ristorante" data-regione="friuli-venezia giulia">
+      <a class="stay" href="/struttura/agriturismo-colja-jozko/" data-tags="Fino a taglia grande|Area sgambamento|Accesso ristorante" data-regione="friuli-venezia-giulia">
         <span class="stay-badge">FR</span>
         <div class="stay-main">
           <h3>Agriturismo Colja Jozko</h3>
@@ -631,7 +661,7 @@
         <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
-      <a class="stay" href="/struttura/hotel-ville-bianchi/" data-tags="Fino a taglia grande|Supplemento 20€/notte" data-regione="friuli-venezia giulia">
+      <a class="stay" href="/struttura/hotel-ville-bianchi/" data-tags="Fino a taglia grande|Supplemento 20€/notte" data-regione="friuli-venezia-giulia">
         <span class="stay-badge">FR</span>
         <div class="stay-main">
           <h3>Hotel Ville Bianchi</h3>
@@ -800,13 +830,23 @@
 <script>
 (function(){
   "use strict";
+  window.activeRegione = null;
+
+  function setActiveRegioneUI(slug){
+    document.querySelectorAll('.map-region, .map-legend button').forEach(function(el){
+      el.classList.toggle('active', !!slug && el.getAttribute('data-regione') === slug);
+    });
+  }
+
   window.applyFilters = function applyFilters(){
     var checked = Array.prototype.slice.call(document.querySelectorAll('.filt-opt input:checked')).map(function(el){ return el.value; });
     var rows = document.querySelectorAll('#stays-list .stay');
     var visible = 0;
     rows.forEach(function(row){
       var tags = (row.getAttribute('data-tags') || '').split('|');
-      var match = checked.length === 0 || checked.some(function(c){ return tags.indexOf(c) !== -1; });
+      var matchTag = checked.length === 0 || checked.some(function(c){ return tags.indexOf(c) !== -1; });
+      var matchRegione = !window.activeRegione || (row.getAttribute('data-regione') || '').indexOf(window.activeRegione) !== -1;
+      var match = matchTag && matchRegione;
       row.style.display = match ? '' : 'none';
       if (match) visible++;
     });
@@ -815,7 +855,23 @@
   };
   window.resetFilters = function resetFilters(){
     document.querySelectorAll('.filt-opt input').forEach(function(el){ el.checked = false; });
+    window.activeRegione = null;
+    setActiveRegioneUI(null);
     applyFilters();
+    var url = new URL(window.location);
+    url.search = '';
+    history.replaceState(null, '', url);
+    return false;
+  };
+  window.selectRegione = function selectRegione(slug, el){
+    window.activeRegione = (window.activeRegione === slug) ? null : slug;
+    setActiveRegioneUI(window.activeRegione);
+    applyFilters();
+    var url = new URL(window.location);
+    if (window.activeRegione) url.searchParams.set('regione', window.activeRegione);
+    else url.searchParams.delete('regione');
+    history.replaceState(null, '', url);
+    if (el) el.blur();
     return false;
   };
 
@@ -828,9 +884,8 @@
   }
   var regione = (params.get('regione') || '').trim().toLowerCase();
   if (regione) {
-    document.querySelectorAll('#stays-list .stay').forEach(function(row){
-      if ((row.getAttribute('data-regione') || '').indexOf(regione) === -1) row.style.display = 'none';
-    });
+    window.activeRegione = regione;
+    setActiveRegioneUI(regione);
   }
   applyFilters();
 })();
