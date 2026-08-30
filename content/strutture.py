@@ -273,6 +273,66 @@ STRUTTURE = [
             "Unità con giardino/déhors recintato privato",
         ],
     },
+    {
+        "slug": "agriturismo-il-podere",
+        "nome": "Agriturismo il Podere",
+        "comune": "Vedelago (Treviso)",
+        "regione": "Veneto",
+        "regione_slug": "veneto",
+        "fonte_nome": "zampavacanza.it",
+        "fonte_url": "https://www.zampavacanza.it/struttura-animali-ammessi/3904",
+        "sito_url": "https://www.amicidelpodere.it/",
+        "tags": ["Ogni taglia", "Accesso ristorante", "Supplemento 5€/giorno"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo a Vedelago, in provincia di Treviso, con animali della fattoria (tra cui "
+            "un San Bernardo e alpaca) e un parco recintato dedicato ai cani. Secondo le fonti "
+            "pubbliche consultate, ammette cani di tutte le taglie sia in camera sia in sala "
+            "ristorante, con un supplemento dichiarato di 5€ al giorno che include ciotola, telo "
+            "e tappetino. Il parco recintato ha aree ombreggiate distinte per cani grandi e "
+            "piccoli."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "5€ al giorno (ciotola, telo e tappetino inclusi)"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso alla sala ristorante, non solo in camera",
+            "Parco recintato con aree ombreggiate per cani grandi e piccoli",
+            "Dog-sitter organizzabile su richiesta",
+        ],
+    },
+    {
+        "slug": "antico-cascinale-lombardo",
+        "nome": "Antico Cascinale Lombardo",
+        "comune": "Lonato del Garda (Brescia)",
+        "regione": "Lombardia",
+        "regione_slug": "lombardia",
+        "fonte_nome": "zampavacanza.it",
+        "fonte_url": "https://www.zampavacanza.it/struttura-animali-ammessi/4207",
+        "sito_url": "https://www.anticocascinalelombardo.it/",
+        "tags": ["Ogni taglia", "Quantità illimitata", "Gratis oltre 2 notti"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Bed & Breakfast a Lonato del Garda (Brescia), vicino al Lago di Garda. Secondo le "
+            "fonti pubbliche consultate, gli animali di qualsiasi taglia e in qualsiasi numero "
+            "soggiornano gratuitamente per soggiorni superiori alle 2 notti. La struttura dispone "
+            "di un ampio cortile privato interamente recintato con cancello automatico, dove cani "
+            "e bambini possono muoversi in sicurezza."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia"),
+            ("Numero di cani", "Nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno per soggiorni oltre le 2 notti"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Cortile privato recintato con cancello automatico",
+            "Vicino al Lago di Garda",
+        ],
+    },
 ]
 
 ALL_TAGS = []
