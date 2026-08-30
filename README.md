@@ -19,12 +19,14 @@ animali. Payoff: *"Il tuo cane, senza taglia, senza limiti."*
 - **`blog/`** — le stesse pagine, già generate in HTML pronto per il deploy
   (`blog/index.html` + una cartella `blog/<slug>/index.html` per articolo),
   con lo stesso sistema di design della home.
-- **`scripts/build_blog.py`** — rigenera tutto `blog/` a partire da
-  `content/blog/*.md` e dallo `<style>`/header/footer estratti da
-  `mockup/home.html`; sincronizza anche `index.html` (radice) come copia
-  di `mockup/home.html`. Va rilanciato (`python3 scripts/build_blog.py`)
-  ogni volta che si modifica un articolo o si tocca il design della home,
-  altrimenti le pagine blog e la home pubblicata restano disallineate.
+- **`scripts/build_all.py`** — punto di ingresso unico: rigenera `blog/`,
+  `struttura/`, `cerca/`, sincronizza `index.html` e scrive `sitemap.xml`.
+  Va rilanciato (`python3 scripts/build_all.py`) ogni volta che si
+  modifica un articolo, una struttura in `content/strutture.py`, o si
+  tocca il design della home — altrimenti le pagine generate restano
+  disallineate. Usa `scripts/build_blog.py` e `scripts/build_strutture.py`
+  internamente; lanciarli da soli rigenera solo la propria parte (utile in
+  sviluppo, ma poi va comunque fatto girare `build_all.py` per la sitemap).
 - **`index.html`** (radice) — copia di `mockup/home.html`, generata dallo
   script sopra. È quella che Vercel serve per `/`: **non va editata a
   mano**, si edita sempre `mockup/home.html` e poi si rilancia lo script.
@@ -37,10 +39,13 @@ da fonti pubbliche citate (non da verifica telefonica — vedi la sezione
 React — è HTML statico generato da uno script Python, pensato per essere
 smontato in un vero framework in un secondo momento se serve.
 
-**Non ancora funzionante, da sapere prima del lancio:**
-- la barra di ricerca in home non è collegata a nulla (è un mockup visivo);
-- il bottone "Inserisci la tua struttura" e i link di contatto in footer
-  sono ancora placeholder (`#`), non un vero modulo o indirizzo.
+**Rimosso invece di lasciarlo finto:** il bottone "Inserisci la tua
+struttura" e i link "Chi siamo / Contatti / Privacy e termini / Accesso
+proprietari" in footer non sono stati implementati — richiedono
+un'identità legale reale (per la privacy policy) e un'email vera (per il
+contatto) che questo progetto non ha ancora. Non li ho lasciati come
+placeholder rotti: sono stati tolti finché non c'è un dato vero da
+metterci. Quando ci sono, si aggiungono facilmente.
 
 ## Deploy
 

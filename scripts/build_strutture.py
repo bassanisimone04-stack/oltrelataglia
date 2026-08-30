@@ -241,6 +241,8 @@ def build():
         f.write(cerca_page)
     print("generata: /cerca/")
 
+    return [st["slug"] for st in STRUTTURE]
+
 
 if __name__ == "__main__":
     build()
