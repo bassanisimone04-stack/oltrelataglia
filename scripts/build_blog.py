@@ -177,7 +177,9 @@ def build():
 """
 
     slug_meta = []
-    for md_path in sorted(glob.glob(os.path.join(BLOG_SRC, "0*.md"))):
+    md_files = glob.glob(os.path.join(BLOG_SRC, "[0-9]*.md"))
+    md_files.sort(key=lambda p: int(os.path.basename(p).split("-", 1)[0]))
+    for md_path in md_files:
         raw = open(md_path, encoding="utf-8").read()
         fm, body = parse_frontmatter(raw)
         h1, body_html, faq_items = render_body(body)
