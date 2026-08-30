@@ -190,7 +190,12 @@ def build():
         tempo = fm["tempo_lettura"]
         keyword = fm["keyword_principale"]
 
-        page = f"""<title>{html.escape(title_seo)}</title>
+        page = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(title_seo)}</title>
 <meta name="description" content="{html.escape(meta_desc)}">
 <meta property="og:title" content="{html.escape(title_seo)}">
 <meta property="og:description" content="{html.escape(meta_desc)}">
@@ -199,6 +204,8 @@ def build():
 <link rel="canonical" href="https://www.oltrelataglia.it/blog/{slug}/">
 {style_block}
 <style>{article_css}</style>
+</head>
+<body>
 
 {header_block}
 
@@ -262,6 +269,8 @@ def build():
 </script>
 ''')}
 {header_script}
+</body>
+</html>
 """
         out_dir = os.path.join(OUT_BLOG_DIR, slug)
         os.makedirs(out_dir, exist_ok=True)
@@ -285,7 +294,12 @@ def build():
         </div>
       </a>''')
 
-    index_page = f"""<title>Guide</title>
+    index_page = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide per viaggiare con cani grandi | Oltre la Taglia</title>
 <meta name="description" content="Guide pratiche per chi viaggia con cani di taglia grande e gigante: spiagge, mare, normativa, strutture pet friendly senza limiti di peso.">
 <link rel="canonical" href="https://www.oltrelataglia.it/blog/">
 {style_block}
@@ -296,6 +310,8 @@ def build():
   .blog-index-grid .post:nth-child(odd){{ border-right:1px solid var(--line); }}
   @media (max-width:820px){{ .blog-index-grid .post:nth-child(odd){{ border-right:none; }} }}
 </style>
+</head>
+<body>
 
 {header_block}
 
@@ -321,6 +337,8 @@ def build():
 
 {footer_block}
 {header_script}
+</body>
+</html>
 """
     os.makedirs(OUT_BLOG_DIR, exist_ok=True)
     with open(os.path.join(OUT_BLOG_DIR, "index.html"), "w", encoding="utf-8") as f:

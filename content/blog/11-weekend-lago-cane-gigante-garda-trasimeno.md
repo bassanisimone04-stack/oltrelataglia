@@ -1,6 +1,6 @@
 ---
 slug: weekend-lago-cane-gigante-garda-trasimeno
-titolo_seo: "Weekend al lago con un cane gigante: Garda e Trasimeno a confronto"
+titolo_seo: "Weekend al lago con un cane gigante: Garda o Trasimeno"
 meta_description: "Dove andare in vacanza al lago con un cane di taglia grande o gigante: confronto tra Lago di Garda e Lago Trasimeno, con strutture verificate."
 keyword_principale: weekend al lago con cane gigante
 keyword_correlate: [lago di garda cani taglia grande, lago trasimeno cani ammessi, vacanza al lago cane gigante]

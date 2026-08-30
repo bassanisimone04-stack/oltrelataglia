@@ -1,7 +1,7 @@
 ---
 slug: regolamento-cani-spiaggia-molossoidi
-titolo_seo: "Cane in spiaggia: normative, obblighi di museruola e documenti per cani giganti"
-meta_description: "Non esiste una legge unica sui cani in spiaggia in Italia: ecco come funzionano davvero le ordinanze locali, cosa portare sempre con sé e come muoversi con un molossoide."
+titolo_seo: "Regolamento cani in spiaggia in Italia | Oltre la Taglia"
+meta_description: "Non esiste una legge unica sui cani in spiaggia in Italia: come funzionano le ordinanze locali, cosa portare sempre con sé, come muoversi con un molossoide."
 keyword_principale: regolamento cani in spiaggia italia
 keyword_correlate: [ordinanze comunali bau beach, museruola obbligatoria cani grandi mare, documenti cane vacanze]
 categoria: Normativa e viaggi

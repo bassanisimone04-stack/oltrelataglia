@@ -1,7 +1,7 @@
 ---
 slug: hotel-villaggi-cani-taglia-gigante
-titolo_seo: "Hotel e villaggi vacanze per cani di taglia gigante: le strutture che non pongono limiti di peso"
-meta_description: "La maggior parte degli hotel pet-friendly pensa a cani piccoli. Come riconoscere in anticipo una struttura pensata davvero per un Alano o un Mastino, dentro e fuori dalla spiaggia."
+titolo_seo: "Hotel pet friendly per cani taglia grande | Oltre la Taglia"
+meta_description: "Molti hotel pet-friendly pensano a cani piccoli. Come riconoscere in anticipo una struttura pensata per un Alano o un Mastino, dentro e fuori dalla spiaggia."
 keyword_principale: hotel pet friendly cani taglia grande
 keyword_correlate: [villaggi turistici ammettono cani giganti, hotel al mare accettano alano]
 categoria: Strutture

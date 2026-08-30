@@ -32,6 +32,24 @@ def nestify_links(fragment):
     return re.sub(r'href="#', 'href="/#', fragment)
 
 
+TAGLIA_LABEL = {
+    "ogni": "cani di ogni taglia ammessi",
+    "gigante": "cani di taglia gigante ammessi",
+    "grande": "cani di taglia grande ammessi",
+    "media": "cani fino a taglia media ammessi",
+}
+
+
+def truncate_desc(text, limit=155):
+    """Accorcia una descrizione alla parola intera piu' vicina al limite,
+    invece di tagliarla a meta' parola: una meta description troncata a
+    caso in mezzo a una parola sembra rotta nei risultati di ricerca."""
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0]
+    return cut.rstrip(",.;:") + "…"
+
+
 def build():
     home_src = open(HOME, encoding="utf-8").read()
     style_block = extract(home_src, "<style>", "</style>")
@@ -90,14 +108,25 @@ def build():
         servizi_html = "".join(f"<li>{html.escape(sv)}</li>" for sv in st["servizi"])
         tags_html = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
 
-        page = f"""<title>{html.escape(st['nome'])}</title>
-<meta name="description" content="{html.escape(st['descrizione'][:150])}">
-<meta property="og:title" content="{html.escape(st['nome'])} — Oltre la Taglia">
+        taglia_label = TAGLIA_LABEL.get(st.get("taglia_bucket"), "cani grandi ammessi")
+        seo_title = f"{st['nome']} — {taglia_label} | Oltre la Taglia"
+        meta_desc = truncate_desc(st['descrizione'], 155)
+        page = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(seo_title)}</title>
+<meta name="description" content="{html.escape(meta_desc)}">
+<meta property="og:title" content="{html.escape(seo_title)}">
+<meta property="og:description" content="{html.escape(meta_desc)}">
 <meta property="og:type" content="place">
 <meta property="og:url" content="https://www.oltrelataglia.it/struttura/{st['slug']}/">
 <link rel="canonical" href="https://www.oltrelataglia.it/struttura/{st['slug']}/">
 {style_block}
 <style>{detail_css}</style>
+</head>
+<body>
 
 {header_block}
 
@@ -161,6 +190,8 @@ def build():
 }, ensure_ascii=False, indent=2)}
 </script>
 {header_script}
+</body>
+</html>
 """
         out_dir = os.path.join(ROOT, "struttura", st["slug"])
         os.makedirs(out_dir, exist_ok=True)
@@ -224,7 +255,12 @@ def build():
         for i, (q, a) in enumerate(cerca_faq)
     )
 
-    cerca_page = f"""<title>Cerca alloggi</title>
+    cerca_page = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerca hotel e agriturismi per cani grandi | Oltre la Taglia</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
 <link rel="canonical" href="https://www.oltrelataglia.it/cerca/">
 {style_block}
@@ -232,6 +268,8 @@ def build():
   .cerca-faq{{ padding-block:70px; border-top:1px solid var(--line); background:var(--surface); }}
   .cerca-faq .faq{{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:10px; }}
 </style>
+</head>
+<body>
 
 {header_block}
 
@@ -336,6 +374,8 @@ def build():
   applyFilters();
 }})();
 </script>
+</body>
+</html>
 """
     out_dir = os.path.join(ROOT, "cerca")
     os.makedirs(out_dir, exist_ok=True)
