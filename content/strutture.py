@@ -425,6 +425,66 @@ STRUTTURE = [
             "A dieci minuti dal mare",
         ],
     },
+    {
+        "slug": "casale-civetta",
+        "nome": "Casale Civetta",
+        "comune": "Trecastelli (Ancona)",
+        "regione": "Marche",
+        "regione_slug": "marche",
+        "fonte_nome": "zampavacanza.it",
+        "fonte_url": "https://www.zampavacanza.it/struttura-animali-ammessi/4534",
+        "sito_url": "https://www.casalecivetta.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Accesso piscina"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo ecosostenibile tra il mare Adriatico vicino Senigallia e il borgo "
+            "medievale di Corinaldo, a Trecastelli, in provincia di Ancona, Marche. Secondo la "
+            "fonte pubblica consultata, ammette cani di ogni taglia e più di tre animali a "
+            "prenotazione, con accesso libero a tutte le aree della struttura, compresa la zona "
+            "piscina panoramica. È previsto un supplemento di 10€ a notte per un solo cane (8€ a "
+            "notte per cane se più di uno), più 10€ di pulizie extra a soggiorno."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di tre a prenotazione"),
+            ("Supplemento animali", "10€/notte (8€/notte/cane se più di uno) + 10€ pulizie"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso alla piscina panoramica",
+            "Parco alberato con percorsi pedonali",
+            "Vicino al mare di Senigallia e al borgo di Corinaldo",
+        ],
+    },
+    {
+        "slug": "monferrato-nel-cuore",
+        "nome": "Monferrato nel Cuore",
+        "comune": "Casalborgone (Torino)",
+        "regione": "Piemonte",
+        "regione_slug": "piemonte",
+        "fonte_nome": "agriturismo.it",
+        "fonte_url": "https://www.agriturismo.it/it/agriturismi/piemonte/torino/Monferratonelcuore-7560096/index.html",
+        "sito_url": "https://www.monferratonelcuore.com/",
+        "tags": ["Ogni taglia"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo a Casalborgone, nel Monferrato torinese, in Piemonte. Secondo la fonte "
+            "pubblica consultata, ammette cani di ogni taglia, inclusa quella gigante (oltre 45 "
+            "kg), a condizione che siano educati e sorvegliati dal proprietario; la presenza "
+            "dell'animale va segnalata al momento della prenotazione. Supplemento e numero "
+            "massimo di cani per prenotazione non sono specificati nella fonte consultata."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Non specificato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Nel cuore del Monferrato torinese",
+            "Animali ammessi a condizione di essere sorvegliati",
+        ],
+    },
 ]
 
 ALL_TAGS = []
