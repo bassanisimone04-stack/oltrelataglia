@@ -11,7 +11,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HOME = os.path.join(ROOT, "mockup", "home.html")
 
-CONTACT_EMAIL = "PLACEHOLDER_EMAIL@example.com"  # sostituire con l'email dedicata prima di pubblicare
+CONTACT_EMAIL = "bassanisimone04+oltrelataglia@gmail.com"  # alias "+": recapita nella stessa inbox, mostrato diverso sul sito
 
 
 def extract(src, start_marker, end_marker):
