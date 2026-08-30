@@ -48,6 +48,9 @@ def page_shell(style_block, header_block, footer_block, header_script, title, de
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="https://www.taglialibera.it/{path}">
@@ -235,7 +238,61 @@ def build():
             f.write(html_out)
         print("generata:", f"/{slug}/")
 
+    write_404(style_block, header_block, footer_block, header_script)
+
     return list(pages.keys())
+
+
+def write_404(style_block, header_block, footer_block, header_script):
+    """Pagina 404 personalizzata: Vercel la serve automaticamente per
+    qualunque URL non trovato se il file si chiama 404.html alla radice.
+    noindex esplicito: non è un contenuto da far indicizzare."""
+    body = """
+  <section class="static-hero">
+    <div class="wrap">
+      <p class="lbl">Errore 404</p>
+      <h1 style="margin-top:10px;">Questa pagina non esiste (più).</h1>
+      <p style="margin-top:16px; max-width:56ch; font-size:16px; color:var(--ink-2);">
+        Il link che hai seguito potrebbe essere sbagliato, o la pagina potrebbe essere stata
+        spostata. Ecco dove trovare quello che cerchi:
+      </p>
+      <div style="margin-top:24px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-klein" href="/">Torna alla home</a>
+        <a class="btn btn-line" href="/cerca/">Cerca una struttura</a>
+        <a class="btn btn-line" href="/blog/">Leggi le guide</a>
+      </div>
+    </div>
+  </section>
+"""
+    html_out = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Pagina non trovata | Taglia Libera</title>
+<meta name="robots" content="noindex">
+{style_block}
+<style>{PAGE_CSS}</style>
+</head>
+<body>
+
+{header_block}
+
+<main id="top">
+{body}
+</main>
+
+{footer_block}
+{header_script}
+</body>
+</html>
+"""
+    with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8") as f:
+        f.write(html_out)
+    print("generata: /404.html")
 
 
 if __name__ == "__main__":

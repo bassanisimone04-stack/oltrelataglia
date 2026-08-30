@@ -116,6 +116,9 @@ def build():
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>{html.escape(seo_title)}</title>
 <meta name="description" content="{html.escape(meta_desc)}">
 <meta property="og:title" content="{html.escape(seo_title)}">
@@ -262,6 +265,9 @@ def build():
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Cerca hotel e agriturismi per cani grandi | Taglia Libera</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
 <meta property="og:title" content="Cerca hotel e agriturismi per cani grandi | Taglia Libera">
