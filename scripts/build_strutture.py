@@ -215,12 +215,11 @@ def build():
         tags_attr = "|".join(st["tags"])
         tags_pill = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
         rows_html.append(f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione'].lower())}">
-        <span class="stay-n">{st['regione_slug'][:2].upper()}</span>
         <div class="stay-main">
           <h3>{html.escape(st['nome'])}</h3>
           <p class="stay-where">{html.escape(st['comune'])} · {html.escape(st['regione'])}</p>
-          <div class="stay-specs">{tags_pill}</div>
         </div>
+        <div class="stay-specs">{tags_pill}</div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>''')
 
@@ -308,6 +307,11 @@ def build():
     <div>
       <div class="results-head">
         <div class="results-count" id="results-count"><span>{len(STRUTTURE)}</span> strutture</div>
+      </div>
+      <div class="stays-head">
+        <span>Struttura</span>
+        <span>Caratteristiche</span>
+        <span>Scheda</span>
       </div>
       <div class="stays" id="stays-list">
 {chr(10).join(rows_html)}

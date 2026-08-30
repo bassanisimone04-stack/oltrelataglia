@@ -240,26 +240,36 @@
 
   /* ── Strutture ───────────────────────────────── */
   .stays{ display:flex; flex-direction:column; border-top:1px solid var(--line); }
+  .stays-head{
+    display:grid; grid-template-columns:1.1fr 1.4fr 96px; gap:24px;
+    padding:0 4px 12px;
+  }
+  .stays-head span{
+    font-family:'Martian Mono',monospace; font-weight:500; font-size:10px;
+    letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-2);
+  }
+  .stays-head span:last-child{ text-align:right; }
+  @media (max-width:860px){ .stays-head{ display:none; } }
+
   .stay{
-    display:grid; grid-template-columns:92px 1fr auto; gap:32px; align-items:center;
-    padding:30px 4px; border-bottom:1px solid var(--line); text-decoration:none;
-    transition:padding-inline .3s cubic-bezier(.22,1,.36,1), background-color .3s ease;
+    display:grid; grid-template-columns:1.1fr 1.4fr 96px; gap:24px; align-items:center;
+    padding:20px 4px; border-bottom:1px solid var(--line); text-decoration:none;
+    transition:background-color .15s ease;
   }
-  .stay:hover{ padding-inline:20px; background:var(--surface); }
+  .stay:hover{ background:var(--surface); }
   @media (max-width:860px){
-    .stay{ grid-template-columns:1fr; gap:16px; align-items:start; }
-    .stay:hover{ padding-inline:4px; }
+    .stay{ grid-template-columns:1fr; gap:10px; align-items:start; }
   }
-  .stay-n{ font-family:'Martian Mono',monospace; font-weight:500; font-size:11px; color:var(--ink-2); font-variant-numeric:tabular-nums; }
-  .stay-main h3{ font-size:clamp(20px, 2.4vw, 30px); font-weight:600; }
-  .stay-where{ margin-top:7px; font-size:14px; }
-  .stay-specs{ display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+  .stay-main h3{ font-size:17px; font-weight:600; letter-spacing:-0.015em; }
+  .stay-where{ margin-top:4px; font-size:13px; }
+  .stay-specs{ display:flex; flex-wrap:wrap; gap:6px; }
   .spec{
     font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px;
     text-transform:uppercase; padding:5px 9px; border:1px solid var(--line); color:var(--ink);
   }
   .spec-hi{ border-color:var(--klein); color:var(--klein-text); }
-  .stay-go{ display:flex; align-items:center; gap:12px; font-size:13px; font-weight:600; color:var(--klein-text); white-space:nowrap; }
+  .stay-go{ font-size:13px; font-weight:600; color:var(--klein-text); white-space:nowrap; text-align:right; }
+  @media (max-width:860px){ .stay-go{ text-align:left; } }
 
   .note{
     border-left:2px solid var(--klein); padding:16px 20px; background:var(--surface);
@@ -402,167 +412,154 @@
       <div class="results-head">
         <div class="results-count" id="results-count"><span>18</span> strutture</div>
       </div>
+      <div class="stays-head">
+        <span>Struttura</span>
+        <span>Caratteristiche</span>
+        <span>Scheda</span>
+      </div>
       <div class="stays" id="stays-list">
       <a class="stay" href="/struttura/agriturismo-bellavita/" data-tags="Ogni taglia|Cani illimitati|Nessun supplemento|Piscina per cani" data-regione="toscana">
-        <span class="stay-n">TO</span>
         <div class="stay-main">
           <h3>Agriturismo Bellavita</h3>
           <p class="stay-where">Lamporecchio, Pistoiese · Toscana</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Cani illimitati</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Piscina per cani</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Cani illimitati</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Piscina per cani</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/baita-gorck/" data-tags="Fino a taglia grande|Ammessi al ristorante|Pulizie +10€" data-regione="trentino">
-        <span class="stay-n">TR</span>
         <div class="stay-main">
           <h3>Baita Gorck</h3>
           <p class="stay-where">Val Rendena, Parco Adamello Brenta · Trentino</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Ammessi al ristorante</span><span class="spec spec-hi">Pulizie +10€</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Ammessi al ristorante</span><span class="spec spec-hi">Pulizie +10€</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/masseria-le-terrazze-di-serranova/" data-tags="Fino a 30 kg|Nessun supplemento|Area sgambamento" data-regione="puglia">
-        <span class="stay-n">PU</span>
         <div class="stay-main">
           <h3>Masseria Le Terrazze di Serranova</h3>
           <p class="stay-where">Serranova, Carovigno (Brindisi) · Puglia</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a 30 kg</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Area sgambamento</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a 30 kg</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Area sgambamento</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/ecoresort-il-cantico-della-natura/" data-tags="Ogni taglia|Fino a 4 cani|Nessun supplemento|Area sgambamento recintata" data-regione="umbria">
-        <span class="stay-n">UM</span>
         <div class="stay-main">
           <h3>EcoResort Il Cantico della Natura</h3>
           <p class="stay-where">Magione (Perugia) · Umbria</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Fino a 4 cani</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Area sgambamento recintata</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Fino a 4 cani</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Area sgambamento recintata</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-casale-degli-olmi/" data-tags="Ogni taglia|Fino a 2 cani|Nessun supplemento|Unità con zona recintata" data-regione="umbria">
-        <span class="stay-n">UM</span>
         <div class="stay-main">
           <h3>Agriturismo Casale degli Olmi</h3>
           <p class="stay-where">Perugia · Umbria</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Fino a 2 cani</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Unità con zona recintata</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Fino a 2 cani</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Unità con zona recintata</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/residence-mizar/" data-tags="Fino a taglia grande|Nessun supplemento giornaliero|Vicino a spiaggia per cani|Pulizie 20€ a fine soggiorno" data-regione="liguria">
-        <span class="stay-n">LI</span>
         <div class="stay-main">
           <h3>Residence Mizar</h3>
           <p class="stay-where">Pietra Ligure (Savona) · Liguria</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Nessun supplemento giornaliero</span><span class="spec spec-hi">Vicino a spiaggia per cani</span><span class="spec spec-hi">Pulizie 20€ a fine soggiorno</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Nessun supplemento giornaliero</span><span class="spec spec-hi">Vicino a spiaggia per cani</span><span class="spec spec-hi">Pulizie 20€ a fine soggiorno</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/podere-il-poggiolo/" data-tags="Taglia gigante ok|Accesso ristorante|50€/animale a settimana" data-regione="toscana">
-        <span class="stay-n">TO</span>
         <div class="stay-main">
           <h3>Podere il Poggiolo</h3>
           <p class="stay-where">Pontassieve, Chianti Rufina (Firenze) · Toscana</p>
-          <div class="stay-specs"><span class="spec spec-hi">Taglia gigante ok</span><span class="spec spec-hi">Accesso ristorante</span><span class="spec spec-hi">50€/animale a settimana</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Taglia gigante ok</span><span class="spec spec-hi">Accesso ristorante</span><span class="spec spec-hi">50€/animale a settimana</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-podere-bello/" data-tags="Fino a 3 cani|Nessun supplemento|Giardino privato recintato" data-regione="toscana">
-        <span class="stay-n">TO</span>
         <div class="stay-main">
           <h3>Agriturismo Podere Bello</h3>
           <p class="stay-where">Pitigliano, Maremma (Grosseto) · Toscana</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a 3 cani</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Giardino privato recintato</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a 3 cani</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Giardino privato recintato</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/masseria-le-palmentelle/" data-tags="Fino a taglia grande|Un cane a camera|Supplemento 5€/giorno" data-regione="puglia">
-        <span class="stay-n">PU</span>
         <div class="stay-main">
           <h3>Masseria le Palmentelle</h3>
           <p class="stay-where">Lecce, Salento · Puglia</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Un cane a camera</span><span class="spec spec-hi">Supplemento 5€/giorno</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Un cane a camera</span><span class="spec spec-hi">Supplemento 5€/giorno</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-il-podere/" data-tags="Ogni taglia|Accesso ristorante|Supplemento 5€/giorno" data-regione="veneto">
-        <span class="stay-n">VE</span>
         <div class="stay-main">
           <h3>Agriturismo il Podere</h3>
           <p class="stay-where">Vedelago (Treviso) · Veneto</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Accesso ristorante</span><span class="spec spec-hi">Supplemento 5€/giorno</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Accesso ristorante</span><span class="spec spec-hi">Supplemento 5€/giorno</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/antico-cascinale-lombardo/" data-tags="Ogni taglia|Quantità illimitata|Gratis oltre 2 notti" data-regione="lombardia">
-        <span class="stay-n">LO</span>
         <div class="stay-main">
           <h3>Antico Cascinale Lombardo</h3>
           <p class="stay-where">Lonato del Garda (Brescia) · Lombardia</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Quantità illimitata</span><span class="spec spec-hi">Gratis oltre 2 notti</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Quantità illimitata</span><span class="spec spec-hi">Gratis oltre 2 notti</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-delizia-deste/" data-tags="Ogni taglia|Più cani ammessi|Nessun supplemento|Piscina e laghetto per cani" data-regione="emilia-romagna">
-        <span class="stay-n">EM</span>
         <div class="stay-main">
           <h3>Agriturismo Delizia d&#x27;Este</h3>
           <p class="stay-where">Ferrara · Emilia-Romagna</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Piscina e laghetto per cani</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Piscina e laghetto per cani</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-baglio-don-bartolo/" data-tags="Fino a taglia grande|Accesso ristorante|Pulizie 10€/giorno" data-regione="sicilia">
-        <span class="stay-n">SI</span>
         <div class="stay-main">
           <h3>Agriturismo Baglio Don Bartolo</h3>
           <p class="stay-where">Castelluzzo, San Vito Lo Capo (Trapani) · Sicilia</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Accesso ristorante</span><span class="spec spec-hi">Pulizie 10€/giorno</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Accesso ristorante</span><span class="spec spec-hi">Pulizie 10€/giorno</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-il-cerro-zagarese/" data-tags="Ogni taglia|Supplemento richiesto" data-regione="calabria">
-        <span class="stay-n">CA</span>
         <div class="stay-main">
           <h3>Agriturismo Il Cerro - Zagarese</h3>
           <p class="stay-where">Fuscaldo (Cosenza) · Calabria</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Supplemento richiesto</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Supplemento richiesto</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/casale-civetta/" data-tags="Ogni taglia|Più cani ammessi|Accesso piscina" data-regione="marche">
-        <span class="stay-n">MA</span>
         <div class="stay-main">
           <h3>Casale Civetta</h3>
           <p class="stay-where">Trecastelli (Ancona) · Marche</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Accesso piscina</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Accesso piscina</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/monferrato-nel-cuore/" data-tags="Ogni taglia" data-regione="piemonte">
-        <span class="stay-n">PI</span>
         <div class="stay-main">
           <h3>Monferrato nel Cuore</h3>
           <p class="stay-where">Casalborgone (Torino) · Piemonte</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-colja-jozko/" data-tags="Fino a taglia grande|Area sgambamento|Accesso ristorante" data-regione="friuli-venezia giulia">
-        <span class="stay-n">FR</span>
         <div class="stay-main">
           <h3>Agriturismo Colja Jozko</h3>
           <p class="stay-where">Samatorza, Sgonico (Trieste) · Friuli-Venezia Giulia</p>
-          <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Area sgambamento</span><span class="spec spec-hi">Accesso ristorante</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Area sgambamento</span><span class="spec spec-hi">Accesso ristorante</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       <a class="stay" href="/struttura/agriturismo-le-tre-poiane/" data-tags="Ogni taglia|Più cani ammessi|Nessun supplemento|Accesso ristorante" data-regione="abruzzo">
-        <span class="stay-n">AB</span>
         <div class="stay-main">
           <h3>Agriturismo Le Tre Poiane</h3>
           <p class="stay-where">Penne (Pescara) · Abruzzo</p>
-          <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Accesso ristorante</span></div>
         </div>
+        <div class="stay-specs"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Accesso ristorante</span></div>
         <span class="stay-go">Vedi la scheda →</span>
       </a>
       </div>
