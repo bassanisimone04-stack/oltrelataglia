@@ -493,7 +493,7 @@ STRUTTURE = [
         "regione_slug": "friuli-venezia-giulia",
         "fonte_nome": "zampavacanza.it",
         "fonte_url": "https://www.zampavacanza.it/struttura-animali-ammessi/2729",
-        "sito_url": "https://www.coljajozko.it/",
+        "sito_url": "https://agriturismocolja.it/",
         "tags": ["Fino a taglia grande", "Area sgambamento", "Accesso ristorante"],
         "taglia_bucket": "grande",
         "descrizione": (
