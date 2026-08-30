@@ -393,6 +393,38 @@ STRUTTURE = [
             "A pochi km dalla spiaggia di San Vito Lo Capo",
         ],
     },
+    {
+        "slug": "agriturismo-il-cerro-zagarese",
+        "nome": "Agriturismo Il Cerro - Zagarese",
+        "comune": "Fuscaldo (Cosenza)",
+        "regione": "Calabria",
+        "regione_slug": "calabria",
+        "fonte_nome": "agriturismo.it",
+        "fonte_url": "https://www.agriturismo.it/it/agriturismi/calabria/cosenza/IlCerro-AgriturismoZagarese-8501151/index.html",
+        "sito_url": "https://www.agriturismozagarese.it/",
+        "tags": ["Ogni taglia", "Supplemento richiesto"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo su un rilievo collinare a dieci minuti dal mare, a Fuscaldo, in "
+            "provincia di Cosenza, Calabria. Secondo la fonte pubblica consultata, ammette cani "
+            "di ogni taglia, inclusa quella gigante (oltre 45 kg), con obbligo di guinzaglio "
+            "negli ambienti interni e la necessità di segnalare la presenza dell'animale al "
+            "momento della prenotazione. È previsto un supplemento per gli animali, il cui "
+            "importo va confermato direttamente con la struttura: le fonti consultate non sono "
+            "concordi su cifra esatta e periodicità."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Richiesto, importo da confermare con la struttura"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Piscina con vista mare",
+            "Cucina calabrese in loco",
+            "A dieci minuti dal mare",
+        ],
+    },
 ]
 
 ALL_TAGS = []
