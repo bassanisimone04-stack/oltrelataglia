@@ -97,6 +97,95 @@ STRUTTURE = [
             "Doccia esterna",
         ],
     },
+    {
+        "slug": "ecoresort-il-cantico-della-natura",
+        "nome": "EcoResort Il Cantico della Natura",
+        "comune": "Magione (Perugia)",
+        "regione": "Umbria",
+        "regione_slug": "umbria",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/umbria/perugia/il-cantico-della-natura",
+        "sito_url": "https://www.ilcanticodellanatura.it/",
+        "tags": ["Ogni taglia", "Fino a 4 cani", "Nessun supplemento", "Area sgambamento recintata"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Ecoresort vicino al Lago Trasimeno, a Magione (Perugia). Secondo la scheda pubblica "
+            "consultata, ammette cani di ogni taglia fino a un massimo di 4 per unità abitativa, "
+            "senza alcun supplemento per gli animali. Dispone di un'area sgambamento recintata e "
+            "di unità con giardino o déhors recintato privato — utile per chi viaggia con più "
+            "cani grandi insieme."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia"),
+            ("Numero di cani", "Fino a 4 per unità"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Area sgambamento recintata",
+            "Unità con giardino/déhors recintato privato",
+            "Vicino al Lago Trasimeno",
+        ],
+    },
+    {
+        "slug": "agriturismo-casale-degli-olmi",
+        "nome": "Agriturismo Casale degli Olmi",
+        "comune": "Perugia",
+        "regione": "Umbria",
+        "regione_slug": "umbria",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/umbria/perugia/agriturismo-casale-degli-olmi",
+        "sito_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/umbria/perugia/agriturismo-casale-degli-olmi",
+        "tags": ["Ogni taglia", "Fino a 2 cani", "Nessun supplemento", "Unità con zona recintata"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo nella campagna intorno a Perugia, in Umbria. Secondo la fonte pubblica "
+            "consultata, ammette cani di tutte le taglie, fino a un massimo di 2 per prenotazione, "
+            "senza alcun supplemento. L'appartamento \"Ceraso\", segnalato come particolarmente "
+            "adatto a chi viaggia con un cane, si trova al piano terra con una zona recintata "
+            "dedicata."
+        ),
+        "fatti": [
+            ("Taglia massima", "Tutte le taglie"),
+            ("Numero di cani", "Fino a 2 per prenotazione"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Appartamento al piano terra con zona recintata",
+        ],
+    },
+    {
+        "slug": "residence-mizar",
+        "nome": "Residence Mizar",
+        "comune": "Pietra Ligure (Savona)",
+        "regione": "Liguria",
+        "regione_slug": "liguria",
+        "fonte_nome": "appartamentimizar.com",
+        "fonte_url": "https://www.appartamentimizar.com/cani.php?lingua=italiano",
+        "sito_url": "https://www.appartamentimizar.com/",
+        "tags": ["Fino a taglia grande", "Nessun supplemento giornaliero", "Vicino a spiaggia per cani", "Pulizie 20€ a fine soggiorno"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Residence di appartamenti vacanza sulla Riviera di Ponente, a Pietra Ligure (Savona). "
+            "Secondo la pagina dedicata sul sito ufficiale, accoglie cani fino a taglia grande "
+            "senza alcun supplemento giornaliero — è previsto un contributo di 20€ a fine "
+            "soggiorno per la pulizia extra, con un regolamento di convivenza da rispettare. Gli "
+            "appartamenti hanno terrazzo, alcuni con giardino privato, e si trovano a circa 400 "
+            "metri da una spiaggia attrezzata per cani."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Nessuno giornaliero; 20€ di pulizia a fine soggiorno"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "A circa 400 m da una spiaggia attrezzata per cani",
+            "Area verde riservata agli animali",
+            "Alcuni appartamenti con giardino privato",
+        ],
+    },
 ]
 
 ALL_TAGS = []
