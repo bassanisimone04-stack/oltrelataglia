@@ -13,6 +13,102 @@ HOME = os.path.join(ROOT, "mockup", "home.html")
 
 CONTACT_EMAIL = "bassanisimone04+taglialibera@gmail.com"  # alias "+": recapita nella stessa inbox, mostrato diverso sul sito
 
+CALC_CSS = """
+  .calc-box{ border:1px solid var(--line); padding:32px; margin-bottom:40px; background:var(--surface-2); }
+  .calc-box label{ font-family:'Martian Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-2); }
+  .calc-row{ display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  .calc-row input{
+    flex:1; min-width:140px; padding:13px 16px; border:1px solid var(--line); background:var(--surface);
+    color:var(--ink); font-family:'Onest',sans-serif; font-size:16px;
+  }
+  .calc-row input:focus{ outline:2.5px solid var(--klein); outline-offset:2px; }
+  .calc-result{ margin-top:24px; padding-top:24px; border-top:1px solid var(--line); }
+  .calc-result-taglia{ font-family:'Martian Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--klein-text); font-weight:600; margin-bottom:8px; }
+  .calc-result p{ margin-bottom:16px; }
+"""
+
+CALC_SCRIPT = """
+<script>
+(function(){
+  "use strict";
+  var input = document.getElementById("peso-cane");
+  var btn = document.getElementById("calc-btn");
+  var result = document.getElementById("calc-result");
+  var taglia = document.getElementById("calc-taglia");
+  var desc = document.getElementById("calc-desc");
+  var link = document.getElementById("calc-link");
+  if (!btn) return;
+
+  var FASCE = [
+    { max: 10, nome: "Piccola", tag: "", desc: "Fino a 10 kg. La maggior parte dei portali \\"pet friendly\\" generici è pensata per questa taglia — questa directory invece si concentra su cani più grandi, ma tanti alloggi generalisti vanno bene." },
+    { max: 25, nome: "Media", tag: "", desc: "Tra 10 e 25 kg. Molte strutture che accettano cani \\"di taglia media\\" si fermano qui: verifica sempre il limite esatto dichiarato." },
+    { max: 45, nome: "Grande", tag: "Fino a taglia grande", desc: "Tra 25 e 45 kg. È la soglia dove iniziano i problemi con i filtri generici: molti hotel \\"pet friendly\\" si fermano prima. In questa directory trovi strutture che dichiarano esplicitamente di accettare questa taglia." },
+    { max: Infinity, nome: "Gigante", tag: "Ogni taglia", desc: "Oltre 45 kg — Alani, San Bernardo, Mastini e simili. È la taglia per cui esiste questa directory: la maggior parte dei portali generalisti non è pensata per un cane di questa stazza." },
+  ];
+
+  function calcola(){
+    var peso = parseFloat(input.value);
+    if (!peso || peso <= 0) {
+      input.focus();
+      return;
+    }
+    var fascia = FASCE[0];
+    for (var i = 0; i < FASCE.length; i++) {
+      if (peso <= FASCE[i].max) { fascia = FASCE[i]; break; }
+    }
+    taglia.textContent = fascia.nome + " (" + peso + " kg)";
+    desc.textContent = fascia.desc;
+    link.href = fascia.tag ? "/cerca/?tag=" + encodeURIComponent(fascia.tag) : "/cerca/";
+    result.hidden = false;
+  }
+
+  btn.addEventListener("click", calcola);
+  input.addEventListener("keydown", function(e){ if (e.key === "Enter") calcola(); });
+})();
+</script>
+"""
+
+CHECKLIST_CSS = """
+  .checklist{ list-style:none; padding:0; margin:0 0 8px; display:flex; flex-direction:column; gap:2px; }
+  .checklist li{ border-bottom:1px solid var(--line); }
+  .checklist label{
+    display:flex; align-items:flex-start; gap:12px; padding:12px 4px; cursor:pointer;
+    font-size:15.5px; color:var(--ink-2); line-height:1.5;
+  }
+  .checklist input[type="checkbox"]{ accent-color:var(--klein); width:18px; height:18px; flex-shrink:0; margin-top:2px; }
+  .checklist label:has(input:checked){ color:var(--ink); text-decoration:line-through; text-decoration-color:var(--klein-text); }
+  .checklist-note{ margin-top:32px; font-size:14px; color:var(--ink-2); }
+  @media print{
+    .no-print, header, footer{ display:none !important; }
+    .static-hero{ padding-top:20px !important; }
+    body{ background:#fff; color:#000; }
+  }
+"""
+
+CHECKLIST_SCRIPT = """
+<script>
+(function(){
+  "use strict";
+  var boxes = document.querySelectorAll(".checklist input[type=checkbox]");
+  var KEY = "checklist-viaggio-cane";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){}
+
+  boxes.forEach(function(box){
+    var id = box.getAttribute("data-item");
+    if (saved[id]) box.checked = true;
+    box.addEventListener("change", function(){
+      saved[id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+    });
+  });
+
+  var printBtn = document.getElementById("print-btn");
+  if (printBtn) printBtn.addEventListener("click", function(){ window.print(); });
+})();
+</script>
+"""
+
 
 def extract(src, start_marker, end_marker):
     i1 = src.index(start_marker)
@@ -42,7 +138,7 @@ PAGE_CSS = """
 """
 
 
-def page_shell(style_block, header_block, footer_block, header_script, title, description, path, body_html):
+def page_shell(style_block, header_block, footer_block, header_script, title, description, path, body_html, extra_css="", extra_script=""):
     return f"""<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -56,7 +152,8 @@ def page_shell(style_block, header_block, footer_block, header_script, title, de
 <meta name="description" content="{description}">
 <link rel="canonical" href="https://www.taglialibera.it/{path}">
 {style_block}
-<style>{PAGE_CSS}</style>
+<style>{PAGE_CSS}
+{extra_css}</style>
 </head>
 <body>
 
@@ -68,6 +165,7 @@ def page_shell(style_block, header_block, footer_block, header_script, title, de
 
 {footer_block}
 {header_script}
+{extra_script}
 </body>
 </html>
 """
@@ -228,10 +326,116 @@ def build():
 """,
     }
 
+    # ---------- Calcolatore taglia cane ----------
+    pages["calcolatore-taglia-cane"] = {
+        "title": "Calcolatore taglia cane: piccola, media, grande, gigante | Taglia Libera",
+        "description": "Inserisci il peso del tuo cane in kg e scopri se rientra in taglia piccola, media, grande o gigante secondo la classificazione più usata dalle strutture pet friendly.",
+        "extra_css": CALC_CSS,
+        "extra_script": CALC_SCRIPT,
+        "body": """
+  <section class="static-hero">
+    <div class="wrap">
+      <p class="lbl"><a href="/" style="text-decoration:none; color:var(--ink-2);">Home</a> / Calcolatore taglia</p>
+      <h1 style="margin-top:10px;">Che taglia ha il tuo cane?</h1>
+      <p style="margin-top:16px; max-width:56ch; font-size:16px; color:var(--ink-2);">
+        Inserisci il peso in chilogrammi: usiamo la stessa classificazione con cui categorizziamo
+        le strutture in questa directory, spiegata anche nella
+        <a href="/blog/cani-taglia-gigante-razze-peso/">guida alle taglie e alle razze</a>.
+      </p>
+    </div>
+  </section>
+  <article class="wrap">
+    <div class="static-body">
+      <div class="calc-box">
+        <label for="peso-cane">Peso del cane (kg)</label>
+        <div class="calc-row">
+          <input type="number" id="peso-cane" min="0" step="0.1" placeholder="es. 38" inputmode="decimal">
+          <button type="button" class="btn btn-klein" id="calc-btn">Calcola</button>
+        </div>
+        <div class="calc-result" id="calc-result" hidden>
+          <div class="calc-result-taglia" id="calc-taglia"></div>
+          <p id="calc-desc"></p>
+          <a href="/cerca/" id="calc-link" class="btn btn-line">Cerca strutture per questa taglia →</a>
+        </div>
+      </div>
+      <h2>Come classifichiamo le taglie</h2>
+      <ul>
+        <li><strong>Piccola</strong>: fino a 10 kg</li>
+        <li><strong>Media</strong>: 10-25 kg</li>
+        <li><strong>Grande</strong>: 25-45 kg</li>
+        <li><strong>Gigante</strong>: oltre 45 kg</li>
+      </ul>
+      <p>Non è uno standard ufficiale unico — è la suddivisione più diffusa tra i portali specializzati in viaggi con animali, ed è quella che usiamo per classificare ogni struttura di questa directory. Il peso reale del tuo cane può variare rispetto al peso "tipico" della razza: usa sempre il peso effettivo, non quello da tabella.</p>
+    </div>
+  </article>
+""",
+    }
+
+    # ---------- Checklist di viaggio ----------
+    pages["checklist-viaggio-cane"] = {
+        "title": "Checklist di viaggio con un cane grande | Taglia Libera",
+        "description": "Checklist stampabile per partire con un cane di taglia grande o gigante: documenti, kit sanitario, attrezzatura auto, tutto in una pagina.",
+        "extra_css": CHECKLIST_CSS,
+        "extra_script": CHECKLIST_SCRIPT,
+        "body": """
+  <section class="static-hero no-print">
+    <div class="wrap">
+      <p class="lbl"><a href="/" style="text-decoration:none; color:var(--ink-2);">Home</a> / Checklist di viaggio</p>
+      <h1 style="margin-top:10px;">Checklist di viaggio con un cane grande.</h1>
+      <p style="margin-top:16px; max-width:56ch; font-size:16px; color:var(--ink-2);">
+        Il riassunto di quello che abbiamo scritto nelle guide del blog, in un'unica pagina da
+        spuntare prima di partire. Le tue spunte restano salvate solo su questo dispositivo.
+      </p>
+      <button type="button" class="btn btn-line" id="print-btn" style="margin-top:20px;">Stampa questa pagina</button>
+    </div>
+  </section>
+  <article class="wrap">
+    <div class="static-body checklist-body">
+
+      <h2>Documenti</h2>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-item="microchip"> Microchip registrato in anagrafe canina</label></li>
+        <li><label><input type="checkbox" data-item="libretto"> Libretto sanitario aggiornato</label></li>
+        <li><label><input type="checkbox" data-item="vaccini"> Vaccinazioni di base in corso di validità</label></li>
+        <li><label><input type="checkbox" data-item="antirabbica"> Vaccinazione antirabbica (se attraversi confini regionali o vai all'estero — <a href="/blog/passaporto-europeo-cane-viaggiare-ue/">guida UE</a>)</label></li>
+        <li><label><input type="checkbox" data-item="passaporto"> Passaporto europeo per animali (solo per viaggi in UE)</label></li>
+        <li><label><input type="checkbox" data-item="foto-microchip"> Foto del numero di microchip salvata sul telefono</label></li>
+      </ul>
+
+      <h2>Kit sanitario e primo soccorso</h2>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-item="contatto-vet"> Contatto del veterinario di zona/destinazione già cercato</label></li>
+        <li><label><input type="checkbox" data-item="acqua-fresca"> Acqua fresca sempre disponibile e ciotola pieghevole</label></li>
+        <li><label><input type="checkbox" data-item="tappetino"> Tappetino rinfrescante XXL (viaggi estivi)</label></li>
+        <li><label><input type="checkbox" data-item="museruola"> Museruola, anche dove non è obbligatoria per legge</label></li>
+      </ul>
+
+      <h2>Attrezzatura auto</h2>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-item="rete"> Rete divisoria o imbracatura omologata per il peso del cane</label></li>
+        <li><label><input type="checkbox" data-item="asciugamano"> Asciugamano extra-large</label></li>
+        <li><label><input type="checkbox" data-item="pause"> Soste programmate ogni ~2 ore</label></li>
+      </ul>
+
+      <h2>Prima di prenotare la struttura</h2>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-item="taglia-max"> Taglia massima ammessa confermata per iscritto</label></li>
+        <li><label><input type="checkbox" data-item="n-cani"> Numero massimo di cani ammessi</label></li>
+        <li><label><input type="checkbox" data-item="supplemento"> Supplemento ed eventuale cauzione, importo esatto</label></li>
+        <li><label><input type="checkbox" data-item="aree-comuni"> Accesso alle aree comuni (ristorante, piscina) verificato</label></li>
+      </ul>
+
+      <p class="checklist-note">Ogni voce è spiegata nel dettaglio nelle guide del blog — in particolare <a href="/blog/documenti-vaccinazioni-viaggiare-cane-italia/">documenti e vaccinazioni</a>, <a href="/blog/viaggiare-in-auto-cane-gigante-sicurezza/">viaggio in auto</a> e <a href="/blog/domande-da-fare-prima-di-prenotare/">domande da fare prima di prenotare</a>.</p>
+    </div>
+  </article>
+""",
+    }
+
     for slug, data in pages.items():
         html_out = page_shell(
             style_block, header_block, footer_block, header_script,
             data["title"], data["description"], f"{slug}/", data["body"],
+            data.get("extra_css", ""), data.get("extra_script", ""),
         )
         out_dir = os.path.join(ROOT, slug)
         os.makedirs(out_dir, exist_ok=True)
