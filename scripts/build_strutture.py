@@ -32,31 +32,31 @@ def nestify_links(fragment):
     return re.sub(r'href="#', 'href="/#', fragment)
 
 
-# Coordinate schematiche (0-100 orizzontale, 0-130 verticale) usate solo per
-# posizionare le regioni su una mini-mappa stilizzata dell'Italia: non sono
-# confini geografici reali, solo una disposizione approssimativa nord-sud/
-# ovest-est pensata per essere leggibile a piccola scala.
+# Coordinate reali (proiezione equirettangolare corretta per la latitudine,
+# stessa trasformazione usata per la sagoma dell'Italia qui sotto) delle
+# capitali/centri di ogni regione, in un viewBox 0 0 100 128. Longitudine e
+# latitudine di partenza sono dati geografici noti, non stimati.
 REGIONI_MAPPA = [
-    ("valle-d-aosta", "Valle d'Aosta", 18, 10),
-    ("piemonte", "Piemonte", 22, 22),
-    ("lombardia", "Lombardia", 38, 18),
-    ("trentino", "Trentino", 52, 10),
-    ("veneto", "Veneto", 60, 18),
-    ("friuli-venezia-giulia", "Friuli-Venezia Giulia", 72, 15),
-    ("liguria", "Liguria", 25, 34),
-    ("emilia-romagna", "Emilia-Romagna", 48, 32),
-    ("toscana", "Toscana", 36, 46),
-    ("umbria", "Umbria", 48, 48),
-    ("marche", "Marche", 60, 45),
-    ("lazio", "Lazio", 46, 60),
-    ("abruzzo", "Abruzzo", 60, 56),
-    ("molise", "Molise", 64, 64),
-    ("campania", "Campania", 52, 70),
-    ("puglia", "Puglia", 78, 66),
-    ("basilicata", "Basilicata", 64, 76),
-    ("calabria", "Calabria", 60, 92),
-    ("sicilia", "Sicilia", 54, 114),
-    ("sardegna", "Sardegna", 14, 72),
+    ("valle-d-aosta", "Valle d'Aosta", 9.5, 19.1),
+    ("piemonte", "Piemonte", 12.3, 26.0),
+    ("lombardia", "Lombardia", 23.9, 21.9),
+    ("trentino", "Trentino", 38.7, 15.7),
+    ("veneto", "Veneto", 47.8, 22.2),
+    ("friuli-venezia-giulia", "Friuli-Venezia Giulia", 54.9, 15.7),
+    ("liguria", "Liguria", 21.9, 32.8),
+    ("emilia-romagna", "Emilia-Romagna", 40.4, 31.9),
+    ("toscana", "Toscana", 39.7, 39.4),
+    ("umbria", "Umbria", 48.4, 46.2),
+    ("marche", "Marche", 57.0, 41.0),
+    ("lazio", "Lazio", 49.2, 58.6),
+    ("abruzzo", "Abruzzo", 56.1, 54.0),
+    ("molise", "Molise", 65.9, 62.2),
+    ("campania", "Campania", 62.8, 69.5),
+    ("puglia", "Puglia", 82.7, 66.7),
+    ("basilicata", "Basilicata", 74.6, 71.7),
+    ("calabria", "Calabria", 80.6, 89.5),
+    ("sicilia", "Sicilia", 55.8, 97.7),
+    ("sardegna", "Sardegna", 23.3, 86.3),
 ]
 
 
@@ -314,28 +314,35 @@ def build():
                 f'<g class="map-region-empty"><title>{html.escape(nome)}: nessuna struttura ancora</title>'
                 f'<circle cx="{x}" cy="{y}" r="1.8"></circle></g>'
             )
-    # Sagoma stilizzata dell'Italia (penisola + Sicilia + Sardegna), disegnata a mano
-    # per dare un riferimento visivo ai pallini — non è un tracciato costiero reale,
-    # solo un contorno approssimativo pensato per essere riconoscibile a colpo d'occhio.
+    # Sagoma reale dell'Italia (penisola + Sicilia + Sardegna), estratta dal
+    # dataset geografico Natural Earth (naturalearth_lowres) e proiettata con
+    # una equirettangolare corretta per la latitudine (stessa trasformazione
+    # usata per le coordinate di REGIONI_MAPPA sopra) — non e' un contorno
+    # disegnato a mano, e' il confine reale semplificato per essere leggibile
+    # a piccola scala.
     map_outline = (
         '<path class="map-italy-outline" d="'
-        'M16 6 C28 2 42 2 55 6 C65 8 75 8 82 14 '
-        'C78 22 74 30 76 40 C78 50 70 55 66 52 '
-        'C62 58 66 64 74 62 C84 60 90 66 86 74 '
-        'C82 80 72 78 66 84 C60 90 64 96 58 102 '
-        'C54 108 50 100 52 92 C54 84 46 80 44 72 '
-        'C42 64 36 60 38 52 C40 44 34 42 36 36 '
-        'C38 28 28 30 24 24 C20 18 22 12 16 6 Z" />'
+        'M33.5 7.2 L38.1 8.6 L39.0 6.7 L46.6 4.9 L48.3 8.5 L59.2 11.1 L58.4 16.2 '
+        'L60.3 20.6 L54.2 19.1 L47.9 22.8 L48.3 27.9 L47.4 30.8 L49.9 36.1 '
+        'L57.1 41.3 L61.0 49.8 L69.5 58.1 L75.5 58.0 L77.4 60.3 L75.2 62.4 '
+        'L87.7 69.2 L94.3 74.6 L95.1 76.5 L93.6 80.2 L89.4 75.4 L82.7 73.7 '
+        'L79.5 80.4 L85.0 84.2 L84.1 89.6 L80.9 90.2 L76.8 99.1 L73.6 99.9 '
+        'L73.7 96.7 L75.2 91.2 L76.9 89.0 L73.9 83.0 L71.6 77.8 L68.4 76.5 '
+        'L66.1 72.0 L61.2 70.2 L57.9 66.0 L52.2 65.4 L46.2 60.7 L39.2 54.0 '
+        'L34.0 48.0 L31.6 37.8 L27.8 36.6 L21.5 33.2 L18.0 34.6 L13.6 39.4 '
+        'L10.4 40.2 L11.3 35.7 L7.1 34.4 L5.1 26.4 L7.8 23.3 L5.6 19.4 '
+        'L5.9 16.5 L9.2 18.7 L12.9 18.2 L17.2 14.7 L18.5 16.3 L22.1 16.0 '
+        'L23.8 11.8 L29.5 13.1 L32.9 11.4 Z" />'
         '<path class="map-italy-outline" d="'
-        'M8 58 C14 55 20 60 18 68 C22 74 18 82 12 86 '
-        'C6 82 4 70 8 58 Z" />'
+        'M58.7 98.6 L72.4 96.5 L69.6 104.6 L70.8 107.8 L69.2 113.1 L63.3 109.3 '
+        'L59.4 108.2 L48.7 102.9 L49.8 97.6 Z" />'
         '<path class="map-italy-outline" d="'
-        'M42 110 C50 106 62 108 68 112 C64 118 54 122 46 120 '
-        'C40 118 38 114 42 110 Z" />'
+        'M20.2 69.0 L24.0 65.8 L28.6 73.1 L27.5 86.8 L24.0 86.1 L20.9 89.6 '
+        'L18.0 86.8 L17.7 74.4 L16.0 68.5 Z" />'
     )
     map_svg = (
-        '<svg viewBox="0 0 90 122" xmlns="http://www.w3.org/2000/svg" role="img" '
-        'aria-label="Mappa stilizzata dell\'Italia con le regioni e il numero di strutture verificate">'
+        '<svg viewBox="0 0 100 128" xmlns="http://www.w3.org/2000/svg" role="img" '
+        'aria-label="Mappa dell\'Italia con le regioni e il numero di strutture verificate">'
         + map_outline + "".join(map_circles) + "</svg>"
     )
     map_legend = "".join(
