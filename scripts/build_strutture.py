@@ -55,7 +55,7 @@ REGIONI_MAPPA = [
     ("puglia", "Puglia", 78, 66),
     ("basilicata", "Basilicata", 64, 76),
     ("calabria", "Calabria", 60, 92),
-    ("sicilia", "Sicilia", 44, 112),
+    ("sicilia", "Sicilia", 54, 114),
     ("sardegna", "Sardegna", 14, 72),
 ]
 
@@ -157,6 +157,7 @@ def build():
   .map-sec .map-note{ font-size:14px; color:var(--ink-2); max-width:42ch; }
   .map-svg-wrap{ display:flex; justify-content:center; }
   .map-svg-wrap svg{ width:100%; max-width:260px; height:auto; }
+  .map-italy-outline{ fill:var(--surface); stroke:var(--line); stroke-width:1.1; }
   .map-region circle{ fill:var(--klein); stroke:var(--surface-2); stroke-width:1.4; transition:transform .15s ease, fill .15s ease; transform-origin:center; transform-box:fill-box; cursor:pointer; }
   .map-region text{ font-family:'Martian Mono',monospace; font-size:6.5px; font-weight:700; fill:var(--on-klein); pointer-events:none; text-anchor:middle; dominant-baseline:central; }
   .map-region:hover circle, .map-region.active circle{ transform:scale(1.22); fill:var(--klein-text); }
@@ -313,10 +314,29 @@ def build():
                 f'<g class="map-region-empty"><title>{html.escape(nome)}: nessuna struttura ancora</title>'
                 f'<circle cx="{x}" cy="{y}" r="1.8"></circle></g>'
             )
+    # Sagoma stilizzata dell'Italia (penisola + Sicilia + Sardegna), disegnata a mano
+    # per dare un riferimento visivo ai pallini — non è un tracciato costiero reale,
+    # solo un contorno approssimativo pensato per essere riconoscibile a colpo d'occhio.
+    map_outline = (
+        '<path class="map-italy-outline" d="'
+        'M16 6 C28 2 42 2 55 6 C65 8 75 8 82 14 '
+        'C78 22 74 30 76 40 C78 50 70 55 66 52 '
+        'C62 58 66 64 74 62 C84 60 90 66 86 74 '
+        'C82 80 72 78 66 84 C60 90 64 96 58 102 '
+        'C54 108 50 100 52 92 C54 84 46 80 44 72 '
+        'C42 64 36 60 38 52 C40 44 34 42 36 36 '
+        'C38 28 28 30 24 24 C20 18 22 12 16 6 Z" />'
+        '<path class="map-italy-outline" d="'
+        'M8 58 C14 55 20 60 18 68 C22 74 18 82 12 86 '
+        'C6 82 4 70 8 58 Z" />'
+        '<path class="map-italy-outline" d="'
+        'M42 110 C50 106 62 108 68 112 C64 118 54 122 46 120 '
+        'C40 118 38 114 42 110 Z" />'
+    )
     map_svg = (
         '<svg viewBox="0 0 90 122" xmlns="http://www.w3.org/2000/svg" role="img" '
-        'aria-label="Mappa stilizzata delle regioni italiane con il numero di strutture verificate">'
-        + "".join(map_circles) + "</svg>"
+        'aria-label="Mappa stilizzata dell\'Italia con le regioni e il numero di strutture verificate">'
+        + map_outline + "".join(map_circles) + "</svg>"
     )
     map_legend = "".join(
         f'<button type="button" data-regione="{slug}" onclick="return selectRegione(\'{slug}\', this)">'
