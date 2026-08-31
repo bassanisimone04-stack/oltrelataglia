@@ -878,6 +878,212 @@ STRUTTURE += [
     },
 ]
 
+STRUTTURE += [
+    {
+        "slug": "chalet-baco",
+        "nome": "Chalet Bacò",
+        "comune": "Velo d'Astico (Vicenza)",
+        "regione": "Veneto",
+        "regione_slug": "veneto",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/ville-case-vacanza-appartamenti-in-affitto/italia/veneto/vicenza/chalet-baco",
+        "sito_url": "https://www.airbnb.com/rooms/751336675869296187",
+        "tags": ["Ogni taglia", "Fino a 2 cani", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Chalet indipendente immerso in 3 ettari di bosco e prati a Velo d'Astico, "
+            "Vicenza, Veneto. Secondo la fonte pubblica consultata, ammette cani di ogni "
+            "taglia, fino a due per soggiorno, senza supplemento giornaliero. L'area esterna "
+            "è completamente recintata e a pochi km scorre un torrente balneabile per cani."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Fino a 2"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Area esterna completamente recintata",
+            "3 ettari di bosco e prati",
+            "Torrente balneabile a pochi km",
+        ],
+    },
+    {
+        "slug": "country-house-il-biroccio",
+        "nome": "Country House Il Biroccio",
+        "comune": "Urbino (Pesaro e Urbino)",
+        "regione": "Marche",
+        "regione_slug": "marche",
+        "fonte_nome": "ilbiroccio.it",
+        "fonte_url": "https://www.ilbiroccio.it/faq/posso-portare-il-cane/",
+        "sito_url": "https://www.ilbiroccio.it/",
+        "tags": ["Ogni taglia", "Giardino privato recintato"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Country house in 28 ettari di verde a Urbino, Marche. Secondo quanto dichiarato "
+            "sul sito ufficiale (pagina FAQ dedicata), ammette cani di ogni razza e taglia, "
+            "purché educati, con solo il costo di pulizia finale a carico dell'ospite. Ogni "
+            "appartamento ha uno spazio esterno privato recintato e ombreggiato."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Solo costo di pulizia finale"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Spazio esterno privato recintato per appartamento",
+            "Area cani dedicata vicino alla piscina",
+            "28 ettari di tenuta"
+        ],
+    },
+    {
+        "slug": "fattorie-inghirami",
+        "nome": "Fattorie Inghirami",
+        "comune": "Volterra (Pisa)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/toscana/pisa/agriturismo-fattorie-inghirami",
+        "sito_url": "https://www.fattorieinghirami.com/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Agriturismo nell'antico borgo di Scornello, a Volterra, Toscana, gestito dalla "
+            "famiglia Inghirami. Secondo la fonte pubblica consultata, ammette cani di ogni "
+            "taglia, anche più di uno per prenotazione, senza supplemento. I cani possono "
+            "dormire in casa e accompagnare gli ospiti nelle passeggiate nel bosco della tenuta."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di uno, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Passeggiate nel bosco della tenuta",
+            "Ciotole d'acqua fresca in vari punti",
+            "Cucce con ombra disponibili su richiesta",
+        ],
+    },
+    {
+        "slug": "wagon-lit-bologna",
+        "nome": "Wagon-Lit",
+        "comune": "Bologna",
+        "regione": "Emilia-Romagna",
+        "regione_slug": "emilia-romagna",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/bed-breakfast-guest-house-garni/italia/emilia-romagna/bologna/bb-wagon-lit",
+        "sito_url": "https://wagon-lit.com/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Pulizie 20€ a fine soggiorno"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Guest house con quattro camere indipendenti nel centro di Bologna, a meno di 100 "
+            "metri dai servizi principali. Secondo la fonte pubblica consultata, ammette cani "
+            "di ogni taglia, anche più di tre su richiesta, senza supplemento giornaliero: è "
+            "richiesto solo un contributo di 20€ a soggiorno per la pulizia finale."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di tre su richiesta"),
+            ("Supplemento animali", "20€ a soggiorno (pulizia finale)"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Cuccia, ciotole e sacchetti igienici in camera",
+            "Accesso a spazio esterno privato",
+            "Servizi principali entro 100 metri",
+        ],
+    },
+    {
+        "slug": "hotel-nazionale-matera",
+        "nome": "Hotel Nazionale",
+        "comune": "Matera",
+        "regione": "Basilicata",
+        "regione_slug": "basilicata",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/hotel/italia/basilicata/matera/hotel-nazionale",
+        "sito_url": "https://www.hotelnazionalematera.com/",
+        "tags": ["Ogni taglia", "Fino a 3 cani", "Supplemento 20€/notte"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel 4 stelle a 20 minuti a piedi dai Sassi di Matera, Basilicata. Secondo la "
+            "fonte pubblica consultata, ammette cani di ogni taglia, fino a tre per "
+            "prenotazione, con un supplemento di 20€ a notte. La struttura ha creato una "
+            "tipologia di camera \"Pet\" pensata per chi viaggia con animali."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Fino a 3"),
+            ("Supplemento animali", "20€ a notte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Camere tipologia \"Pet\" dedicate",
+            "A 20 minuti a piedi dai Sassi di Matera",
+            "Vicino a stazione e autostazione",
+        ],
+    },
+    {
+        "slug": "hotel-mantova-residence",
+        "nome": "Hotel Mantova Residence",
+        "comune": "Mantova",
+        "regione": "Lombardia",
+        "regione_slug": "lombardia",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/residence-aparthotel/italia/lombardia/mantova/hotel-mantova-residence",
+        "sito_url": "https://www.booking.com/hotel/it/mantova-residence.html",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Residence in un edificio moderno nella zona di Valdaro, a pochi km dal centro "
+            "storico di Mantova, Lombardia. Secondo la fonte pubblica consultata, ammette cani "
+            "di ogni taglia e razza, anche più di uno per prenotazione, senza supplemento. "
+            "Dispone di un giardino dove i cani possono muoversi e di un ampio parcheggio."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di uno, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Giardino dove far muovere il cane",
+            "Ampio parcheggio",
+            "Studio con angolo cottura",
+        ],
+    },
+    {
+        "slug": "agriturismo-peretti",
+        "nome": "Agriturismo Peretti",
+        "comune": "Orbetello (Grosseto)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/agriturismo-masi-case-rurali/italia/toscana/grosseto/agriturismo-peretti",
+        "sito_url": "https://agriturismoperetti.com/en/",
+        "tags": ["Ogni taglia", "Supplemento 5€/notte"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Azienda agricola in Maremma, a Orbetello, Grosseto, Toscana, vicina alle spiagge "
+            "e alle dog beach della zona. Secondo la fonte pubblica consultata, ammette cani "
+            "di ogni taglia in ogni ambiente della struttura, con un supplemento di 5€ a notte "
+            "per animale. Dispone di un laghetto balneabile per cani in azienda."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "5€ a notte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Laghetto balneabile per cani in azienda",
+            "Vicino alle dog beach della Maremma",
+            "Cani ammessi in ogni ambiente della struttura",
+        ],
+    },
+]
+
 ALL_TAGS = []
 for _s in STRUTTURE:
     for _t in _s["tags"]:
