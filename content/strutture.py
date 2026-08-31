@@ -1084,6 +1084,212 @@ STRUTTURE += [
     },
 ]
 
+STRUTTURE += [
+    {
+        "slug": "hotel-sonja",
+        "nome": "Hotel Sonja",
+        "comune": "Cadipietra, Valle Aurina (Bolzano)",
+        "regione": "Trentino-Alto Adige",
+        "regione_slug": "trentino",
+        "fonte_nome": "hotel-sonja.it",
+        "fonte_url": "https://www.hotel-sonja.it/it/vacanza-con-il-cane/vacanza-con-il-cane/",
+        "sito_url": "https://www.hotel-sonja.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel dedicato ai cani in Valle Aurina, Alto Adige, con giardino attrezzato per "
+            "l'agility e due piscine per cani. Secondo quanto dichiarato sul sito ufficiale, "
+            "ammette cani di ogni taglia e razza, anche più di tre per prenotazione, senza "
+            "supplemento per il primo cane ospite. Cani ammessi in camera e in sala da pranzo."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di tre, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno per il primo cane"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Giardino con percorso agility per cani",
+            "Due piscine per cani",
+            "Freezer per il cibo del cane a disposizione",
+        ],
+    },
+    {
+        "slug": "lido-verbano-camping-village",
+        "nome": "Lido Verbano Camping Village",
+        "comune": "Castelletto sopra Ticino (Novara)",
+        "regione": "Piemonte",
+        "regione_slug": "piemonte",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/campeggi-camping-village-agricamping/italia/piemonte/novara/lido-verbano-camping-village",
+        "sito_url": "https://www.campinglidoverbano.com/",
+        "tags": ["Ogni taglia", "Fino a 3 cani", "Supplemento richiesto"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Camping village sul Lago Maggiore, a Castelletto sopra Ticino, Piemonte. Secondo "
+            "la fonte pubblica consultata, ammette cani di ogni taglia, fino a tre per "
+            "prenotazione, con un supplemento variabile in base alla stagione. Dispone di un "
+            "'area cani recintata dove i cani possono giocare liberi e di una dog beach sul lago."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Fino a 3"),
+            ("Supplemento animali", "Variabile in base alla stagione"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Area cani recintata per il gioco libero",
+            "Dog beach sul Lago Maggiore",
+            "Spiaggia privata",
+        ],
+    },
+    {
+        "slug": "appartamenti-le-querce-elba",
+        "nome": "Appartamenti Le Querce",
+        "comune": "Capoliveri, Isola d'Elba (Livorno)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/ville-case-vacanza-appartamenti-in-affitto/italia/toscana/isola-d-elba/appartamenti-le-querce-isola-d-elba",
+        "sito_url": "http://www.appartamentilequerce.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Supplemento richiesto"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Sei appartamenti con giardino privato recintato a Capoliveri, Isola d'Elba, "
+            "Livorno. Secondo la fonte pubblica consultata, ammette cani di ogni taglia, anche "
+            "più di uno per famiglia, con una tariffa di 50€ a soggiorno. A 900 metri dal mare "
+            "e a 5 minuti da una spiaggia per cani."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di uno, nessun limite dichiarato"),
+            ("Supplemento animali", "50€ a soggiorno"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Giardino privato recintato per ogni appartamento",
+            "A 5 minuti da una spiaggia per cani",
+            "Possibilità di paddock su richiesta",
+        ],
+    },
+    {
+        "slug": "fattoria-maremmana",
+        "nome": "Fattoria Maremmana",
+        "comune": "Marina di Grosseto (Grosseto)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/residence-aparthotel/italia/toscana/grosseto/fattoria-maremmana",
+        "sito_url": "https://www.fattoriamaremmana.com/",
+        "tags": ["Ogni taglia", "Fino a 4 cani"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel e appartamenti a Marina di Grosseto, Toscana, a pochi minuti dal mare. "
+            "Secondo la fonte pubblica consultata, ammette cani di ogni taglia (inclusa la "
+            "gigante), fino a quattro per prenotazione. I cani sono ammessi al guinzaglio nel "
+            "lounge bar e al ristorante, e la struttura ha una piscina dedicata ai cani."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Fino a 4"),
+            ("Supplemento animali", "Non indicato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Piscina dedicata ai cani",
+            "Accesso al lounge bar e al ristorante",
+            "Area verde recintata con percorso agility",
+        ],
+    },
+    {
+        "slug": "bb-casello-km-5",
+        "nome": "B&B Casello Km 5",
+        "comune": "Borgo San Dalmazzo (Cuneo)",
+        "regione": "Piemonte",
+        "regione_slug": "piemonte",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/bed-breakfast-guest-house-garni/italia/piemonte/cuneo/casello-km-5",
+        "sito_url": "https://www.casellokm5.com/",
+        "tags": ["Ogni taglia", "Supplemento richiesto"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "B&B con due camere a Borgo San Dalmazzo, Cuneo, Piemonte, in un contesto agricolo "
+            "con asini, pecore e altri animali. Secondo la fonte pubblica consultata, ammette "
+            "cani fino a taglia XL, con un supplemento di 10€ a soggiorno. I cani al guinzaglio "
+            "possono accedere alla sala colazione."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia XL, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "10€ a soggiorno"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso alla sala colazione al guinzaglio",
+            "Contesto agricolo con altri animali",
+            "Due camere, ambiente familiare",
+        ],
+    },
+    {
+        "slug": "tenuta-di-ghizzano",
+        "nome": "Tenuta di Ghizzano",
+        "comune": "Peccioli (Pisa)",
+        "regione": "Toscana",
+        "regione_slug": "toscana",
+        "fonte_nome": "zampavacanza.it",
+        "fonte_url": "https://www.zampavacanza.it/struttura-animali-ammessi/8224",
+        "sito_url": "https://www.tenutadighizzano.com/",
+        "tags": ["Ogni taglia", "Giardino privato recintato"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Tenuta biologica e biodinamica di 360 ettari tra Pisa, Siena e Firenze, con "
+            "quattro casali indipendenti a Peccioli, Toscana. Secondo la fonte pubblica "
+            "consultata, ammette esplicitamente cani di taglia piccola, media, grande e "
+            "gigante negli alloggi, negli spazi comuni e nelle aree esterne attrezzate."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Non indicato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Recinti privati per cani",
+            "Passeggiate guidate con i cani nella tenuta",
+            "Accesso al ristorante della tenuta",
+        ],
+    },
+    {
+        "slug": "agriturismo-la-fonte-bevagna",
+        "nome": "Agriturismo La Fonte",
+        "comune": "Bevagna (Perugia)",
+        "regione": "Umbria",
+        "regione_slug": "umbria",
+        "fonte_nome": "agriturismo.it",
+        "fonte_url": "https://www.agriturismo.it/it/agriturismi/umbria/perugia/LaFonte-9801103/index.html",
+        "sito_url": "https://www.lafontedibevagna.it/",
+        "tags": ["Fino a taglia grande"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Agriturismo con due casali (L'Olivo e Le Case) nella campagna di Bevagna, Umbria, "
+            "tra oliveti e vigneti. Secondo la fonte pubblica consultata, ammette cani di "
+            "taglia piccola, media e grande (la fonte non menziona esplicitamente la taglia "
+            "gigante) negli alloggi, negli spazi comuni e nelle aree esterne attrezzate."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (gigante non specificata)"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Non indicato nella fonte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Passeggiate nell'oliveto secolare",
+            "Piscina privata",
+            "Veranda con pergola per ogni appartamento",
+        ],
+    },
+]
+
 ALL_TAGS = []
 for _s in STRUTTURE:
     for _t in _s["tags"]:

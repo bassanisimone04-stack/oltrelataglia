@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<title>Fattoria Maremmana — cani di ogni taglia ammessi | Taglia Libera</title>
+<meta name="description" content="Hotel e appartamenti a Marina di Grosseto, Toscana, a pochi minuti dal mare. Secondo la fonte pubblica consultata, ammette cani di ogni taglia (inclusa la…">
+<meta property="og:title" content="Fattoria Maremmana — cani di ogni taglia ammessi | Taglia Libera">
+<meta property="og:description" content="Hotel e appartamenti a Marina di Grosseto, Toscana, a pochi minuti dal mare. Secondo la fonte pubblica consultata, ammette cani di ogni taglia (inclusa la…">
+<meta property="og:type" content="place">
+<meta property="og:url" content="https://www.taglialibera.it/struttura/fattoria-maremmana/">
+<meta property="og:image" content="https://www.taglialibera.it/img/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.taglialibera.it/struttura/fattoria-maremmana/">
+<style>
+  :root{
+    --paper:#F0EFF7;
+    --surface:#FFFFFF;
+    --surface-2:#E7E6F1;
+    --ink:#0B0B11;
+    --ink-2:#56566A;
+    --line:#D9D8E6;
+    --klein:#1B1BE8;
+    --klein-text:#1B1BE8;
+    --on-klein:#FFFFFF;
+    /* fascia scura e slot foto: scuri in ogni tema, dipinti con token propri */
+    --band:#0B0B11;
+    --band-ink-2:#8B8B9E;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#08080D; --surface:#101018; --surface-2:#181822;
+      --ink:#F0EFF7; --ink-2:#9494A8; --line:#242430;
+      --klein:#2E2EF5; --klein-text:#8E8EFF; --on-klein:#FFFFFF;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#08080D; --surface:#101018; --surface-2:#181822;
+    --ink:#F0EFF7; --ink-2:#9494A8; --line:#242430;
+    --klein:#2E2EF5; --klein-text:#8E8EFF; --on-klein:#FFFFFF;
+    color-scheme: dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Onest', system-ui, -apple-system, sans-serif; font-weight:400;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  p{ margin:0; line-height:1.55; color:var(--ink-2); }
+  h1,h2,h3{ margin:0; font-weight:700; letter-spacing:-0.035em; line-height:0.94; text-wrap:balance; }
+  :focus-visible{ outline:2.5px solid var(--klein); outline-offset:3px; }
+
+  .wrap{ width:100%; max-width:1320px; margin:0 auto; padding-inline:32px; }
+  @media (max-width:640px){ .wrap{ padding-inline:20px; } }
+
+  .lbl{
+    font-family:'Martian Mono', ui-monospace, monospace;
+    font-weight:500; font-size:10px; letter-spacing:0.02em;
+    text-transform:uppercase; color:var(--ink-2);
+  }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:13px 22px; border-radius:100px; border:1px solid transparent;
+    font-family:'Onest',sans-serif; font-size:13px; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;
+    cursor:pointer; background:none; color:var(--ink);
+    transition:background-color .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.9; }
+  .btn-fill{ background:var(--ink); color:var(--paper); }
+  .btn-fill:hover{ background:var(--klein); color:var(--on-klein); }
+  .btn-klein{ background:var(--klein); color:var(--on-klein); }
+  .btn-klein:hover{ background:var(--ink); color:var(--paper); }
+  .btn-line{ border-color:var(--line); color:var(--ink); }
+  .btn-line:hover{ border-color:var(--ink); background:var(--ink); color:var(--paper); }
+
+  /* ── Header ──────────────────────────────────── */
+  header{
+    position:fixed; inset:0 0 auto 0; z-index:100;
+    border-bottom:1px solid transparent;
+    transition:background-color .3s ease, border-color .3s ease;
+  }
+  header.stuck{
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(14px); border-bottom-color:var(--line);
+  }
+  .headbar{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:18px; }
+  .brand{ font-weight:800; font-size:17px; letter-spacing:-0.02em; text-decoration:none; text-transform:uppercase; white-space:nowrap; }
+  .brand em{ font-style:normal; color:var(--klein-text); }
+  .navlinks{ display:flex; gap:30px; }
+  .navlinks a{ text-decoration:none; font-size:14px; font-weight:500; color:var(--ink-2); transition:color .2s ease; }
+  .navlinks a:hover{ color:var(--ink); }
+  @media (max-width:980px){ .navlinks{ display:none; } }
+
+  .theme-toggle{
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+    width:38px; height:38px; border:1px solid var(--line); background:var(--surface);
+    color:var(--ink); cursor:pointer; transition:border-color .2s ease;
+  }
+  .theme-toggle:hover{ border-color:var(--ink); }
+  .theme-toggle svg{ width:17px; height:17px; }
+  .theme-toggle .icon-moon{ display:none; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{ display:none; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{ display:block; }
+  }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+  :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+  :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
+
+  /* ── Hero + barra di ricerca ─────────────────── */
+  .hero{ position:relative; padding:132px 0 52px; overflow:hidden; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; background:var(--band); }
+  .hero-bg img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; }
+  .hero-bg::after{
+    content:""; position:absolute; inset:0;
+    /* velatura: piu opaca in alto dove sta il testo, si apre verso il basso */
+    background:linear-gradient(180deg,
+      color-mix(in srgb, var(--paper) 92%, transparent) 0%,
+      color-mix(in srgb, var(--paper) 80%, transparent) 46%,
+      color-mix(in srgb, var(--paper) 55%, transparent) 78%,
+      color-mix(in srgb, var(--paper) 90%, transparent) 100%);
+  }
+  .hero > .wrap{ position:relative; z-index:1; }
+  .hero h1{ font-size:clamp(38px, 6.3vw, 84px); font-weight:700; max-width:17ch; margin-top:16px; }
+  .hero h1 em{ font-style:normal; color:var(--klein-text); }
+  .hero-sub{ margin-top:24px; max-width:62ch; font-size:17px; }
+
+  .search{
+    margin-top:40px; background:var(--surface); border:1px solid var(--ink);
+    display:grid; grid-template-columns:1.6fr 1fr 1fr auto;
+  }
+  @media (max-width:760px){ .search{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .search{ grid-template-columns:1fr; } }
+  .fld{
+    display:flex; flex-direction:column; gap:5px; padding:16px 20px;
+    border-right:1px solid var(--line); min-width:0;
+  }
+  .fld:last-of-type{ border-right:none; }
+  @media (max-width:760px){
+    .fld{ border-bottom:1px solid var(--line); }
+    .fld:nth-child(2n){ border-right:none; }
+  }
+  @media (max-width:480px){ .fld{ border-right:none; } }
+  .fld label{
+    font-family:'Martian Mono',monospace; font-weight:500; font-size:9px;
+    letter-spacing:0.02em; text-transform:uppercase; color:var(--ink-2);
+  }
+  .fld input, .fld select{
+    appearance:none; -webkit-appearance:none; border:none; background:none; padding:0;
+    font-family:'Onest',sans-serif; font-size:15px; font-weight:600; letter-spacing:-0.01em;
+    color:var(--ink); width:100%;
+  }
+  .fld input::placeholder{ color:var(--ink-2); font-weight:500; }
+  .fld input:focus, .fld select:focus{ outline:none; }
+  .fld select{ cursor:pointer; }
+  .search .go{
+    border:none; background:var(--klein); color:var(--on-klein);
+    font-family:'Onest',sans-serif; font-size:13px; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase; cursor:pointer;
+    padding:16px 30px; transition:background-color .25s ease;
+  }
+  .search .go:hover{ background:var(--ink); }
+  .search-note{ margin-top:12px; font-size:12.5px; color:var(--ink-2); }
+
+  .trust{ display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:20px; }
+  .trust span{ display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink-2); }
+  .trust b{ width:5px; height:5px; border-radius:50%; background:var(--klein); flex-shrink:0; }
+
+  /* ── Fascia manifesto ────────────────────────── */
+  .field{ position:relative; background:var(--band); overflow:hidden; }
+  .field-grid{
+    display:grid; grid-template-columns:1.15fr .85fr; align-items:stretch;
+  }
+  @media (max-width:860px){ .field-grid{ grid-template-columns:1fr; } }
+  .field-text{
+    padding:clamp(56px, 9vw, 108px) clamp(24px, 4vw, 56px);
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .field-stmt{
+    font-size:clamp(28px, 4.6vw, 58px); font-weight:700; letter-spacing:-0.035em;
+    line-height:1.02; color:#F0EFF7; max-width:16ch; margin:0;
+  }
+  .field-stmt em{ font-style:normal; color:#6F6FFF; }
+  .field-cap{
+    display:flex; flex-direction:column; gap:12px;
+    margin-top:40px; padding-top:22px; border-top:1px solid #25252F;
+  }
+  .field-cap span{
+    font-family:'Martian Mono', monospace; font-weight:500;
+    font-size:9.5px; letter-spacing:0.02em; text-transform:uppercase; color:var(--band-ink-2);
+  }
+  .field-photo{ position:relative; min-height:340px; background:#050508; }
+  .field-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  @media (max-width:860px){ .field-photo{ min-height:280px; } }
+
+  /* ── Slot foto ───────────────────────────────────────────────────
+     Ogni foto sta su un fondo pieno di marca: se l'immagine manca o
+     non carica, resta un blocco pulito, non un'icona rotta.         */
+  .ph{ position:relative; overflow:hidden; background:var(--band); }
+  .ph img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .ph::after{
+    content:attr(data-ph);
+    position:absolute; left:14px; bottom:12px;
+    font-family:'Martian Mono',monospace; font-weight:500; font-size:8.5px;
+    letter-spacing:0.02em; text-transform:uppercase; color:#6B6B7E;
+    pointer-events:none;
+  }
+  .ph:has(img)::after{ content:none; }
+
+  /* ── Ticker ──────────────────────────────────── */
+  .ticker{ background:var(--klein); color:var(--on-klein); padding:16px 0; overflow:hidden; }
+  .ticker-track{ display:flex; width:max-content; animation:slide 38s linear infinite; }
+  .ticker-track > div{ display:flex; }
+  .ticker span{ padding-inline:26px; white-space:nowrap; font-size:14px; font-weight:600; letter-spacing:-0.01em; }
+  .ticker i{ font-style:normal; opacity:.5; }
+  @keyframes slide{ to{ transform:translateX(-50%); } }
+
+  /* ── Sezioni ─────────────────────────────────── */
+  .sec{ padding-block:104px; }
+  @media (max-width:640px){ .sec{ padding-block:68px; } }
+  .sec-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:28px; flex-wrap:wrap; margin-bottom:44px; }
+  .sec-head h2{ font-size:clamp(28px, 4vw, 52px); max-width:19ch; margin-top:14px; }
+
+  /* ── Chip filtri ─────────────────────────────── */
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    display:inline-flex; align-items:center; gap:9px; padding:11px 17px;
+    border:1px solid var(--line); background:var(--surface);
+    font-size:13.5px; font-weight:600; text-decoration:none; color:var(--ink);
+    transition:background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .chip b{ font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px; color:var(--klein-text); transition:color .2s ease; }
+  .chip:hover{ background:var(--klein); border-color:var(--klein); color:var(--on-klein); }
+  .chip:hover b{ color:var(--on-klein); }
+
+  .seo-copy{ margin-top:30px; max-width:74ch; font-size:15px; }
+  .seo-copy strong{ color:var(--ink); font-weight:600; }
+
+  /* ── Perché affidarsi a noi ──────────────────── */
+  .why{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:860px){ .why{ grid-template-columns:1fr; } }
+  .why-c{ background:var(--paper); padding:38px 32px; display:flex; flex-direction:column; gap:16px; }
+  .why-n{ font-family:'Martian Mono',monospace; font-weight:500; font-size:10px; color:var(--klein-text); text-transform:uppercase; }
+  .why-c h3{ font-size:23px; font-weight:600; letter-spacing:-0.025em; line-height:1.14; }
+  .why-c p{ font-size:14.5px; }
+
+  /* ── Strutture ───────────────────────────────── */
+  .stays-table{ border:1px solid var(--line); }
+  .stays{ display:flex; flex-direction:column; }
+  .stays-head{
+    display:grid; grid-template-columns:52px 1.1fr 1.4fr 96px; gap:20px;
+    padding:14px 16px; background:var(--surface-2); border-bottom:1px solid var(--line);
+  }
+  .stays-head span{
+    font-family:'Martian Mono',monospace; font-weight:500; font-size:10px;
+    letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-2);
+  }
+  .stays-head span:last-child{ text-align:right; }
+  @media (max-width:860px){ .stays-head{ display:none; } }
+
+  .stay{
+    display:grid; grid-template-columns:52px 1.1fr 1.4fr 96px; gap:20px; align-items:center;
+    padding:18px 16px; border-bottom:1px solid var(--line); text-decoration:none;
+    transition:background-color .15s ease;
+  }
+  .stay:nth-child(even){ background:color-mix(in srgb, var(--surface-2) 45%, transparent); }
+  .stay:hover{ background:var(--surface); }
+  @media (max-width:860px){
+    .stay{ grid-template-columns:44px 1fr; gap:14px; align-items:start; padding:18px 4px; }
+  }
+  .stay-badge{
+    width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+    background:var(--klein); color:var(--on-klein); flex-shrink:0;
+    font-family:'Martian Mono',monospace; font-weight:600; font-size:11px;
+  }
+  .stay-main h3{ font-size:17px; font-weight:600; letter-spacing:-0.015em; }
+  .stay-where{ margin-top:4px; font-size:13px; }
+  .stay-specs{ display:flex; flex-wrap:wrap; gap:6px; }
+  @media (max-width:860px){ .stay-specs{ grid-column:2; } }
+  .spec{
+    font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px;
+    text-transform:uppercase; padding:5px 9px; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--ink);
+  }
+  .spec-hi{ border-color:var(--klein); color:var(--klein-text); }
+  .stay-go{ font-size:13px; font-weight:600; color:var(--klein-text); white-space:nowrap; text-align:right; }
+  @media (max-width:860px){ .stay-go{ grid-column:2; text-align:left; } }
+
+  .note{
+    border-left:2px solid var(--klein); padding:16px 20px; background:var(--surface);
+    font-size:13.5px; line-height:1.6; color:var(--ink-2); margin-bottom:36px;
+  }
+  .note b{ color:var(--ink); font-weight:600; }
+
+  /* ── Blog ────────────────────────────────────── */
+  .feature{
+    display:grid; grid-template-columns:1.05fr 1fr;
+    border:1px solid var(--line); background:var(--surface); text-decoration:none;
+    transition:border-color .25s ease;
+  }
+  .feature:hover{ border-color:var(--ink); }
+  @media (max-width:820px){ .feature{ grid-template-columns:1fr; } }
+  .feature-art{ min-height:320px; }
+  .feature-body{ padding:40px; display:flex; flex-direction:column; gap:18px; justify-content:center; }
+  @media (max-width:640px){ .feature-body{ padding:26px; } }
+  .feature-body h3{ font-size:clamp(24px, 3vw, 36px); font-weight:700; }
+  .feature-meta{ display:flex; gap:14px; align-items:center; }
+  .tag{
+    font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px;
+    text-transform:uppercase; color:var(--on-klein); background:var(--klein); padding:5px 9px;
+    align-self:flex-start;
+  }
+
+  .posts{ display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--line); border-bottom:none; margin-top:20px; }
+  @media (max-width:820px){ .posts{ grid-template-columns:1fr; } }
+  .post{
+    text-decoration:none; border-bottom:1px solid var(--line);
+    display:flex; flex-direction:column; background:var(--surface);
+    transition:background-color .25s ease;
+  }
+  .post + .post{ border-left:1px solid var(--line); }
+  @media (max-width:820px){ .post + .post{ border-left:none; } }
+  .post:hover{ background:var(--surface-2); }
+  .post .ph{ aspect-ratio:16/10; }
+  .post-body{ padding:26px 30px 30px; display:flex; flex-direction:column; gap:13px; flex:1; }
+  .post-noimg .post-body{ padding-top:34px; justify-content:center; }
+  .post h3{ font-size:19px; font-weight:600; line-height:1.18; letter-spacing:-0.02em; }
+  .post p{ font-size:14px; }
+  .post .arrow{ margin-top:auto; font-size:19px; color:var(--klein-text); }
+
+  /* ── FAQ ─────────────────────────────────────── */
+  .faq{ border-top:1px solid var(--line); }
+  .faq details{ border-bottom:1px solid var(--line); }
+  .faq summary{
+    list-style:none; cursor:pointer; padding:24px 0;
+    display:flex; justify-content:space-between; align-items:flex-start; gap:26px;
+    font-size:clamp(16px, 1.75vw, 20px); font-weight:600; letter-spacing:-0.02em; line-height:1.32;
+  }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{
+    content:"+"; font-family:'Martian Mono',monospace; font-size:16px; font-weight:500;
+    color:var(--klein-text); flex-shrink:0; line-height:1.2; transition:transform .3s ease;
+  }
+  .faq details[open] summary::after{ transform:rotate(45deg); }
+  .faq details p{ padding:0 0 28px; max-width:70ch; font-size:15.5px; }
+
+
+  /* ── Footer ──────────────────────────────────── */
+  footer{ padding-block:60px 34px; border-top:1px solid var(--line); }
+  .foot{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:34px; }
+  @media (max-width:760px){ .foot{ grid-template-columns:1fr 1fr; } }
+  .foot h4{ margin:0 0 16px; font-family:'Martian Mono',monospace; font-weight:500; font-size:9.5px; text-transform:uppercase; color:var(--ink-2); }
+  .foot ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+  .foot a{ text-decoration:none; font-size:14px; color:var(--ink-2); transition:color .2s ease; }
+  .foot a:hover{ color:var(--klein-text); }
+  .foot-end{
+    margin-top:52px; padding-top:24px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:12.5px; color:var(--ink-2);
+  }
+
+  .rv{ opacity:0; transform:translateY(22px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); transition-delay:var(--d,0ms); }
+  .rv.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .rv{ opacity:1; transform:none; }
+  }
+</style>
+<style>
+  .det-hero{ padding:150px 0 40px; border-bottom:1px solid var(--line); }
+  .det-hero .lbl{ margin-bottom:10px; }
+  .det-hero h1{ font-size:clamp(28px,4vw,46px); max-width:22ch; }
+  .det-loc{ margin-top:10px; font-size:15px; color:var(--ink-2); }
+  .det-source{ margin-top:14px; font-size:13.5px; color:var(--ink-2); }
+  .det-source a{ color:var(--klein-text); text-decoration:underline; }
+  .det-badge{
+    display:inline-flex; align-items:center; gap:8px; margin-top:18px;
+    background:var(--surface-2); border:1px solid var(--line); padding:9px 15px;
+    font-size:12.5px; color:var(--ink-2);
+  }
+  .det-actions{ margin-top:24px; display:flex; gap:10px; flex-wrap:wrap; }
+  .det-body{ max-width:70ch; padding-block:56px; }
+  .det-body p{ font-size:16.5px; line-height:1.72; margin-bottom:18px; color:var(--ink-2); }
+  .fact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:40px; }
+  @media (max-width:560px){ .fact-grid{ grid-template-columns:1fr; } }
+  .fact{ background:var(--surface); padding:20px; }
+  .fact .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .fact .v{ margin-top:6px; font-size:15.5px; font-weight:700; color:var(--ink); }
+  .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
+  .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
+  .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap headbar">
+    <a class="brand" href="/#top">Taglia&nbsp;<em>Libera</em></a>
+    <nav class="navlinks">
+      <a href="/#cerca">Cerca alloggi</a>
+      <a href="/#perche">Perché noi</a>
+      <a href="/#strutture">Strutture</a>
+      <a href="/#guide">Guide</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambia tema chiaro/scuro">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a.6.6 0 0 0-.7-.8A9.5 9.5 0 1 0 21.3 15.3a.6.6 0 0 0-.8-.7z"/></svg>
+    </button>
+    <a class="btn btn-fill" href="/#cerca">Cerca alloggi <span class="dot"></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="det-hero">
+    <div class="wrap">
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Toscana</p>
+      <h1 style="margin-top:10px;">Fattoria Maremmana</h1>
+      <p class="det-loc">Marina di Grosseto (Grosseto) · Toscana</p>
+      <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Fino a 4 cani</span></div>
+      <p class="det-source">Dati presi da fonte pubblica: <a href="https://www.dogwelcome.it/strutture-cani-animali-ammessi/residence-aparthotel/italia/toscana/grosseto/fattoria-maremmana" target="_blank" rel="noopener">dogwelcome.it</a> — da confermare direttamente con la struttura prima di prenotare.</p>
+      <div class="det-badge">Fonte pubblica, non ancora verificata telefonicamente dal team</div>
+      <div class="det-actions">
+        <a class="btn btn-klein" href="https://www.fattoriamaremmana.com/" target="_blank" rel="noopener">Sito ufficiale ↗</a>
+        <a class="btn btn-line" href="/cerca/">&larr; Torna alla ricerca</a>
+      </div>
+    </div>
+  </section>
+
+  <article class="wrap">
+    <div class="det-body">
+      <div class="fact-grid"><div class="fact"><div class="k">Taglia massima</div><div class="v">Ogni taglia, inclusa gigante</div></div><div class="fact"><div class="k">Numero di cani</div><div class="v">Fino a 4</div></div><div class="fact"><div class="k">Supplemento animali</div><div class="v">Non indicato nella fonte</div></div><div class="fact"><div class="k">Cauzione</div><div class="v">Non indicata nella fonte</div></div></div>
+      <p>Hotel e appartamenti a Marina di Grosseto, Toscana, a pochi minuti dal mare. Secondo la fonte pubblica consultata, ammette cani di ogni taglia (inclusa la gigante), fino a quattro per prenotazione. I cani sono ammessi al guinzaglio nel lounge bar e al ristorante, e la struttura ha una piscina dedicata ai cani.</p>
+      <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
+      <ul class="det-servizi"><li>Piscina dedicata ai cani</li><li>Accesso al lounge bar e al ristorante</li><li>Area verde recintata con percorso agility</li></ul>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <span class="brand" style="display:block; margin-bottom:14px;">Taglia&nbsp;<em>Libera</em></span>
+        <p style="max-width:30ch; font-size:14px;">La directory italiana di alloggi per cani grandi, giganti e branchi numerosi, con le fonti sempre citate.</p>
+      </div>
+      <div>
+        <h4>Esplora</h4>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+      </div>
+      <div>
+        <h4>Strumenti</h4>
+        <ul><li><a href="/calcolatore-taglia-cane/">Calcolatore taglia</a></li><li><a href="/checklist-viaggio-cane/">Checklist di viaggio</a></li></ul>
+      </div>
+      <div>
+        <h4>Progetto</h4>
+        <ul><li><a href="/chi-siamo/">Chi siamo</a></li><li><a href="/contatti/">Contatti</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/termini/">Termini</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-end">
+      <span>© 2026 Taglia Libera.</span>
+      <span>taglialibera.it</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.taglialibera.it/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cerca",
+      "item": "https://www.taglialibera.it/cerca/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Fattoria Maremmana",
+      "item": "https://www.taglialibera.it/struttura/fattoria-maremmana/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Fattoria Maremmana",
+  "description": "Hotel e appartamenti a Marina di Grosseto, Toscana, a pochi minuti dal mare. Secondo la fonte pubblica consultata, ammette cani di ogni taglia (inclusa la gigante), fino a quattro per prenotazione. I cani sono ammessi al guinzaglio nel lounge bar e al ristorante, e la struttura ha una piscina dedicata ai cani.",
+  "url": "https://www.fattoriamaremmana.com/",
+  "sameAs": [
+    "https://www.dogwelcome.it/strutture-cani-animali-ammessi/residence-aparthotel/italia/toscana/grosseto/fattoria-maremmana"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Marina di Grosseto (Grosseto)",
+    "addressRegion": "Toscana",
+    "addressCountry": "IT"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Taglia massima",
+      "value": "Ogni taglia, inclusa gigante"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Numero di cani",
+      "value": "Fino a 4"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Supplemento animali",
+      "value": "Non indicato nella fonte"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Cauzione",
+      "value": "Non indicata nella fonte"
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var hd = document.getElementById("hd");
+  function onScroll(){ hd.classList.toggle("stuck", window.scrollY > 24); }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive:true });
+
+  var themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function(){
+      var root = document.documentElement;
+      var current = root.getAttribute("data-theme");
+      var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var isDark = current ? current === "dark" : systemDark;
+      var next = isDark ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch(e){}
+    });
+  }
+
+  var items = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin:"0px 0px -12% 0px", threshold:0.08 });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+})();
+</script>
+</body>
+</html>
