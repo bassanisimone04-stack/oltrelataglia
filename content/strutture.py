@@ -787,6 +787,97 @@ STRUTTURE += [
     },
 ]
 
+STRUTTURE += [
+    {
+        "slug": "chalet-du-lys-hotel-spa",
+        "nome": "Chalet du Lys Hotel & SPA",
+        "comune": "Gressoney-La-Trinité (Aosta)",
+        "regione": "Valle d'Aosta",
+        "regione_slug": "valle-d-aosta",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/hotel/italia/valle-d-aosta/aosta/chalet-du-lys",
+        "sito_url": "https://chaletdulys.it/",
+        "tags": ["Ogni taglia", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel con SPA ai piedi del Monte Rosa, a Gressoney-La-Trinité, Valle d'Aosta. "
+            "Secondo la fonte pubblica consultata, ammette cani di ogni taglia e razza, in "
+            "camera e al ristorante, senza supplemento. Sulle funivie della zona è richiesto "
+            "guinzaglio e museruola per il trasporto."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Accesso al ristorante dell'hotel",
+            "Ampi spazi verdi ai piedi del Monte Rosa",
+            "SPA in struttura",
+        ],
+    },
+    {
+        "slug": "summer-residence-bunte",
+        "nome": "Summer Residence Bunte",
+        "comune": "Olbia (Sassari)",
+        "regione": "Sardegna",
+        "regione_slug": "sardegna",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/residence-aparthotel/italia/sardegna/sassari/summer-residence-bunte",
+        "sito_url": "https://www.residencebunte.it/",
+        "tags": ["Fino a taglia grande", "Supplemento 5€/notte"],
+        "taglia_bucket": "grande",
+        "descrizione": (
+            "Residence sulla costa orientale della Sardegna, a Murta Maria (Olbia), a pochi "
+            "passi dal mare. Secondo la fonte pubblica consultata, ammette cani fino a taglia "
+            "grande (non oltre), con un supplemento di 5€ a notte. Il residence ha un ampio "
+            "giardino ed è vicino a spiagge pet friendly della zona."
+        ),
+        "fatti": [
+            ("Taglia massima", "Fino a taglia grande (no XL)"),
+            ("Numero di cani", "Non specificato nella fonte"),
+            ("Supplemento animali", "5€ a notte"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Ampio giardino intorno alla struttura",
+            "Vicino a spiagge pet friendly",
+            "Appartamenti con angolo cottura",
+        ],
+    },
+    {
+        "slug": "case-vacanza-marina-porto-rotondo",
+        "nome": "Case Vacanza Marina",
+        "comune": "Porto Rotondo, Olbia (Sassari)",
+        "regione": "Sardegna",
+        "regione_slug": "sardegna",
+        "fonte_nome": "dogwelcome.it",
+        "fonte_url": "https://www.dogwelcome.it/strutture-cani-animali-ammessi/ville-case-vacanza-appartamenti-in-affitto/italia/sardegna/olbia-tempio/case-vacanza-marina-porto-rotondo",
+        "sito_url": "https://beb.it/marinaportorotondo/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Dieci appartamenti immersi in un parco di 5.000 mq a Porto Rotondo, frazione di "
+            "Olbia, a 500 metri da una spiaggia pet friendly. Secondo la fonte pubblica "
+            "consultata, ammette cani di ogni taglia, anche più di tre per cliente, senza "
+            "supplemento; le recensioni degli ospiti confermano l'accoglienza di cani di "
+            "taglia grande come i pastori maremmani. Soggiorno minimo di una settimana."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di tre, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Parco recintato di 5.000 mq",
+            "Area lavaggio cani esterna",
+            "A 500 metri da una spiaggia pet friendly",
+        ],
+    },
+]
+
 ALL_TAGS = []
 for _s in STRUTTURE:
     for _t in _s["tags"]:
