@@ -409,7 +409,8 @@
   @media (max-width:820px){ .blog-index-grid .post:nth-child(odd){ border-right:none; } }
   .cat-filters{ display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
   .cat-pill{ font-family:'Martian Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em;
-    padding:8px 14px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer; }
+    padding:8px 14px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer;
+    text-decoration:none; display:inline-block; }
   .cat-pill.active{ background:var(--klein); border-color:var(--klein); color:var(--on-klein); }
 </style>
 </head>
@@ -444,8 +445,8 @@
         possiamo dire con certezza.
       </p>
       <div class="cat-filters" id="cat-filters">
-        <button type="button" class="cat-pill active" data-cat="">Tutte</button>
-        <button type="button" class="cat-pill" data-cat="Destinazioni">Destinazioni</button><button type="button" class="cat-pill" data-cat="Salute e benessere">Salute e benessere</button><button type="button" class="cat-pill" data-cat="Normativa e viaggi">Normativa e viaggi</button><button type="button" class="cat-pill" data-cat="Strutture">Strutture</button><button type="button" class="cat-pill" data-cat="Consigli pratici">Consigli pratici</button><button type="button" class="cat-pill" data-cat="Pratica">Pratica</button><button type="button" class="cat-pill" data-cat="Guide">Guide</button>
+        <a href="/blog/" class="cat-pill active" data-cat="" onclick="return filterCat('', this)">Tutte</a>
+        <a class="cat-pill" href="/blog/categoria/destinazioni/" data-cat="Destinazioni" onclick="return filterCat('Destinazioni', this)">Destinazioni</a><a class="cat-pill" href="/blog/categoria/salute-e-benessere/" data-cat="Salute e benessere" onclick="return filterCat('Salute e benessere', this)">Salute e benessere</a><a class="cat-pill" href="/blog/categoria/normativa-e-viaggi/" data-cat="Normativa e viaggi" onclick="return filterCat('Normativa e viaggi', this)">Normativa e viaggi</a><a class="cat-pill" href="/blog/categoria/strutture/" data-cat="Strutture" onclick="return filterCat('Strutture', this)">Strutture</a><a class="cat-pill" href="/blog/categoria/consigli-pratici/" data-cat="Consigli pratici" onclick="return filterCat('Consigli pratici', this)">Consigli pratici</a><a class="cat-pill" href="/blog/categoria/pratica/" data-cat="Pratica" onclick="return filterCat('Pratica', this)">Pratica</a><a class="cat-pill" href="/blog/categoria/guide/" data-cat="Guide" onclick="return filterCat('Guide', this)">Guide</a>
       </div>
     </div>
   </section>
@@ -756,17 +757,15 @@
   "use strict";
   var pills = document.querySelectorAll("#cat-filters .cat-pill");
   var posts = document.querySelectorAll("#blog-grid .post");
-  pills.forEach(function(pill){
-    pill.addEventListener("click", function(){
-      pills.forEach(function(p){ p.classList.remove("active"); });
-      pill.classList.add("active");
-      var cat = pill.getAttribute("data-cat");
-      posts.forEach(function(post){
-        var match = !cat || post.getAttribute("data-categoria") === cat;
-        post.style.display = match ? "" : "none";
-      });
+  window.filterCat = function filterCat(cat, el){
+    pills.forEach(function(p){ p.classList.remove("active"); });
+    if (el) el.classList.add("active");
+    posts.forEach(function(post){
+      var match = !cat || post.getAttribute("data-categoria") === cat;
+      post.style.display = match ? "" : "none";
     });
-  });
+    return false;
+  };
 })();
 </script>
 </body>

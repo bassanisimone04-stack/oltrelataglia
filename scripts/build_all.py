@@ -7,6 +7,7 @@ script, ogni volta che si tocca un contenuto o il design della home:
     python3 scripts/build_all.py
 """
 import os
+import re
 import sys
 import html
 from datetime import date, datetime, timezone
@@ -61,10 +62,20 @@ def write_rss(blog_meta):
     print(f"generata: /feed.xml ({len(items_meta)} articoli)")
 
 
-def write_sitemap(blog_slugs, struttura_slugs, static_slugs, regione_slugs):
+def cat_slug(nome):
+    """Stessa logica di build_blog.cat_slug: nome categoria -> slug URL."""
+    s = nome.lower().strip()
+    s = (s.replace("à", "a").replace("è", "e").replace("é", "e")
+           .replace("ì", "i").replace("ò", "o").replace("ù", "u"))
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s
+
+
+def write_sitemap(blog_slugs, struttura_slugs, static_slugs, regione_slugs, categoria_slugs):
     today = date.today().isoformat()
     urls = [("", 1.0), ("cerca/", 0.9), ("blog/", 0.8)]
     urls += [(f"blog/{s}/", 0.6) for s in blog_slugs]
+    urls += [(f"blog/categoria/{s}/", 0.5) for s in categoria_slugs]
     urls += [(f"struttura/{s}/", 0.7) for s in struttura_slugs]
     urls += [(f"regione/{s}/", 0.7) for s in regione_slugs]
     urls += [(f"{s}/", 0.3) for s in static_slugs]
@@ -93,7 +104,8 @@ if __name__ == "__main__":
     static_slugs = build_pages.build()
     build_blog.sync_index()
     blog_slugs = [m["slug"] for m in blog_meta]
-    write_sitemap(blog_slugs, strutture_out["struttura_slugs"], static_slugs, strutture_out["regione_slugs"])
+    categoria_slugs = sorted(set(cat_slug(m["categoria"]) for m in blog_meta))
+    write_sitemap(blog_slugs, strutture_out["struttura_slugs"], static_slugs, strutture_out["regione_slugs"], categoria_slugs)
     write_rss(blog_meta)
 
     print()

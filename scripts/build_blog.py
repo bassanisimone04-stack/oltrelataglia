@@ -35,6 +35,14 @@ def data_leggibile(iso_date):
     return f"{int(d)} {MESI_IT[m]} {y}"
 
 
+def truncate_desc(text, limit=155):
+    """Accorcia alla parola intera piu' vicina al limite, mai a meta' parola."""
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0]
+    return cut.rstrip(",.;:") + "…"
+
+
 def extract(src, start_marker, end_marker):
     i1 = src.index(start_marker)
     i2 = src.index(end_marker, i1) + len(end_marker)
@@ -350,8 +358,112 @@ def build():
     for m in slug_meta:
         if m["categoria"] not in categorie:
             categorie.append(m["categoria"])
+
+    def cat_slug(nome):
+        s = nome.lower().strip()
+        s = (s.replace("à", "a").replace("è", "e").replace("é", "e")
+               .replace("ì", "i").replace("ò", "o").replace("ù", "u"))
+        s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+        return s
+
+    # ---- pagine /blog/categoria/<slug>/index.html ----
+    categoria_slugs = []
+    for cat in categorie:
+        c_slug = cat_slug(cat)
+        categoria_slugs.append(c_slug)
+        cat_meta = [m for m in slug_meta if m["categoria"] == cat]
+        cat_cards = "".join(
+            f'''      <a class="post rv" href="/blog/{m['slug']}/" data-categoria="{html.escape(m['categoria'])}">
+        <div class="post-body">
+          <span class="tag">{html.escape(m['categoria'])}</span>
+          <h3>{html.escape(m['title'])}</h3>
+          <p>{html.escape(m['meta_desc'])}</p>
+          <span class="arrow">→</span>
+        </div>
+      </a>'''
+            for m in cat_meta
+        )
+        cat_title = f"{cat}: guide per cani grandi | Taglia Libera"
+        cat_desc = truncate_desc(
+            f"Tutte le guide della categoria {cat} per chi viaggia con un cane di taglia grande "
+            f"o gigante: {len(cat_meta)} articol{'o' if len(cat_meta) == 1 else 'i'}, solo dati verificati.",
+            155,
+        )
+        cat_page = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
+<title>{html.escape(cat_title)}</title>
+<meta name="description" content="{html.escape(cat_desc)}">
+<meta property="og:title" content="{html.escape(cat_title)}">
+<meta property="og:description" content="{html.escape(cat_desc)}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{OG_IMAGE}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.taglialibera.it/blog/categoria/{c_slug}/">
+{style_block}
+<style>{article_css}
+  .blog-index-grid{{ display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--line); border-top:none; }}
+  @media (max-width:820px){{ .blog-index-grid{{ grid-template-columns:1fr; }} }}
+  .blog-index-grid .post{{ border-top:1px solid var(--line); }}
+  .blog-index-grid .post:nth-child(odd){{ border-right:1px solid var(--line); }}
+  @media (max-width:820px){{ .blog-index-grid .post:nth-child(odd){{ border-right:none; }} }}
+</style>
+</head>
+<body>
+
+{header_block}
+
+<main id="top">
+  <section class="article-hero" style="padding-bottom:56px;">
+    <div class="wrap">
+      <p class="breadcrumb-lbl lbl" style="margin-bottom:10px;"><a href="/blog/" style="text-decoration:none; color:var(--ink-2);">Guide</a> / {html.escape(cat)}</p>
+      <h1>{html.escape(cat)}.</h1>
+      <p style="margin-top:18px; max-width:62ch; font-size:17px; color:var(--ink-2);">
+        {len(cat_meta)} guida della categoria {html.escape(cat)}, solo dati verificati con fonte.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-block:0 90px;">
+    <div class="blog-index-grid">
+{cat_cards}
+    </div>
+  </section>
+</main>
+
+{footer_block}
+
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taglialibera.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Guide", "item": "https://www.taglialibera.it/blog/"},
+        {"@type": "ListItem", "position": 3, "name": cat, "item": f"https://www.taglialibera.it/blog/categoria/{c_slug}/"},
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
+{header_script}
+</body>
+</html>
+"""
+        c_out_dir = os.path.join(OUT_BLOG_DIR, "categoria", c_slug)
+        os.makedirs(c_out_dir, exist_ok=True)
+        with open(os.path.join(c_out_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(cat_page)
+        print("generata:", f"/blog/categoria/{c_slug}/")
+
+    cat_slug_map = {c: cat_slug(c) for c in categorie}
     filter_pills = "".join(
-        f'<button type="button" class="cat-pill" data-cat="{html.escape(c)}">{html.escape(c)}</button>'
+        f'<a class="cat-pill" href="/blog/categoria/{cat_slug_map[c]}/" data-cat="{html.escape(c)}" '
+        f'onclick="return filterCat(\'{html.escape(c)}\', this)">{html.escape(c)}</a>'
         for c in categorie
     )
 
@@ -382,7 +494,8 @@ def build():
   @media (max-width:820px){{ .blog-index-grid .post:nth-child(odd){{ border-right:none; }} }}
   .cat-filters{{ display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }}
   .cat-pill{{ font-family:'Martian Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em;
-    padding:8px 14px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer; }}
+    padding:8px 14px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer;
+    text-decoration:none; display:inline-block; }}
   .cat-pill.active{{ background:var(--klein); border-color:var(--klein); color:var(--on-klein); }}
 </style>
 </head>
@@ -401,7 +514,7 @@ def build():
         possiamo dire con certezza.
       </p>
       <div class="cat-filters" id="cat-filters">
-        <button type="button" class="cat-pill active" data-cat="">Tutte</button>
+        <a href="/blog/" class="cat-pill active" data-cat="" onclick="return filterCat('', this)">Tutte</a>
         {filter_pills}
       </div>
     </div>
@@ -421,17 +534,15 @@ def build():
   "use strict";
   var pills = document.querySelectorAll("#cat-filters .cat-pill");
   var posts = document.querySelectorAll("#blog-grid .post");
-  pills.forEach(function(pill){{
-    pill.addEventListener("click", function(){{
-      pills.forEach(function(p){{ p.classList.remove("active"); }});
-      pill.classList.add("active");
-      var cat = pill.getAttribute("data-cat");
-      posts.forEach(function(post){{
-        var match = !cat || post.getAttribute("data-categoria") === cat;
-        post.style.display = match ? "" : "none";
-      }});
+  window.filterCat = function filterCat(cat, el){{
+    pills.forEach(function(p){{ p.classList.remove("active"); }});
+    if (el) el.classList.add("active");
+    posts.forEach(function(post){{
+      var match = !cat || post.getAttribute("data-categoria") === cat;
+      post.style.display = match ? "" : "none";
     }});
-  }});
+    return false;
+  }};
 }})();
 </script>
 </body>
