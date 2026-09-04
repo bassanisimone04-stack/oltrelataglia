@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Toscana</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/toscana/" style="text-decoration:none; color:var(--ink-2);">Toscana</a></p>
       <h1 style="margin-top:10px;">Agriturismo Bellavita</h1>
       <p class="det-loc">Lamporecchio, Pistoiese · Toscana</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Cani illimitati</span><span class="spec spec-hi">Nessun supplemento</span><span class="spec spec-hi">Piscina per cani</span></div>
@@ -448,6 +454,17 @@
       <p>Agriturismo a Lamporecchio, nel pistoiese tra Firenze e Lucca, pensato per chi viaggia con cani di qualsiasi taglia — compresi i cani grandi e giganti che altrove trovano solo porte chiuse. Secondo quanto dichiarato sul sito ufficiale, la struttura accoglie più di un animale a prenotazione senza limiti di numero e senza supplemento, ed è convenzionata con un ambulatorio veterinario attivo 24 ore su 24. Dispone di una piscina dedicata ai cani e di un&#x27;area giochi recintata, con attività educative e ricreative seguite da un educatore cinofilo diplomato.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Piscina dedicata ai cani</li><li>Area giochi recintata</li><li>Attività con educatore cinofilo</li><li>Convenzione ambulatorio veterinario h24</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Toscana</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/podere-il-poggiolo/">
+        <span class="k">Pontassieve, Chianti Rufina (Firenze)</span>
+        <h3>Podere il Poggiolo</h3>
+      </a><a class="simile-card" href="/struttura/agriturismo-podere-bello/">
+        <span class="k">Pitigliano, Maremma (Grosseto)</span>
+        <h3>Agriturismo Podere Bello</h3>
+      </a><a class="simile-card" href="/struttura/podere-vignali/">
+        <span class="k">Pari, Civitella Paganico (Grosseto)</span>
+        <h3>Agriturismo Podere Vignali</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +478,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>

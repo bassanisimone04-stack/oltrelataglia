@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Piemonte</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/piemonte/" style="text-decoration:none; color:var(--ink-2);">Piemonte</a></p>
       <h1 style="margin-top:10px;">Lido Verbano Camping Village</h1>
       <p class="det-loc">Castelletto sopra Ticino (Novara) · Piemonte</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Fino a 3 cani</span><span class="spec spec-hi">Supplemento richiesto</span></div>
@@ -448,6 +454,14 @@
       <p>Camping village sul Lago Maggiore, a Castelletto sopra Ticino, Piemonte. Secondo la fonte pubblica consultata, ammette cani di ogni taglia, fino a tre per prenotazione, con un supplemento variabile in base alla stagione. Dispone di un &#x27;area cani recintata dove i cani possono giocare liberi e di una dog beach sul lago.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Area cani recintata per il gioco libero</li><li>Dog beach sul Lago Maggiore</li><li>Spiaggia privata</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Piemonte</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/monferrato-nel-cuore/">
+        <span class="k">Casalborgone (Torino)</span>
+        <h3>Monferrato nel Cuore</h3>
+      </a><a class="simile-card" href="/struttura/bb-casello-km-5/">
+        <span class="k">Borgo San Dalmazzo (Cuneo)</span>
+        <h3>B&amp;B Casello Km 5</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +475,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>

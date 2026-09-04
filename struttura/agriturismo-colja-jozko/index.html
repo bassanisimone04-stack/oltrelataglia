@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Friuli-Venezia Giulia</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/friuli-venezia-giulia/" style="text-decoration:none; color:var(--ink-2);">Friuli-Venezia Giulia</a></p>
       <h1 style="margin-top:10px;">Agriturismo Colja Jozko</h1>
       <p class="det-loc">Samatorza, Sgonico (Trieste) · Friuli-Venezia Giulia</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Area sgambamento</span><span class="spec spec-hi">Accesso ristorante</span></div>
@@ -448,6 +454,11 @@
       <p>Azienda agricola nel Carso triestino, a Samatorza (Sgonico), a pochi chilometri dal mare e dal confine con la Slovenia, nella Denominazione di Origine Controllata Friuli Carso. Secondo la fonte pubblica consultata, ammette cani fino a taglia grande, con area sgambamento dedicata, accesso al ristorante interno e percorsi pensati per le passeggiate con il cane. Supplemento e numero massimo di animali per prenotazione non sono specificati nella fonte consultata.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Area sgambamento dedicata ai cani</li><li>Accesso al ristorante interno</li><li>Percorsi per passeggiate con il cane</li><li>A pochi km dal mare e dal confine sloveno</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Friuli-Venezia Giulia</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/hotel-ville-bianchi/">
+        <span class="k">Grado (Gorizia)</span>
+        <h3>Hotel Ville Bianchi</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +472,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>

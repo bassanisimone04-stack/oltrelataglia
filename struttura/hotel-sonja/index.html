@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Trentino-Alto Adige</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/trentino/" style="text-decoration:none; color:var(--ink-2);">Trentino-Alto Adige</a></p>
       <h1 style="margin-top:10px;">Hotel Sonja</h1>
       <p class="det-loc">Cadipietra, Valle Aurina (Bolzano) · Trentino-Alto Adige</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Più cani ammessi</span><span class="spec spec-hi">Nessun supplemento</span></div>
@@ -448,6 +454,11 @@
       <p>Hotel dedicato ai cani a Cadipietra, in Valle Aurina, Alto Adige, con giardino attrezzato per l&#x27;agility e due piscine per cani. Secondo quanto dichiarato sul sito ufficiale, ammette cani di ogni taglia e razza, anche più di tre per prenotazione, senza supplemento per il primo cane ospite. Cani ammessi in camera e in sala da pranzo.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Giardino con percorso agility per cani</li><li>Due piscine per cani</li><li>Freezer per il cibo del cane a disposizione</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Trentino-Alto Adige</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/baita-gorck/">
+        <span class="k">Val Rendena, Parco Adamello Brenta</span>
+        <h3>Baita Gorck</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +472,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>

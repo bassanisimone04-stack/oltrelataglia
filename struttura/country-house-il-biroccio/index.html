@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Marche</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/marche/" style="text-decoration:none; color:var(--ink-2);">Marche</a></p>
       <h1 style="margin-top:10px;">Country House Il Biroccio</h1>
       <p class="det-loc">Urbino (Pesaro e Urbino) · Marche</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Giardino privato recintato</span></div>
@@ -448,6 +454,11 @@
       <p>Country house in 28 ettari di verde a Urbino, Marche. Secondo quanto dichiarato sul sito ufficiale (pagina FAQ dedicata), ammette cani di ogni razza e taglia, purché educati, con solo il costo di pulizia finale a carico dell&#x27;ospite. Ogni appartamento ha uno spazio esterno privato recintato e ombreggiato.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Spazio esterno privato recintato per appartamento</li><li>Area cani dedicata vicino alla piscina</li><li>28 ettari di tenuta</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Marche</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/casale-civetta/">
+        <span class="k">Trecastelli (Ancona)</span>
+        <h3>Casale Civetta</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +472,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>

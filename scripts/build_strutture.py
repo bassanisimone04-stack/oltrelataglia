@@ -133,6 +133,12 @@ def build():
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 """
 
     cerca_css = """
@@ -163,8 +169,8 @@ def build():
   .map-region:hover circle, .map-region.active circle{ transform:scale(1.22); fill:var(--klein-text); }
   .map-region-empty circle{ fill:var(--line); }
   .map-legend{ display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:18px; }
-  .map-legend button{ font-family:inherit; font-size:13px; background:none; border:1px solid var(--line); padding:6px 12px; cursor:pointer; color:var(--ink-2); }
-  .map-legend button.active{ border-color:var(--klein); color:var(--klein-text); font-weight:700; }
+  .map-legend a{ font-family:inherit; font-size:13px; background:none; border:1px solid var(--line); padding:6px 12px; cursor:pointer; color:var(--ink-2); text-decoration:none; display:inline-block; }
+  .map-legend a.active{ border-color:var(--klein); color:var(--klein-text); font-weight:700; }
 """
 
     # ---------- pagine struttura ----------
@@ -175,6 +181,21 @@ def build():
         )
         servizi_html = "".join(f"<li>{html.escape(sv)}</li>" for sv in st["servizi"])
         tags_html = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
+
+        # strutture simili: stessa regione, fino a 3, escludendo la struttura stessa
+        simili = [s for s in STRUTTURE if s["regione_slug"] == st["regione_slug"] and s["slug"] != st["slug"]][:3]
+        simili_html = "".join(
+            f'''<a class="simile-card" href="/struttura/{s['slug']}/">
+        <span class="k">{html.escape(s['comune'])}</span>
+        <h3>{html.escape(s['nome'])}</h3>
+      </a>'''
+            for s in simili
+        )
+        simili_section = ""
+        if simili:
+            simili_section = f'''
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in {html.escape(st['regione'])}</h2>
+      <div class="simili-grid">{simili_html}</div>'''
 
         seo_title = build_seo_title(st['nome'], st.get("taglia_bucket"))
         meta_desc = truncate_desc(st['descrizione'], 155)
@@ -206,7 +227,7 @@ def build():
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / {html.escape(st['regione'])}</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/{st['regione_slug']}/" style="text-decoration:none; color:var(--ink-2);">{html.escape(st['regione'])}</a></p>
       <h1 style="margin-top:10px;">{html.escape(st['nome'])}</h1>
       <p class="det-loc">{html.escape(st['comune'])} · {html.escape(st['regione'])}</p>
       <div class="stay-specs" style="margin-top:16px;">{tags_html}</div>
@@ -224,7 +245,7 @@ def build():
       <div class="fact-grid">{facts_html}</div>
       <p>{html.escape(st['descrizione'])}</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
-      <ul class="det-servizi">{servizi_html}</ul>
+      <ul class="det-servizi">{servizi_html}</ul>{simili_section}
     </div>
   </article>
 </main>
@@ -278,11 +299,10 @@ def build():
         for t in ALL_TAGS
     )
 
-    rows_html = []
-    for st in STRUTTURE:
+    def struttura_row(st):
         tags_attr = "|".join(st["tags"])
         tags_pill = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
-        rows_html.append(f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione_slug'])}">
+        return f'''      <a class="stay" href="/struttura/{st['slug']}/" data-tags="{html.escape(tags_attr)}" data-regione="{html.escape(st['regione_slug'])}">
         <span class="stay-badge">{st['regione_slug'][:2].upper()}</span>
         <div class="stay-main">
           <h3>{html.escape(st['nome'])}</h3>
@@ -290,7 +310,9 @@ def build():
         </div>
         <div class="stay-specs">{tags_pill}</div>
         <span class="stay-go">Vedi la scheda →</span>
-      </a>''')
+      </a>'''
+
+    rows_html = [struttura_row(st) for st in STRUTTURE]
 
     # ---------- mappa regioni per /cerca/ ----------
     conteggio_regioni = {}
@@ -304,7 +326,7 @@ def build():
             r = round(3.4 + (n ** 0.5) * 1.7, 1)
             title = f"{nome}: {n} struttur{'a' if n == 1 else 'e'}"
             map_circles.append(
-                f'<a class="map-region" href="/cerca/?regione={slug}" data-regione="{slug}" '
+                f'<a class="map-region" href="/regione/{slug}/" data-regione="{slug}" '
                 f'onclick="return selectRegione(\'{slug}\', this)"><title>{html.escape(title)}</title>'
                 f'<circle cx="{x}" cy="{y}" r="{r}"></circle>'
                 f'<text x="{x}" y="{y}">{n}</text></a>'
@@ -346,8 +368,8 @@ def build():
         + map_outline + "".join(map_circles) + "</svg>"
     )
     map_legend = "".join(
-        f'<button type="button" data-regione="{slug}" onclick="return selectRegione(\'{slug}\', this)">'
-        f'{html.escape(nome)} <span style="color:var(--klein-text);font-weight:700;">{conteggio_regioni[slug]}</span></button>'
+        f'<a href="/regione/{slug}/" data-regione="{slug}" onclick="return selectRegione(\'{slug}\', this)">'
+        f'{html.escape(nome)} <span style="color:var(--klein-text);font-weight:700;">{conteggio_regioni[slug]}</span></a>'
         for slug, nome, _, _ in REGIONI_MAPPA if conteggio_regioni.get(slug)
     )
 
@@ -507,7 +529,7 @@ def build():
   window.activeRegione = null;
 
   function setActiveRegioneUI(slug){{
-    document.querySelectorAll('.map-region, .map-legend button').forEach(function(el){{
+    document.querySelectorAll('.map-region, .map-legend a').forEach(function(el){{
       el.classList.toggle('active', !!slug && el.getAttribute('data-regione') === slug);
     }});
   }}
@@ -573,7 +595,119 @@ def build():
         f.write(cerca_page)
     print("generata: /cerca/")
 
-    return [st["slug"] for st in STRUTTURE]
+    # ---------- /regione/<slug>/index.html ----------
+    # Una pagina solo per le regioni che hanno gia' almeno una struttura
+    # verificata: una pagina "0 risultati" non porta nulla in piu' di
+    # /cerca/ e rischia di leggere come contenuto vuoto per un motore
+    # di ricerca.
+    regione_slugs = []
+    for r_slug, r_nome, _, _ in REGIONI_MAPPA:
+        strutture_regione = [st for st in STRUTTURE if st["regione_slug"] == r_slug]
+        if not strutture_regione:
+            continue
+        regione_slugs.append(r_slug)
+        n = len(strutture_regione)
+        regione_title = f"Hotel e agriturismi cani grandi in {r_nome} | Taglia Libera"
+        regione_meta = truncate_desc(
+            f"Le {n} struttur{'a' if n == 1 else 'e'} verificate per cani di taglia grande e gigante in "
+            f"{r_nome}: hotel, agriturismi e B&B che accettano cani senza i soliti limiti di peso.",
+            155,
+        )
+        regione_rows = "".join(struttura_row(st) for st in strutture_regione)
+        regione_page = f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
+<title>{html.escape(regione_title)}</title>
+<meta name="description" content="{html.escape(regione_meta)}">
+<meta property="og:title" content="{html.escape(regione_title)}">
+<meta property="og:description" content="{html.escape(regione_meta)}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.taglialibera.it/img/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.taglialibera.it/regione/{r_slug}/">
+{style_block}
+<style>{cerca_css}</style>
+</head>
+<body>
+
+{header_block}
+
+<main id="top">
+  <section class="cerca-hero">
+    <div class="wrap">
+      <p class="lbl"><a href="/" style="text-decoration:none; color:var(--ink-2);">Home</a> / <a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / {html.escape(r_nome)}</p>
+      <h1 style="margin-top:10px;">Cani grandi e giganti benvenuti in {html.escape(r_nome)}.</h1>
+      <p style="margin-top:16px; max-width:60ch; font-size:16px; color:var(--ink-2);">
+        {n} struttur{'a' if n == 1 else 'e'} verificat{'a' if n == 1 else 'e'} in {html.escape(r_nome)}, ognuna con la fonte citata
+        nella scheda. Per filtrare anche per taglia o servizi, usa la
+        <a href="/cerca/?regione={r_slug}" style="color:var(--klein-text); text-decoration:underline;">ricerca completa</a>.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-block:44px 90px;">
+    <div class="stays-table">
+      <div class="stays-head">
+        <span></span>
+        <span>Struttura</span>
+        <span>Caratteristiche</span>
+        <span>Scheda</span>
+      </div>
+      <div class="stays">
+{regione_rows}
+      </div>
+    </div>
+  </div>
+</main>
+
+{footer_block}
+
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taglialibera.it/"},
+        {"@type": "ListItem", "position": 2, "name": "Cerca", "item": "https://www.taglialibera.it/cerca/"},
+        {"@type": "ListItem", "position": 3, "name": r_nome, "item": f"https://www.taglialibera.it/regione/{r_slug}/"},
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
+<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": st["nome"],
+            "url": f"https://www.taglialibera.it/struttura/{st['slug']}/",
+        }
+        for i, st in enumerate(strutture_regione)
+    ],
+}, ensure_ascii=False, indent=2)}
+</script>
+{header_script}
+</body>
+</html>
+"""
+        r_out_dir = os.path.join(ROOT, "regione", r_slug)
+        os.makedirs(r_out_dir, exist_ok=True)
+        with open(os.path.join(r_out_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(regione_page)
+        print("generata:", f"/regione/{r_slug}/")
+
+    return {
+        "struttura_slugs": [st["slug"] for st in STRUTTURE],
+        "regione_slugs": regione_slugs,
+    }
 
 
 if __name__ == "__main__":

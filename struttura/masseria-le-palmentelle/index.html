@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Puglia</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/puglia/" style="text-decoration:none; color:var(--ink-2);">Puglia</a></p>
       <h1 style="margin-top:10px;">Masseria le Palmentelle</h1>
       <p class="det-loc">Lecce, Salento · Puglia</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Fino a taglia grande</span><span class="spec spec-hi">Un cane a camera</span><span class="spec spec-hi">Supplemento 5€/giorno</span></div>
@@ -448,6 +454,11 @@
       <p>Masseria nel Salento, in provincia di Lecce. Secondo la fonte pubblica consultata, accetta cani fino a taglia grande (non oltre), un animale per camera, con un supplemento dichiarato di 5€ al giorno. Le unità singole dispongono di giardino o déhors recintato privato.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Unità con giardino/déhors recintato privato</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Puglia</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/masseria-le-terrazze-di-serranova/">
+        <span class="k">Serranova, Carovigno (Brindisi)</span>
+        <h3>Masseria Le Terrazze di Serranova</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +472,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>

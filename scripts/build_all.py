@@ -61,11 +61,12 @@ def write_rss(blog_meta):
     print(f"generata: /feed.xml ({len(items_meta)} articoli)")
 
 
-def write_sitemap(blog_slugs, struttura_slugs, static_slugs):
+def write_sitemap(blog_slugs, struttura_slugs, static_slugs, regione_slugs):
     today = date.today().isoformat()
     urls = [("", 1.0), ("cerca/", 0.9), ("blog/", 0.8)]
     urls += [(f"blog/{s}/", 0.6) for s in blog_slugs]
     urls += [(f"struttura/{s}/", 0.7) for s in struttura_slugs]
+    urls += [(f"regione/{s}/", 0.7) for s in regione_slugs]
     urls += [(f"{s}/", 0.3) for s in static_slugs]
 
     entries = "\n".join(
@@ -88,11 +89,11 @@ def write_sitemap(blog_slugs, struttura_slugs, static_slugs):
 
 if __name__ == "__main__":
     blog_meta = build_blog.build()
-    struttura_slugs = build_strutture.build()
+    strutture_out = build_strutture.build()
     static_slugs = build_pages.build()
     build_blog.sync_index()
     blog_slugs = [m["slug"] for m in blog_meta]
-    write_sitemap(blog_slugs, struttura_slugs, static_slugs)
+    write_sitemap(blog_slugs, strutture_out["struttura_slugs"], static_slugs, strutture_out["regione_slugs"])
     write_rss(blog_meta)
 
     print()

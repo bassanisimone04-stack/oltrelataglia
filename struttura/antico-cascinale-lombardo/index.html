@@ -404,6 +404,12 @@
   .det-servizi{ display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
   .det-servizi li{ font-size:15px; color:var(--ink-2); list-style:none; padding-left:20px; position:relative; }
   .det-servizi li::before{ content:"—"; position:absolute; left:0; color:var(--klein-text); }
+  .simili-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .simili-grid{ grid-template-columns:1fr; } }
+  .simile-card{ display:block; border:1px solid var(--line); padding:16px; text-decoration:none; transition:border-color .15s ease; }
+  .simile-card:hover{ border-color:var(--klein); }
+  .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
+  .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -429,7 +435,7 @@
 <main id="top">
   <section class="det-hero">
     <div class="wrap">
-      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / Lombardia</p>
+      <p class="lbl"><a href="/cerca/" style="text-decoration:none; color:var(--ink-2);">Cerca</a> / <a href="/regione/lombardia/" style="text-decoration:none; color:var(--ink-2);">Lombardia</a></p>
       <h1 style="margin-top:10px;">Antico Cascinale Lombardo</h1>
       <p class="det-loc">Lonato del Garda (Brescia) · Lombardia</p>
       <div class="stay-specs" style="margin-top:16px;"><span class="spec spec-hi">Ogni taglia</span><span class="spec spec-hi">Quantità illimitata</span><span class="spec spec-hi">Gratis oltre 2 notti</span></div>
@@ -448,6 +454,11 @@
       <p>Bed &amp; Breakfast a Lonato del Garda (Brescia), vicino al Lago di Garda. Secondo le fonti pubbliche consultate, gli animali di qualsiasi taglia e in qualsiasi numero soggiornano gratuitamente per soggiorni superiori alle 2 notti. La struttura dispone di un ampio cortile privato interamente recintato con cancello automatico, dove cani e bambini possono muoversi in sicurezza.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Cortile privato recintato con cancello automatico</li><li>Vicino al Lago di Garda</li></ul>
+      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Lombardia</h2>
+      <div class="simili-grid"><a class="simile-card" href="/struttura/hotel-mantova-residence/">
+        <span class="k">Mantova</span>
+        <h3>Hotel Mantova Residence</h3>
+      </a></div>
     </div>
   </article>
 </main>
@@ -461,7 +472,7 @@
       </div>
       <div>
         <h4>Esplora</h4>
-        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/#strutture">Destinazioni</a></li></ul>
+        <ul><li><a href="/#cerca">Cerca alloggi</a></li><li><a href="/blog/">Blog e guide</a></li><li><a href="/cerca/">Destinazioni</a></li></ul>
       </div>
       <div>
         <h4>Strumenti</h4>
