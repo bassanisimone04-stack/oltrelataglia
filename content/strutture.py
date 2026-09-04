@@ -17,7 +17,7 @@ STRUTTURE = [
         "tags": ["Ogni taglia", "Cani illimitati", "Nessun supplemento", "Piscina per cani"],
         "taglia_bucket": "ogni",
         "descrizione": (
-            "Agriturismo nel pistoiese, tra Firenze e Lucca, pensato per chi viaggia con cani "
+            "Agriturismo a Lamporecchio, nel pistoiese tra Firenze e Lucca, pensato per chi viaggia con cani "
             "di qualsiasi taglia — compresi i cani grandi e giganti che altrove trovano solo "
             "porte chiuse. Secondo quanto dichiarato sul sito ufficiale, la struttura accoglie "
             "più di un animale a prenotazione senza limiti di numero e senza supplemento, ed è "
@@ -79,7 +79,7 @@ STRUTTURE = [
         "tags": ["Fino a 30 kg", "Nessun supplemento", "Area sgambamento"],
         "taglia_bucket": "media",
         "descrizione": (
-            "Masseria nell'entroterra di Carovigno (Brindisi), in Puglia. Secondo le fonti "
+            "Masseria a Serranova, nell'entroterra di Carovigno (Brindisi), in Puglia. Secondo le fonti "
             "pubbliche consultate, accoglie cani fino a 30 kg — un cane di taglia grande o "
             "media per camera, oppure due cani piccoli — senza alcun supplemento giornaliero "
             "per gli animali. Dispone di un'area dedicata allo sgambamento e di una piscina a "
@@ -198,7 +198,7 @@ STRUTTURE = [
         "tags": ["Taglia gigante ok", "Accesso ristorante", "50€/animale a settimana"],
         "taglia_bucket": "gigante",
         "descrizione": (
-            "Azienda agricola biologica a conduzione familiare nel Chianti Rufina, a 23 km da "
+            "Azienda agricola biologica a conduzione familiare a Pontassieve, nel Chianti Rufina, a 23 km da "
             "Firenze. Secondo il sito ufficiale, l'intera fattoria è recintata e i cani di tutte "
             "le taglie — inclusa gigante — sono ammessi in alloggio, ristorante, aree comuni e "
             "piscina. Il costo dichiarato è di 50€ per animale a settimana."
@@ -227,7 +227,7 @@ STRUTTURE = [
         "tags": ["Fino a 3 cani", "Nessun supplemento", "Giardino privato recintato"],
         "taglia_bucket": "grande",
         "descrizione": (
-            "Agriturismo biologico nella Maremma toscana, vicino alle Terme di Saturnia e ai "
+            "Agriturismo biologico a Pitigliano, in Maremma, vicino alle Terme di Saturnia e ai "
             "borghi di Sorano e Sovana. Secondo la fonte pubblica consultata, ammette cani fino a "
             "taglia grande (non oltre), massimo 3 per prenotazione, senza supplemento. Ogni "
             "alloggio ha un giardino privato recintato; su richiesta sono disponibili ciotole, "
@@ -1097,7 +1097,7 @@ STRUTTURE += [
         "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
         "taglia_bucket": "ogni",
         "descrizione": (
-            "Hotel dedicato ai cani in Valle Aurina, Alto Adige, con giardino attrezzato per "
+            "Hotel dedicato ai cani a Cadipietra, in Valle Aurina, Alto Adige, con giardino attrezzato per "
             "l'agility e due piscine per cani. Secondo quanto dichiarato sul sito ufficiale, "
             "ammette cani di ogni taglia e razza, anche più di tre per prenotazione, senza "
             "supplemento per il primo cane ospite. Cani ammessi in camera e in sala da pranzo."
