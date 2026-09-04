@@ -59,6 +59,32 @@ REGIONI_MAPPA = [
     ("sardegna", "Sardegna", 23.3, 86.3),
 ]
 
+# Coordinate geografiche reali (lat, lon) dei capoluoghi/centri di regione,
+# usate SOLO per calcolare la distanza in km da "vicino a me" su /cerca/
+# (proiezione haversine lato client) — dati noti, non stimati.
+REGIONI_LATLON = {
+    "valle-d-aosta": (45.737, 7.315),
+    "piemonte": (45.070, 7.686),
+    "lombardia": (45.464, 9.190),
+    "trentino": (46.068, 11.121),
+    "veneto": (45.440, 12.315),
+    "friuli-venezia-giulia": (46.064, 13.234),
+    "liguria": (44.407, 8.934),
+    "emilia-romagna": (44.494, 11.343),
+    "toscana": (43.769, 11.256),
+    "umbria": (43.112, 12.389),
+    "marche": (43.616, 13.518),
+    "lazio": (41.903, 12.496),
+    "abruzzo": (42.351, 13.399),
+    "molise": (41.561, 14.668),
+    "campania": (40.852, 14.268),
+    "puglia": (41.125, 16.867),
+    "basilicata": (40.642, 15.805),
+    "calabria": (38.910, 16.588),
+    "sicilia": (38.116, 13.361),
+    "sardegna": (39.223, 9.122),
+}
+
 
 TAGLIA_LABEL = {
     "ogni": "cani di ogni taglia ammessi",
@@ -151,9 +177,11 @@ def build():
   .filters h2{ font-size:16px; }
   .filt-opt{ display:flex; align-items:center; gap:10px; font-size:14px; cursor:pointer; }
   .filt-opt input{ accent-color:var(--klein); width:16px; height:16px; flex-shrink:0; }
-  .results-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; flex-wrap:wrap; gap:10px; }
+  .results-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:10px; }
   .results-count{ font-size:14.5px; font-weight:700; }
   .results-count span{ color:var(--klein-text); }
+  .near-me-status{ font-size:13px; color:var(--ink-2); margin-bottom:14px; }
+  .stay-dist{ font-family:'Martian Mono',monospace; font-size:11px; color:var(--klein-text); font-weight:600; margin-left:8px; }
   .no-results{ display:none; padding:60px 20px; text-align:center; color:var(--ink-2); border:1px solid var(--line); }
   .no-results.show{ display:block; }
   .map-sec{ border-bottom:1px solid var(--line); padding-block:44px; background:var(--surface-2); }
@@ -474,7 +502,9 @@ def build():
     <div>
       <div class="results-head">
         <div class="results-count" id="results-count"><span>{len(STRUTTURE)}</span> strutture</div>
+        <button type="button" class="btn btn-line" id="near-me-btn" style="font-size:13px; padding:9px 14px;">📍 Ordina per vicinanza</button>
       </div>
+      <p class="near-me-status" id="near-me-status" hidden></p>
       <div class="stays-table">
         <div class="stays-head">
           <span></span>
@@ -584,6 +614,69 @@ def build():
     setActiveRegioneUI(regione);
   }}
   applyFilters();
+
+  // "Vicino a me": geolocalizzazione del browser, nessun servizio esterno.
+  // La distanza e' calcolata dalla posizione dell'utente al centro
+  // geografico della regione di ogni struttura (dato noto, non la sede
+  // esatta della struttura, che non abbiamo) — un'approssimazione onesta,
+  // dichiarata nel testo del pulsante e nel messaggio di stato.
+  var REGIONI_LATLON = {json.dumps({k: list(v) for k, v in REGIONI_LATLON.items()}, ensure_ascii=False)};
+  var nearBtn = document.getElementById('near-me-btn');
+  var nearStatus = document.getElementById('near-me-status');
+
+  function haversineKm(lat1, lon1, lat2, lon2){{
+    var R = 6371;
+    var dLat = (lat2 - lat1) * Math.PI / 180;
+    var dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }}
+
+  if (nearBtn) {{
+    nearBtn.addEventListener('click', function(){{
+      if (!('geolocation' in navigator)) {{
+        nearStatus.hidden = false;
+        nearStatus.textContent = 'Il browser non supporta la geolocalizzazione.';
+        return;
+      }}
+      nearBtn.disabled = true;
+      nearBtn.textContent = 'Sto localizzando…';
+      navigator.geolocation.getCurrentPosition(function(pos){{
+        var uLat = pos.coords.latitude, uLon = pos.coords.longitude;
+        var list = document.getElementById('stays-list');
+        var rows = Array.prototype.slice.call(list.querySelectorAll('.stay'));
+        rows.forEach(function(row){{
+          var rSlug = row.getAttribute('data-regione');
+          var coords = REGIONI_LATLON[rSlug];
+          var dist = coords ? haversineKm(uLat, uLon, coords[0], coords[1]) : Infinity;
+          row.setAttribute('data-dist-km', dist);
+          var where = row.querySelector('.stay-where');
+          if (where) {{
+            var existing = where.querySelector('.stay-dist');
+            if (existing) existing.remove();
+            var badge = document.createElement('span');
+            badge.className = 'stay-dist';
+            badge.textContent = isFinite(dist) ? '~' + Math.round(dist) + ' km' : '';
+            where.appendChild(badge);
+          }}
+        }});
+        rows.sort(function(a, b){{
+          return parseFloat(a.getAttribute('data-dist-km')) - parseFloat(b.getAttribute('data-dist-km'));
+        }});
+        rows.forEach(function(row){{ list.appendChild(row); }});
+        nearBtn.textContent = '📍 Ordinato per vicinanza';
+        nearStatus.hidden = false;
+        nearStatus.textContent = 'Distanza calcolata dal centro della regione di ogni struttura, non dall\\'indirizzo esatto — un\\'approssimazione, non un dato di precisione.';
+      }}, function(){{
+        nearBtn.disabled = false;
+        nearBtn.textContent = '📍 Ordina per vicinanza';
+        nearStatus.hidden = false;
+        nearStatus.textContent = 'Non è stato possibile ottenere la tua posizione — controlla i permessi del browser.';
+      }});
+    }});
+  }}
 }})();
 </script>
 </body>
