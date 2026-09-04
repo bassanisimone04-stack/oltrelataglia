@@ -1,0 +1,24 @@
+{
+  "name": "Taglia Libera — Hotel e agriturismi per cani grandi",
+  "short_name": "Taglia Libera",
+  "description": "Directory di hotel, agriturismi e B&B verificati che accettano cani di taglia grande e gigante senza i soliti limiti di peso.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F0EFF7",
+  "theme_color": "#1B1BE8",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

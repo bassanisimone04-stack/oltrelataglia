@@ -147,6 +147,7 @@ def page_shell(style_block, header_block, footer_block, header_script, title, de
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{title}</title>
 <meta name="description" content="{description}">
@@ -477,6 +478,7 @@ def write_404(style_block, header_block, footer_block, header_script):
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>Pagina non trovata | Taglia Libera</title>
 <meta name="robots" content="noindex">

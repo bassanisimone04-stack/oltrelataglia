@@ -165,6 +165,11 @@ def build():
   .simile-card:hover{ border-color:var(--klein); }
   .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
   .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
+  @media print{
+    .no-print, header, footer, .simili-grid{ display:none !important; }
+    .det-hero{ padding-top:20px !important; }
+    body{ background:#fff; color:#000; }
+  }
 """
 
     cerca_css = """
@@ -222,7 +227,7 @@ def build():
         simili_section = ""
         if simili:
             simili_section = f'''
-      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in {html.escape(st['regione'])}</h2>
+      <h2 class="art-h2 no-print" style="font-size:20px; margin:44px 0 14px;">Altre strutture in {html.escape(st['regione'])}</h2>
       <div class="simili-grid">{simili_html}</div>'''
 
         seo_title = build_seo_title(st['nome'], st.get("taglia_bucket"))
@@ -235,6 +240,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{html.escape(seo_title)}</title>
 <meta name="description" content="{html.escape(meta_desc)}">
@@ -264,6 +270,7 @@ def build():
       <div class="det-actions">
         <a class="btn btn-klein" href="{st['sito_url']}" target="_blank" rel="noopener">Sito ufficiale ↗</a>
         <a class="btn btn-line" href="/cerca/">&larr; Torna alla ricerca</a>
+        <button type="button" class="btn btn-line no-print" onclick="window.print()">Stampa scheda 🖨</button>
       </div>
     </div>
   </section>
@@ -445,6 +452,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>Cerca hotel e agriturismi per cani grandi | Taglia Libera</title>
 <meta name="description" content="Cerca tra le strutture reali per cani grandi e giganti raccolte in questa directory: filtra per taglia, cani ammessi e servizi.">
@@ -715,6 +723,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{html.escape(regione_title)}</title>
 <meta name="description" content="{html.escape(regione_meta)}">

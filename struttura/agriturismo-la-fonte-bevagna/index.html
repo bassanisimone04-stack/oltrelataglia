@@ -6,6 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <title>Agriturismo La Fonte — taglia grande | Taglia Libera</title>
 <meta name="description" content="Agriturismo con due casali (L&#x27;Olivo e Le Case) nella campagna di Bevagna, Umbria, tra oliveti e vigneti. Secondo la fonte pubblica consultata, ammette…">
@@ -95,6 +96,17 @@
     background:color-mix(in srgb, var(--paper) 88%, transparent);
     backdrop-filter:blur(14px); border-bottom-color:var(--line);
   }
+  .back-to-top{
+    position:fixed; right:22px; bottom:22px; z-index:40;
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    background:var(--klein); color:var(--on-klein); border-radius:50%;
+    box-shadow:0 4px 16px rgba(0,0,0,.18);
+    opacity:0; transform:translateY(10px); pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .back-to-top.show{ opacity:1; transform:none; pointer-events:auto; }
+  .back-to-top svg{ width:20px; height:20px; }
+  @media print{ .back-to-top{ display:none !important; } }
   .headbar{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:18px; }
   .brand{ font-weight:800; font-size:17px; letter-spacing:-0.02em; text-decoration:none; text-transform:uppercase; white-space:nowrap; }
   .brand em{ font-style:normal; color:var(--klein-text); }
@@ -410,6 +422,11 @@
   .simile-card:hover{ border-color:var(--klein); }
   .simile-card .k{ font-family:'Martian Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-2); }
   .simile-card h3{ margin-top:6px; font-size:15.5px; color:var(--ink); }
+  @media print{
+    .no-print, header, footer, .simili-grid{ display:none !important; }
+    .det-hero{ padding-top:20px !important; }
+    body{ background:#fff; color:#000; }
+  }
 </style>
 </head>
 <body>
@@ -444,6 +461,7 @@
       <div class="det-actions">
         <a class="btn btn-klein" href="https://www.lafontedibevagna.it/" target="_blank" rel="noopener">Sito ufficiale ↗</a>
         <a class="btn btn-line" href="/cerca/">&larr; Torna alla ricerca</a>
+        <button type="button" class="btn btn-line no-print" onclick="window.print()">Stampa scheda 🖨</button>
       </div>
     </div>
   </section>
@@ -454,7 +472,7 @@
       <p>Agriturismo con due casali (L&#x27;Olivo e Le Case) nella campagna di Bevagna, Umbria, tra oliveti e vigneti. Secondo la fonte pubblica consultata, ammette cani di taglia piccola, media e grande (la fonte non menziona esplicitamente la taglia gigante) negli alloggi, negli spazi comuni e nelle aree esterne attrezzate.</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
       <ul class="det-servizi"><li>Passeggiate nell&#x27;oliveto secolare</li><li>Piscina privata</li><li>Veranda con pergola per ogni appartamento</li></ul>
-      <h2 class="art-h2" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Umbria</h2>
+      <h2 class="art-h2 no-print" style="font-size:20px; margin:44px 0 14px;">Altre strutture in Umbria</h2>
       <div class="simili-grid"><a class="simile-card" href="/struttura/ecoresort-il-cantico-della-natura/">
         <span class="k">Magione (Perugia)</span>
         <h3>EcoResort Il Cantico della Natura</h3>
@@ -491,6 +509,9 @@
       <span>taglialibera.it</span>
     </div>
   </div>
+  <a href="/#top" class="back-to-top" id="back-to-top" aria-label="Torna all'inizio della pagina">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 </footer>
 
 <script type="application/ld+json">
@@ -566,7 +587,11 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var hd = document.getElementById("hd");
-  function onScroll(){ hd.classList.toggle("stuck", window.scrollY > 24); }
+  var backTop = document.getElementById("back-to-top");
+  function onScroll(){
+    hd.classList.toggle("stuck", window.scrollY > 24);
+    if (backTop) backTop.classList.toggle("show", window.scrollY > 600);
+  }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive:true });
 

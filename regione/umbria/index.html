@@ -6,6 +6,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <title>Hotel e agriturismi cani grandi in Umbria | Taglia Libera</title>
 <meta name="description" content="Le 3 strutture verificate per cani di taglia grande e gigante in Umbria: hotel, agriturismi e B&amp;B che accettano cani senza i soliti limiti di peso.">
@@ -94,6 +95,17 @@
     background:color-mix(in srgb, var(--paper) 88%, transparent);
     backdrop-filter:blur(14px); border-bottom-color:var(--line);
   }
+  .back-to-top{
+    position:fixed; right:22px; bottom:22px; z-index:40;
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    background:var(--klein); color:var(--on-klein); border-radius:50%;
+    box-shadow:0 4px 16px rgba(0,0,0,.18);
+    opacity:0; transform:translateY(10px); pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .back-to-top.show{ opacity:1; transform:none; pointer-events:auto; }
+  .back-to-top svg{ width:20px; height:20px; }
+  @media print{ .back-to-top{ display:none !important; } }
   .headbar{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:18px; }
   .brand{ font-weight:800; font-size:17px; letter-spacing:-0.02em; text-decoration:none; text-transform:uppercase; white-space:nowrap; }
   .brand em{ font-style:normal; color:var(--klein-text); }
@@ -511,6 +523,9 @@
       <span>taglialibera.it</span>
     </div>
   </div>
+  <a href="/#top" class="back-to-top" id="back-to-top" aria-label="Torna all'inizio della pagina">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 </footer>
 
 <script type="application/ld+json">
@@ -571,7 +586,11 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var hd = document.getElementById("hd");
-  function onScroll(){ hd.classList.toggle("stuck", window.scrollY > 24); }
+  var backTop = document.getElementById("back-to-top");
+  function onScroll(){
+    hd.classList.toggle("stuck", window.scrollY > 24);
+    if (backTop) backTop.classList.toggle("show", window.scrollY > 600);
+  }
   onScroll();
   window.addEventListener("scroll", onScroll, { passive:true });
 

@@ -243,6 +243,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{html.escape(title_seo)}</title>
 <meta name="description" content="{html.escape(meta_desc)}">
@@ -397,6 +398,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{html.escape(cat_title)}</title>
 <meta name="description" content="{html.escape(cat_desc)}">
@@ -475,6 +477,7 @@ def build():
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>Guide per viaggiare con cani grandi | Taglia Libera</title>
 <meta name="description" content="Guide pratiche per chi viaggia con cani di taglia grande e gigante: spiagge, mare, normativa, strutture pet friendly senza limiti di peso.">
