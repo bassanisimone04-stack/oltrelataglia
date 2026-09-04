@@ -1353,6 +1353,39 @@ STRUTTURE += [
     },
 ]
 
+STRUTTURE += [
+    {
+        "slug": "hotel-les-montagnards-morgex",
+        "nome": "Hotel Les Montagnards",
+        "comune": "Morgex (Aosta)",
+        "regione": "Valle d'Aosta",
+        "regione_slug": "valle-d-aosta",
+        "fonte_nome": "hotelmontagnards.com",
+        "fonte_url": "https://www.hotelmontagnards.com/servizi/pet-friendly",
+        "sito_url": "https://www.hotelmontagnards.com/",
+        "tags": ["Ogni taglia", "Fino a 2 cani", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel 3 stelle superior a Morgex, Valle d'Aosta, con piccola SPA e colazione "
+            "alpina. Secondo quanto dichiarato sul sito ufficiale, ammette cani di ogni "
+            "taglia, fino a due per camera, senza supplemento. I cani possono restare in "
+            "camera e negli spazi comuni, tranne la sala colazione durante il servizio e "
+            "il centro benessere; è disponibile anche un servizio di dog-sitting."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Fino a 2"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Servizio di dog-sitting su richiesta",
+            "Accesso agli spazi comuni (salvo sala colazione e SPA)",
+            "Piccola SPA in struttura",
+        ],
+    },
+]
+
 ALL_TAGS = []
 for _s in STRUTTURE:
     for _t in _s["tags"]:
