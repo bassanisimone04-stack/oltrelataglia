@@ -1,7 +1,7 @@
 ---
 slug: agriturismi-umbria-cani-grandi
-titolo_seo: "Agriturismi in Umbria per cani grandi: la guida 2026"
-meta_description: "Dove alloggiare in Umbria con un cane di taglia grande o gigante: agriturismi con giardino recintato, nessun supplemento e cani ammessi senza limiti."
+titolo_seo: "Agriturismo Umbria cani grandi: la guida 2026"
+meta_description: "Agriturismo Umbria cani grandi: dove alloggiare con un cane di taglia grande o gigante, giardino recintato, nessun supplemento."
 keyword_principale: agriturismo umbria cani grandi
 keyword_correlate: [agriturismo umbria animali ammessi, vacanze umbria con il cane, agriturismo cani senza supplemento umbria]
 categoria: Destinazioni

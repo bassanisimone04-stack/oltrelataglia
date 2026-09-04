@@ -1,7 +1,7 @@
 ---
 slug: treno-aereo-traghetto-cane-gigante-italia
-titolo_seo: "Cane gigante in treno, aereo e traghetto: le regole"
-meta_description: "Come viaggiare in Italia con un cane di taglia grande o gigante senza l'auto: regole di Trenitalia, aereo e traghetti, aggiornate e con fonte."
+titolo_seo: "Viaggiare in treno con cane grande: aereo e traghetto"
+meta_description: "Viaggiare in treno con cane grande, aereo e traghetto: le regole di Trenitalia, aggiornate e con fonte, per chi viaggia senza l'auto."
 keyword_principale: viaggiare in treno con cane grande
 keyword_correlate: [cane in aereo taglia grande, cane in traghetto regole, ITA Airways cane cabina]
 categoria: Normativa e viaggi

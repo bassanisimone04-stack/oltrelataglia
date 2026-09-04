@@ -1,7 +1,7 @@
 ---
 slug: agriturismi-marche-cani-grandi
-titolo_seo: "Agriturismi nelle Marche per cani grandi | Taglia Libera"
-meta_description: "Dove alloggiare nelle Marche con un cane di taglia grande o gigante: agriturismi tra collina e mare, con dati verificati alla fonte."
+titolo_seo: "Agriturismo Marche cani grandi | Taglia Libera"
+meta_description: "Agriturismo Marche cani grandi: dove alloggiare tra collina e mare con un cane di taglia grande o gigante, dati verificati alla fonte."
 keyword_principale: agriturismo marche cani grandi
 keyword_correlate: [agriturismo marche animali ammessi, vacanze marche con il cane, agriturismo cani taglia gigante marche]
 categoria: Destinazioni

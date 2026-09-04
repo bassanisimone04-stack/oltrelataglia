@@ -1,7 +1,7 @@
 ---
 slug: assicurazione-rc-cane-taglia-grande
-titolo_seo: "Assicurazione RC per cani di taglia grande: serve?"
-meta_description: "Quando conviene un'assicurazione di responsabilità civile per un cane di taglia grande o gigante, cosa copre di solito e cosa chiedere prima di firmare."
+titolo_seo: "Assicurazione RC cane taglia grande: serve davvero?"
+meta_description: "Assicurazione RC cane taglia grande: quando conviene una polizza di responsabilità civile, cosa copre di solito e cosa chiedere prima di firmare."
 keyword_principale: assicurazione rc cane taglia grande
 keyword_correlate: [assicurazione cane gigante, responsabilità civile cane morso, polizza cane obbligatoria]
 categoria: Consigli pratici

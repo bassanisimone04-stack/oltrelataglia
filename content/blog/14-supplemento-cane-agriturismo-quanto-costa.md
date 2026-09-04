@@ -1,7 +1,7 @@
 ---
 slug: supplemento-cane-agriturismo-quanto-costa
-titolo_seo: "Supplemento cane in hotel e agriturismo: quanto costa"
-meta_description: "Quanto chiedono davvero hotel e agriturismi per un cane di taglia grande: esempi reali di supplementi, dalle pulizie extra alla tariffa a notte."
+titolo_seo: "Supplemento cane hotel quanto costa (e agriturismo)"
+meta_description: "Supplemento cane hotel quanto costa: quanto chiedono davvero hotel e agriturismi per un cane grande, esempi reali di tariffe e pulizie extra."
 keyword_principale: supplemento cane hotel quanto costa
 keyword_correlate: [prezzo cane agriturismo, tariffa cane hotel notte, quanto costa portare il cane in vacanza]
 categoria: Pratica

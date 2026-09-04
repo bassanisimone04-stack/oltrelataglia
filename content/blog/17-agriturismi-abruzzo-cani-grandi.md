@@ -1,7 +1,7 @@
 ---
 slug: agriturismi-abruzzo-cani-grandi
-titolo_seo: "Agriturismi in Abruzzo per cani grandi | Taglia Libera"
-meta_description: "Dove alloggiare in Abruzzo con un cane di taglia grande o gigante: un agriturismo verificato sulle colline pescaresi, senza supplemento."
+titolo_seo: "Agriturismo Abruzzo cani grandi | Taglia Libera"
+meta_description: "Agriturismo Abruzzo cani grandi: dove alloggiare con un cane di taglia grande o gigante, un agriturismo verificato sulle colline pescaresi."
 keyword_principale: agriturismo abruzzo cani grandi
 keyword_correlate: [agriturismo majella cani ammessi, vacanze abruzzo con il cane, agriturismo cani taglia gigante abruzzo]
 categoria: Destinazioni

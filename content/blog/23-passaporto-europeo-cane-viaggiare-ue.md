@@ -1,7 +1,7 @@
 ---
 slug: passaporto-europeo-cane-viaggiare-ue
-titolo_seo: "Passaporto europeo per il cane: come viaggiare in UE"
-meta_description: "Cosa serve per viaggiare con il cane nei paesi dell'Unione Europea: passaporto europeo, microchip, vaccino antirabbico e le regole specifiche di alcuni paesi."
+titolo_seo: "Passaporto europeo cane: come viaggiare in UE"
+meta_description: "Passaporto europeo cane: cosa serve per viaggiare nei paesi UE, microchip, vaccino antirabbico e le regole specifiche di alcuni paesi."
 keyword_principale: passaporto europeo cane
 keyword_correlate: [documenti cane viaggio ue, vaccino antirabbico cane obbligatorio, viaggiare con cane estero]
 categoria: Normativa e viaggi

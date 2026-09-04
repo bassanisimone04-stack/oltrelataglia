@@ -1,7 +1,7 @@
 ---
 slug: cani-taglia-gigante-razze-peso
-titolo_seo: "Cani di taglia gigante: quali razze e quanto pesano"
-meta_description: "Quali razze rientrano nella taglia gigante, quanto pesano davvero e perché per loro trovare un alloggio pet friendly è più difficile del previsto."
+titolo_seo: "Cani di taglia gigante razze e peso: la guida"
+meta_description: "Cani di taglia gigante razze: quali rientrano in questa categoria, quanto pesano davvero e perché per loro un alloggio è più difficile da trovare."
 keyword_principale: cani di taglia gigante razze
 keyword_correlate: [quanto pesa un alano, razze cani giganti lista, cani grandi e giganti differenza]
 categoria: Consigli pratici

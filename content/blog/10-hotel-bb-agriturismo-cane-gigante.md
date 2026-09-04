@@ -1,7 +1,7 @@
 ---
 slug: hotel-bb-agriturismo-cane-gigante
-titolo_seo: "Hotel, B&B o agriturismo: quale scegliere col cane"
-meta_description: "Vantaggi e limiti reali di hotel, B&B e agriturismi per chi viaggia con un cane di taglia grande o gigante: spazio, supplementi, regole comuni."
+titolo_seo: "Dove dormire con cane gigante: hotel, B&B o agriturismo"
+meta_description: "Dove dormire con cane gigante: vantaggi e limiti reali di hotel, B&B e agriturismi, spazio, supplementi, regole comuni per chi viaggia."
 keyword_principale: dove dormire con cane gigante
 keyword_correlate: [hotel cani taglia gigante, agriturismo o hotel con il cane, b&b cani grandi ammessi]
 categoria: Guide

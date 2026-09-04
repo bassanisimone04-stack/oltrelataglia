@@ -1,7 +1,7 @@
 ---
 slug: domande-da-fare-prima-di-prenotare
-titolo_seo: "Domande da fare prima di prenotare con il cane"
-meta_description: "Taglia massima, numero di animali, supplementi, cauzione, spazi comuni: le cinque domande che vanno fatte per iscritto prima di prenotare con un cane grande."
+titolo_seo: "Domande da fare prima di prenotare hotel cane"
+meta_description: "Domande da fare prima di prenotare hotel cane: taglia massima, supplementi, cauzione, spazi comuni — le cinque da fare per iscritto."
 keyword_principale: domande da fare prima di prenotare hotel cane
 keyword_correlate: [cosa chiedere hotel cani grandi, supplemento cane hotel, cauzione animali hotel]
 categoria: Pratica

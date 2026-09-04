@@ -1,7 +1,7 @@
 ---
 slug: bagno-mare-cane-gigante-sicurezza
-titolo_seo: "Bagno in mare con un cane gigante | Taglia Libera"
-meta_description: "Non tutti i cani giganti nuotano bene. Come capire se il tuo è a suo agio in acqua, quale salvagente scegliere e come evitare otiti e dermatiti dopo il bagno."
+titolo_seo: "Cani grandi bagno in mare: guida alla sicurezza"
+meta_description: "Cani grandi bagno in mare: non tutti nuotano bene. Come capire se il tuo cane è a suo agio in acqua, quale salvagente scegliere, come evitare otiti."
 keyword_principale: cani grandi bagno in mare
 keyword_correlate: [salvagente per cani taglia gigante, razze di cani che amano il mare, risciacquare pelo cane salsedine]
 categoria: Consigli pratici

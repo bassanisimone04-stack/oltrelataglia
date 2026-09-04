@@ -1,7 +1,7 @@
 ---
 slug: viaggiare-in-auto-cane-gigante-sicurezza
-titolo_seo: "Viaggiare in auto con un cane gigante in sicurezza"
-meta_description: "Come viaggiare in auto con un cane di taglia grande o gigante: ancoraggio, soste, temperatura in abitacolo e cosa dice il Codice della Strada."
+titolo_seo: "Viaggiare in auto con cane gigante in sicurezza"
+meta_description: "Viaggiare in auto con cane gigante: ancoraggio, soste, temperatura in abitacolo e cosa dice il Codice della Strada."
 keyword_principale: viaggiare in auto con cane gigante
 keyword_correlate: [cane gigante in macchina sicurezza, cintura di sicurezza per cani, trasporto cane auto codice della strada]
 categoria: Consigli pratici

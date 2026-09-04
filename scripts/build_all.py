@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_blog
 import build_strutture
 import build_pages
+import seo_audit
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_URL = "https://www.taglialibera.it"
@@ -93,3 +94,7 @@ if __name__ == "__main__":
     blog_slugs = [m["slug"] for m in blog_meta]
     write_sitemap(blog_slugs, struttura_slugs, static_slugs)
     write_rss(blog_meta)
+
+    print()
+    print("--- controllo SEO (parole chiave) ---")
+    seo_audit.main()

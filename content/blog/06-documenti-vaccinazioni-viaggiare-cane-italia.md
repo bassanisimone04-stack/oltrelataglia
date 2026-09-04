@@ -1,7 +1,7 @@
 ---
 slug: documenti-vaccinazioni-viaggiare-cane-italia
-titolo_seo: "Documenti per viaggiare con il cane in Italia"
-meta_description: "Libretto sanitario, microchip, anagrafe canina: cosa serve davvero per viaggiare in Italia con un cane di taglia grande, senza sorprese ai controlli."
+titolo_seo: "Documenti cane vacanze Italia: la checklist completa"
+meta_description: "Documenti cane vacanze Italia: libretto sanitario, microchip, anagrafe canina, cosa serve davvero per viaggiare senza sorprese ai controlli."
 keyword_principale: documenti cane vacanze italia
 keyword_correlate: [libretto sanitario cane viaggio, microchip anagrafe canina obbligatorio, vaccinazioni cane prima di partire]
 categoria: Normativa e viaggi

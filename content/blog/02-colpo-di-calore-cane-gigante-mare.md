@@ -1,7 +1,7 @@
 ---
 slug: colpo-di-calore-cane-gigante-mare
-titolo_seo: "Colpo di calore nel cane gigante: mare sicuro"
-meta_description: "Sabbia rovente, colpo di calore, quanta acqua serve davvero: guida pratica per portare al mare un cane di taglia gigante senza rischi in estate."
+titolo_seo: "Colpo di calore cane estate mare: rischi e prevenzione"
+meta_description: "Colpo di calore cane estate mare: sabbia rovente, quanta acqua serve davvero, guida pratica per portare al mare un cane gigante senza rischi."
 keyword_principale: colpo di calore cane estate mare
 keyword_correlate: [cani giganti e sabbia calda, protezione solare cani grandi, come rinfrescare un alano in spiaggia]
 categoria: Salute e benessere

@@ -1,7 +1,7 @@
 ---
 slug: agriturismi-piemonte-langhe-monferrato-cani-grandi
-titolo_seo: "Agriturismi in Piemonte per cani grandi | Taglia Libera"
-meta_description: "Langhe e Monferrato con un cane di taglia grande o gigante: dove alloggiare, cosa aspettarsi e una struttura verificata alla fonte."
+titolo_seo: "Agriturismo Piemonte cani grandi: Langhe e Monferrato"
+meta_description: "Agriturismo Piemonte cani grandi: Langhe e Monferrato, dove alloggiare, cosa aspettarsi, una struttura verificata alla fonte."
 keyword_principale: agriturismo piemonte cani grandi
 keyword_correlate: [agriturismo langhe cani ammessi, agriturismo monferrato animali, vacanze piemonte con il cane]
 categoria: Destinazioni

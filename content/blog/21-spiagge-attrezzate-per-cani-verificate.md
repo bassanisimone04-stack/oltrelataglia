@@ -1,7 +1,7 @@
 ---
 slug: spiagge-attrezzate-per-cani-verificate
-titolo_seo: "Spiagge attrezzate per cani in Italia: 2 verificate"
-meta_description: "Due spiagge italiane davvero attrezzate per cani, con area dedicata, docce e regole chiare: dati verificati alla fonte, non una classifica soggettiva."
+titolo_seo: "Spiagge attrezzate per cani Italia: 2 verificate"
+meta_description: "Spiagge attrezzate per cani Italia: due davvero attrezzate, con area dedicata, docce e regole chiare — dati verificati, non una classifica."
 keyword_principale: spiagge attrezzate per cani italia
 keyword_correlate: [dog beach san vincenzo, baba beach alassio, spiaggia per cani con doccia]
 categoria: Destinazioni

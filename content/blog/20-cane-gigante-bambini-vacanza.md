@@ -1,7 +1,7 @@
 ---
 slug: cane-gigante-bambini-vacanza
-titolo_seo: "Cane gigante e bambini in vacanza: convivenza serena"
-meta_description: "Come gestire la convivenza tra un cane di taglia grande o gigante e bambini durante una vacanza in una struttura nuova, con consigli pratici."
+titolo_seo: "Cane gigante e bambini vacanza: convivenza serena"
+meta_description: "Cane gigante e bambini vacanza: come gestire la convivenza in una struttura nuova, con consigli pratici per una convivenza serena."
 keyword_principale: cane gigante e bambini vacanza
 keyword_correlate: [cane grande con bambini consigli, sicurezza cane bambini vacanza, molossoide e bambini]
 categoria: Consigli pratici

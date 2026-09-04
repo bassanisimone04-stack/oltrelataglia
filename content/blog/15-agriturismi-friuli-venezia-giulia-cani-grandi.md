@@ -1,7 +1,7 @@
 ---
 slug: agriturismi-friuli-venezia-giulia-cani-grandi
-titolo_seo: "Agriturismi in Friuli Venezia Giulia per cani grandi"
-meta_description: "Dove alloggiare in Friuli Venezia Giulia con un cane di taglia grande: un agriturismo nel Carso triestino verificato alla fonte, con area sgambamento."
+titolo_seo: "Agriturismo Friuli Venezia Giulia cani grandi"
+meta_description: "Agriturismo Friuli Venezia Giulia cani grandi: un agriturismo nel Carso triestino verificato alla fonte, con area sgambamento."
 keyword_principale: agriturismo friuli venezia giulia cani grandi
 keyword_correlate: [agriturismo carso cani ammessi, vacanze trieste con il cane, agriturismo cani taglia grande friuli]
 categoria: Destinazioni
