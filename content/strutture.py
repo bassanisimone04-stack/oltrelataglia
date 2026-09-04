@@ -1290,6 +1290,69 @@ STRUTTURE += [
     },
 ]
 
+STRUTTURE += [
+    {
+        "slug": "hotel-holidays-barrea",
+        "nome": "Hotel Holidays",
+        "comune": "Barrea (L'Aquila)",
+        "regione": "Abruzzo",
+        "regione_slug": "abruzzo",
+        "fonte_nome": "hotel-holidays.it",
+        "fonte_url": "https://www.hotel-holidays.it/vacanze-con-il-cane-hotel-animali-ammessi-abruzzo/",
+        "sito_url": "https://www.hotel-holidays.it/",
+        "tags": ["Ogni taglia", "Più cani ammessi", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel a Barrea, nel Parco Nazionale d'Abruzzo, affacciato sul lago. Secondo "
+            "quanto dichiarato sulla pagina dedicata del sito ufficiale, ammette cani di "
+            "ogni taglia, anche più di tre per cliente, senza alcun supplemento. L'accesso "
+            "alla sala da pranzo è consentito salvo la presenza di altri ospiti che non "
+            "tollerano animali."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Più di tre, nessun limite dichiarato"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Ciotole per il cibo disponibili",
+            "Nel Parco Nazionale d'Abruzzo, sul lago di Barrea",
+            "Accesso alla sala da pranzo (salvo altri ospiti)",
+        ],
+    },
+    {
+        "slug": "villa-maredona-ascea",
+        "nome": "CondHotel Villa Maredona",
+        "comune": "Ascea (Salerno)",
+        "regione": "Campania",
+        "regione_slug": "campania",
+        "fonte_nome": "villamaredona.it",
+        "fonte_url": "https://www.villamaredona.it/hotel-pet-friendly-ascea",
+        "sito_url": "https://www.villamaredona.it/",
+        "tags": ["Ogni taglia", "Fino a 2 cani", "Nessun supplemento"],
+        "taglia_bucket": "ogni",
+        "descrizione": (
+            "Hotel sulla costa del Cilento, tra Ascea e Casalvelino, a pochi passi dal "
+            "mare. Secondo quanto dichiarato sulla pagina dedicata del sito ufficiale, "
+            "ammette cani di ogni taglia, fino a due per prenotazione, senza supplemento. "
+            "Un tratto della spiaggia riservata agli ospiti è accessibile ai cani, e "
+            "un'area giochi adiacente permette loro di correre liberi in sicurezza."
+        ),
+        "fatti": [
+            ("Taglia massima", "Ogni taglia, inclusa gigante"),
+            ("Numero di cani", "Fino a 2"),
+            ("Supplemento animali", "Nessuno dichiarato"),
+            ("Cauzione", "Non indicata nella fonte"),
+        ],
+        "servizi": [
+            "Tratto di spiaggia riservata accessibile ai cani",
+            "Area giochi recintata adiacente alla struttura",
+            "Costa del Cilento tra Ascea e Casalvelino",
+        ],
+    },
+]
+
 ALL_TAGS = []
 for _s in STRUTTURE:
     for _t in _s["tags"]:
