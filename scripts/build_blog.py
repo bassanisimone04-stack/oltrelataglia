@@ -367,6 +367,17 @@ def build():
         s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
         return s
 
+    # Foto tematica per l'header di ogni categoria (vedi img/blog/README.md
+    # per provenienza/licenza). Le categorie senza una foto adatta restano
+    # senza immagine, invece di forzarne una fuori tema.
+    CATEGORIA_IMG = {
+        "Destinazioni": ("/img/blog/cane-agriturismo.jpg", "Cane di taglia grande sdraiato in un'azienda agricola"),
+        "Normativa e viaggi": ("/img/blog/cane-auto.jpg", "Cane di taglia grande al finestrino di un'auto in viaggio"),
+        "Consigli pratici": ("/img/blog/cane-casa.jpg", "Cane di taglia grande in casa"),
+        "Salute e benessere": ("/img/blog/cane-ritratto.jpg", "Ritratto di un cane di taglia gigante"),
+        "Strutture": ("/img/blog/cane-giardino.jpg", "Cane di taglia grande in un giardino recintato"),
+    }
+
     # ---- pagine /blog/categoria/<slug>/index.html ----
     categoria_slugs = []
     for cat in categorie:
@@ -383,6 +394,11 @@ def build():
         </div>
       </a>'''
             for m in cat_meta
+        )
+        cat_img = CATEGORIA_IMG.get(cat)
+        cat_img_html = (
+            f'<div class="cat-hero-img"><img src="{cat_img[0]}" alt="{html.escape(cat_img[1])}"></div>'
+            if cat_img else ""
         )
         cat_title = f"{cat}: guide per cani grandi | Taglia Libera"
         cat_desc = truncate_desc(
@@ -405,7 +421,7 @@ def build():
 <meta property="og:title" content="{html.escape(cat_title)}">
 <meta property="og:description" content="{html.escape(cat_desc)}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image" content="{'https://www.taglialibera.it' + cat_img[0] if cat_img else OG_IMAGE}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.taglialibera.it/blog/categoria/{c_slug}/">
 {style_block}
@@ -415,6 +431,8 @@ def build():
   .blog-index-grid .post{{ border-top:1px solid var(--line); }}
   .blog-index-grid .post:nth-child(odd){{ border-right:1px solid var(--line); }}
   @media (max-width:820px){{ .blog-index-grid .post:nth-child(odd){{ border-right:none; }} }}
+  .cat-hero-img{{ margin-top:32px; height:220px; overflow:hidden; border:1px solid var(--line); }}
+  .cat-hero-img img{{ width:100%; height:100%; object-fit:cover; }}
 </style>
 </head>
 <body>
@@ -429,6 +447,7 @@ def build():
       <p style="margin-top:18px; max-width:62ch; font-size:17px; color:var(--ink-2);">
         {len(cat_meta)} guida della categoria {html.escape(cat)}, solo dati verificati con fonte.
       </p>
+      {cat_img_html}
     </div>
   </section>
 
