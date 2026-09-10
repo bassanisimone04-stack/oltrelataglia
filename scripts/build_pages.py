@@ -110,6 +110,48 @@ CHECKLIST_SCRIPT = """
 """
 
 
+COLLABORA_CSS = """
+  .embed-box{ border:1px solid var(--line); padding:28px; margin:24px 0 32px; background:var(--surface-2); }
+  .embed-box .embed-preview{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .embed-box .embed-preview img{ display:block; }
+  .embed-box textarea{
+    width:100%; min-height:90px; padding:14px 16px; border:1px solid var(--line); background:var(--surface);
+    color:var(--ink); font-family:'Martian Mono',monospace; font-size:12.5px; line-height:1.6; resize:vertical;
+  }
+  .embed-box .embed-actions{ margin-top:14px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .embed-copied{ font-family:'Martian Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--klein-text); opacity:0; transition:opacity .2s; }
+  .embed-copied.show{ opacity:1; }
+"""
+
+COLLABORA_SCRIPT = """
+<script>
+(function(){
+  "use strict";
+  var btn = document.getElementById("embed-copy-btn");
+  var box = document.getElementById("embed-code");
+  var msg = document.getElementById("embed-copied-msg");
+  if (!btn || !box) return;
+  btn.addEventListener("click", function(){
+    box.select();
+    box.setSelectionRange(0, box.value.length);
+    var done = false;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(box.value);
+        done = true;
+      }
+    } catch(e){}
+    if (!done) { try { document.execCommand("copy"); done = true; } catch(e){} }
+    if (done && msg) {
+      msg.classList.add("show");
+      setTimeout(function(){ msg.classList.remove("show"); }, 2200);
+    }
+  });
+})();
+</script>
+"""
+
+
 def extract(src, start_marker, end_marker):
     i1 = src.index(start_marker)
     i2 = src.index(end_marker, i1) + len(end_marker)
@@ -207,7 +249,57 @@ def build():
         <li>Non pubblichiamo prezzi o valutazioni: se non li abbiamo verificati, preferiamo ometterli.</li>
       </ul>
       <h2>Segnala un errore</h2>
-      <p>Se gestisci una delle strutture segnalate, o hai trovato un'informazione non più aggiornata, scrivici dalla pagina <a href="/contatti/">Contatti</a>: correggiamo volentieri ogni scheda su segnalazione.</p>
+      <p>Se gestisci una delle strutture segnalate, o hai trovato un'informazione non più aggiornata, scrivici dalla pagina <a href="/contatti/">Contatti</a>: correggiamo volentieri ogni scheda su segnalazione. Se gestisci una struttura pet friendly per cani grandi, guarda anche la pagina <a href="/collabora/">Collabora con noi</a>.</p>
+    </div>
+  </article>
+""",
+    }
+
+    # ---------- Collabora con noi (per le strutture) ----------
+    pages["collabora"] = {
+        "title": "Collabora con noi: per le strutture | Taglia Libera",
+        "description": "Sei il gestore di una struttura pet friendly per cani grandi? Ecco come farti segnalare, correggere una scheda e il badge da mettere sul tuo sito.",
+        "extra_css": COLLABORA_CSS,
+        "extra_script": COLLABORA_SCRIPT,
+        "body": f"""
+  <section class="static-hero">
+    <div class="wrap">
+      <p class="lbl"><a href="/" style="text-decoration:none; color:var(--ink-2);">Home</a> / Collabora con noi</p>
+      <h1 style="margin-top:10px;">Gestisci una struttura? Collabora con noi.</h1>
+      <p style="margin-top:16px; max-width:56ch; font-size:16px; color:var(--ink-2);">
+        Taglia Libera è una directory indipendente: non chiediamo commissioni né pagamenti per comparire.
+        Se la tua struttura accoglie davvero cani di taglia grande o gigante senza i soliti limiti, ecco come essere segnalati o correggere un dato.
+      </p>
+    </div>
+  </section>
+  <article class="wrap">
+    <div class="static-body">
+      <h2>Come farti segnalare</h2>
+      <p>Scrivici dalla pagina <a href="/contatti/">Contatti</a> con il nome della struttura, il link al tuo sito ufficiale e un riferimento pubblico dove è dichiarato che accettate cani di taglia grande o gigante (una pagina del vostro sito, una policy pet, un portale specializzato). Verifichiamo il dato e, se confermato, creiamo la scheda gratuitamente. Il metodo con cui aggiungiamo le strutture è descritto nella pagina <a href="/chi-siamo/">Chi siamo</a>.</p>
+
+      <h2>Hai già una scheda? Correggila</h2>
+      <p>Se un dato non è più aggiornato — taglia massima ammessa, numero di cani, supplemento — scrivici dai <a href="/contatti/">Contatti</a>: correggiamo ogni scheda su segnalazione, di solito nel giro di pochi giorni.</p>
+
+      <h2>Il badge per il tuo sito</h2>
+      <p>Se la tua struttura è già segnalata su Taglia Libera, puoi mettere questo badge sul tuo sito (nella pagina "cani ammessi" o in home) per far sapere ai tuoi ospiti che sei nella directory. È solo un link di cortesia: non è un obbligo e non cambia nulla nella tua scheda.</p>
+
+      <div class="embed-box">
+        <div class="embed-preview">
+          <img src="/img/badge/badge-taglia-libera.svg" width="220" height="56" alt="Anteprima del badge Taglia Libera">
+        </div>
+        <label for="embed-code" style="font-family:'Martian Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-2);">Codice da incollare sul tuo sito</label>
+        <textarea id="embed-code" readonly rows="4">&lt;a href="https://www.taglialibera.it/" target="_blank" rel="noopener"&gt;
+  &lt;img src="https://www.taglialibera.it/img/badge/badge-taglia-libera.svg" width="220" height="56" alt="Struttura segnalata su Taglia Libera, la directory per cani di taglia grande e gigante"&gt;
+&lt;/a&gt;</textarea>
+        <div class="embed-actions">
+          <button type="button" class="btn btn-klein" id="embed-copy-btn">Copia codice</button>
+          <span class="embed-copied" id="embed-copied-msg">Copiato ✓</span>
+        </div>
+      </div>
+      <p>Se conosci l'indirizzo esatto della tua scheda (es. <code>https://www.taglialibera.it/struttura/nome-struttura/</code>), puoi sostituirlo al posto dell'home page nel codice sopra: il link porterà i tuoi ospiti direttamente alla tua pagina.</p>
+
+      <h2>Sei un blog o un portale di settore?</h2>
+      <p>Se scrivi di viaggi, cinofilia o strutture pet friendly e vuoi linkare una guida o una scheda di Taglia Libera come fonte, sei libero di farlo: citiamo sempre le fonti pubbliche da cui arrivano i dati delle strutture, e apprezziamo lo stesso trattamento. Scrivici dai <a href="/contatti/">Contatti</a> se vuoi segnalarci un articolo o proporre uno scambio di link su contenuti in tema.</p>
     </div>
   </article>
 """,
