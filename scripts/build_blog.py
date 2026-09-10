@@ -397,7 +397,7 @@ def build():
         )
         cat_img = CATEGORIA_IMG.get(cat)
         cat_img_html = (
-            f'<div class="cat-hero-img"><img src="{cat_img[0]}" alt="{html.escape(cat_img[1])}"></div>'
+            f'<div class="cat-hero-img"><img src="{cat_img[0]}" alt="{html.escape(cat_img[1])}" decoding="async"></div>'
             if cat_img else ""
         )
         cat_title = f"{cat}: guide per cani grandi | Taglia Libera"
