@@ -9,9 +9,9 @@ tempo_lettura: 5 min
 data_pubblicazione: 2026-08-30
 ---
 
-# Cani di taglia gigante: quali razze e quanto pesano
+# Cani di taglia gigante razze e peso: la guida
 
-Chi cerca un alloggio pet friendly incontra spesso una distinzione poco chiara tra "cane grande" e "cane gigante" — eppure per chi prenota fa una differenza enorme, perché molte strutture pongono il limite proprio a cavallo tra queste due categorie.
+Le cani di taglia gigante razze più comuni sono meno ovvie di quanto sembri: chi cerca un alloggio pet friendly incontra spesso una distinzione poco chiara tra "cane grande" e "cane gigante" — eppure per chi prenota fa una differenza enorme, perché molte strutture pongono il limite proprio a cavallo tra queste due categorie, con cani grandi e giganti differenza che spesso non è dichiarata in modo esplicito.
 
 ## Come si classificano le taglie nei cani
 
@@ -24,11 +24,11 @@ Non esiste uno standard unico e ufficiale usato da tutte le strutture ricettive,
 
 È la stessa suddivisione che usiamo in questa directory per classificare le strutture, proprio perché è quella più diffusa tra i portali specializzati.
 
-## Quali razze rientrano nella taglia gigante
+## Razze cani giganti lista: quali rientrano nella taglia gigante
 
-Alcune delle razze più comuni che superano tipicamente i 45 kg da adulti (con ampia variabilità individuale, soprattutto tra maschio e femmina):
+Ecco una razze cani giganti lista con i pesi tipici da adulti (con ampia variabilità individuale, soprattutto tra maschio e femmina):
 
-- **Alano** — tra le razze più alte al mondo, i maschi superano spesso i 55-65 kg
+- **Alano** — quanto pesa un alano? Tra le razze più alte al mondo, i maschi superano spesso i 55-65 kg
 - **San Bernardo** — può arrivare oltre i 70-80 kg
 - **Mastino Napoletano** — tipicamente tra i 50 e i 70 kg
 - **Cane da Montagna dei Pirenei** — spesso tra i 45 e i 60 kg

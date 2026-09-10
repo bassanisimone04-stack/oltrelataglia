@@ -9,9 +9,9 @@ tempo_lettura: 5 min
 data_pubblicazione: 2026-08-30
 ---
 
-# Le 5 domande da fare sempre prima di prenotare (e perché contano)
+# Domande da fare prima di prenotare hotel cane: le 5 che contano
 
-La maggior parte delle brutte sorprese con un cane grande non nasce da una struttura disonesta, ma da una domanda che nessuno ha fatto per iscritto prima di partire. "Animali ammessi" scritto su un sito non dice quasi nulla: non dice fino a che taglia, non dice quanti, non dice quanto costa, non dice dove il cane può stare davvero. Sono proprio le domande che usiamo come metodo per ogni struttura che raccogliamo in questa directory — e sono le stesse che chiunque può fare da solo, prima ancora che esista una scheda verificata a cui affidarsi.
+Le domande da fare prima di prenotare hotel cane sono poche, ma vanno fatte per iscritto e prima di partire — non dopo. La maggior parte delle brutte sorprese con un cane grande non nasce da una struttura disonesta, ma da una domanda che nessuno ha fatto per iscritto prima di partire. "Animali ammessi" scritto su un sito non dice quasi nulla: non dice fino a che taglia, non dice quanti, non dice quanto costa, non dice dove il cane può stare davvero. Sono proprio le domande che usiamo come metodo per ogni struttura che raccogliamo in questa directory — e sono le stesse che chiunque può fare da solo, prima ancora che esista una scheda verificata a cui affidarsi. In sintesi, cosa chiedere hotel cani grandi si riduce a cinque punti concreti.
 
 ## 1. Qual è la taglia massima ammessa, in kg?
 
@@ -23,11 +23,11 @@ Molte strutture ragionano "un animale" al singolare anche quando lo scrivono al 
 
 ## 3. Ci sono costi extra legati agli animali, e quanto sono esattamente?
 
-Non fermarti a "sì, c'è un supplemento": chiedi la cifra esatta e se è una tantum per il soggiorno o calcolata a notte. È lo stesso principio che applichiamo nelle schede di questa directory — quando la fonte non specifica un importo, lo segnaliamo come "non indicato" invece di lasciare immaginare una cifra qualsiasi.
+Il supplemento cane hotel è quasi sempre presente in qualche forma: non fermarti a "sì, c'è un supplemento", chiedi la cifra esatta e se è una tantum per il soggiorno o calcolata a notte. È lo stesso principio che applichiamo nelle schede di questa directory — quando la fonte non specifica un importo, lo segnaliamo come "non indicato" invece di lasciare immaginare una cifra qualsiasi.
 
 ## 4. È richiesta una cauzione, e come viene restituita?
 
-Quando prevista, la cauzione è generalmente una cifra fissa restituita al check-out se non ci sono danni — ma "generalmente" non è una garanzia per il tuo caso specifico. Chiedi l'importo, le modalità di pagamento (contanti, carta, bonifico) e in che tempi viene restituita. Una risposta vaga o evasiva su questo punto è un segnale a cui prestare attenzione più di quanto sembri.
+La cauzione animali hotel, quando prevista, è generalmente una cifra fissa restituita al check-out se non ci sono danni — ma "generalmente" non è una garanzia per il tuo caso specifico. Chiedi l'importo, le modalità di pagamento (contanti, carta, bonifico) e in che tempi viene restituita. Una risposta vaga o evasiva su questo punto è un segnale a cui prestare attenzione più di quanto sembri.
 
 ## 5. Il cane può accedere agli spazi comuni — sala colazione, ristorante, piscina?
 

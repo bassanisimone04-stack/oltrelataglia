@@ -9,11 +9,11 @@ tempo_lettura: 6 min
 data_pubblicazione: 2026-08-30
 ---
 
-# Cane gigante in treno, aereo e traghetto: le regole in Italia
+# Viaggiare in treno con cane grande, aereo e traghetto: le regole in Italia
 
-Non tutti i viaggi si fanno in auto. Se il tuo cane è troppo grande per il classico trasportino, alcune regole cambiano — ecco cosa dicono davvero Trenitalia, le compagnie aeree e i traghetti, con fonte.
+Non tutti i viaggi si fanno in auto: viaggiare in treno con cane grande, in aereo o in traghetto ha regole diverse da quelle dell'auto. Se il tuo cane è troppo grande per il classico trasportino, alcune regole cambiano — ecco cosa dicono davvero Trenitalia, le compagnie aeree e i traghetti, con fonte.
 
-## In treno con Trenitalia
+## Viaggiare in treno con cane grande su Trenitalia
 
 Un cane di taglia medio-grande o grande non entra in un trasportino: secondo il regolamento pubblico, deve viaggiare **al guinzaglio e con la museruola**, e serve un biglietto — di norma il costo è pari alla metà di un biglietto di seconda classe o di un biglietto regionale. Sui treni regionali è possibile portare un cane di qualsiasi taglia (sempre con museruola e guinzaglio) a qualunque ora, tranne che dalle 7 alle 9 nei giorni feriali.
 
@@ -21,17 +21,17 @@ Un cane di taglia medio-grande o grande non entra in un trasportino: secondo il 
 
 Sulle promozioni stagionali che a volte permettono ai cani di ogni taglia di viaggiare gratis sulle Frecce, non c'è una conferma stabile valida tutto l'anno: verifica sempre le condizioni in vigore sul sito Trenitalia prima di prenotare, non basarti su quanto letto altrove.
 
-## In aereo
+## Cane in aereo taglia grande: cosa cambia da compagnia a compagnia
 
 Qui la situazione cambia molto da compagnia a compagnia e, soprattutto, con il peso del cane.
 
 **Cabina (trasportino)**: quasi tutte le compagnie limitano il peso totale (cane + trasportino) tra 8 e 12&nbsp;kg — inutilizzabile per un cane gigante, spesso anche per uno di taglia grande.
 
-**Novità recente — ITA Airways "Large Dog On Board"**: dal 3 agosto 2026, ITA Airways ha introdotto un servizio che permette a cani **fino a 30&nbsp;kg** di viaggiare in cabina **senza trasportino**, seduti nella prima fila lato sinistro, posto finestrino. Il servizio è disponibile solo su alcuni voli nazionali e va prenotato tramite il Customer Information Assistance Office (CIAO) almeno quattro giorni prima della partenza.
+**Novità recente — ITA Airways cane cabina, il servizio "Large Dog On Board"**: dal 3 agosto 2026, ITA Airways ha introdotto un servizio che permette a cani **fino a 30&nbsp;kg** di viaggiare in cabina **senza trasportino**, seduti nella prima fila lato sinistro, posto finestrino. Il servizio è disponibile solo su alcuni voli nazionali e va prenotato tramite il Customer Information Assistance Office (CIAO) almeno quattro giorni prima della partenza.
 
 **Oltre i 30 kg (stiva)**: per un cane davvero gigante, la maggior parte delle compagnie prevede ancora il trasporto in stiva, in un apposito trasportino rigido. Le regole su dimensioni, temperature ammesse e costi variano molto da compagnia a compagnia e non sono uniformi: verificale direttamente con la compagnia scelta prima di prenotare, idealmente per iscritto.
 
-## In traghetto
+## Cane in traghetto regole: cosa dicono le compagnie di navigazione
 
 Le regole delle principali compagnie di navigazione italiane sono più uniformi tra loro rispetto a treno e aereo:
 

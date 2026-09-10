@@ -9,15 +9,15 @@ tempo_lettura: 7 min
 data_pubblicazione: 2026-08-27
 ---
 
-# Spiagge attrezzate per cani grandi e giganti: dove andare senza problemi di spazio
+# Spiagge per cani taglia grande e gigante: dove andare senza problemi di spazio
 
-Molte "bau beach" italiane nascono pensando a un Jack Russell, non a un Terranova. Il risultato è uno stallo di due metri per due, un ombrellone incastrato tra altri due, e un cane di 60&nbsp;kg che non riesce nemmeno a sdraiarsi di traverso. Non è colpa dello stabilimento: è che lo spazio pensato per un cane medio semplicemente non basta a uno grande, e nessuno lo dice finché non ci sei già dentro con l'auto parcheggiata e il bagagliaio pieno.
+Trovare spiagge per cani taglia grande adatte davvero non è come cercare una bau beach qualsiasi. Molte "bau beach" italiane nascono pensando a un Jack Russell, non a un Terranova. Il risultato è uno stallo di due metri per due, un ombrellone incastrato tra altri due, e un cane di 60&nbsp;kg che non riesce nemmeno a sdraiarsi di traverso. Non è colpa dello stabilimento: è che lo spazio pensato per un cane medio semplicemente non basta a uno grande, e nessuno lo dice finché non ci sei già dentro con l'auto parcheggiata e il bagagliaio pieno.
 
 Questa guida non è un elenco di stabilimenti — non abbiamo ancora una rete di spiagge verificate una per una, e non vogliamo inventarcela. È un metodo: cosa guardare, cosa chiedere e come riconoscere in anticipo se una spiaggia regge davvero un cane grande, prima di scoprirlo sul posto.
 
 ## La differenza tra una bau beach qualunque e una spiaggia per giganti
 
-Tre cose separano le due categorie, e nessuna delle tre si vede nelle foto sul sito dello stabilimento.
+Tre cose separano le due categorie, e nessuna delle tre si vede nelle foto sul sito dello stabilimento. In pratica, quello che cerchi è quello che all'estero chiamano un dog beach spazi grandi: un'area pensata per cani che occupano fisicamente più posto, non un angolo di cortesia ricavato tra due ombrelloni.
 
 **Lo spazio vitale per piazzola.** Una piazzola pensata per un cane piccolo misura spesso 2×2 metri: ombrellone, due lettini, un metro di sabbia libera. Un Alano sdraiato occupa già quasi tutto quel metro. Se lo stabilimento non riesce a dirti la metratura della piazzola, è un segnale — non necessariamente che sia inadatta, ma che nessuno l'ha mai misurata pensando a un cane grande.
 
@@ -40,7 +40,7 @@ Chi gestisce lo stabilimento, se lo spazio c'è, di solito è felice di dirtelo 
 
 Non pubblichiamo ancora una mappa di spiagge verificate: sarebbe facile scrivere dieci nomi trovati con una ricerca veloce, ma sarebbe esattamente il tipo di dato non verificato che su questo sito non vogliamo mettere. Il metodo con cui aggiungiamo ogni struttura, una alla volta, è descritto in [Chi siamo](/chi-siamo/) — e quando avremo una prima selezione di spiagge con piazzole XXL confermate per iscritto, questa guida verrà aggiornata con i nomi reali, la fonte e il link diretto.
 
-Nel frattempo, il metodo sopra funziona ovunque tu stia guardando: in Liguria come in Puglia, la domanda giusta fatta prima vale più di qualsiasi elenco.
+Nel frattempo, il metodo sopra funziona ovunque tu stia guardando: in Liguria come in Puglia, la domanda giusta fatta prima vale più di qualsiasi elenco. Vale anche per gli stabilimenti balneari cani oltre 40 kg, dove il limite di peso — quando esiste — va sempre chiesto per iscritto, mai dato per scontato dal semplice "animali ammessi".
 
 ## Domande frequenti
 
@@ -51,4 +51,4 @@ Non necessariamente. Una spiaggia libera dà più spazio in assoluto, ma zero om
 È un segnale d'allarme ragionevole, sì. Non significa che la spiaggia sia inadatta, ma che nessuno ha ancora pensato in modo specifico a chi arriva con un cane grande — e quindi la sorpresa, buona o cattiva, la scopri sul posto.
 
 **Potete darmi un elenco di spiagge specifiche per cani di taglia grande?**
-Non ancora — come spieghiamo in questo articolo, non pubblichiamo nomi di spiagge finché non abbiamo una verifica diretta e scritta delle piazzole XXL, per non ripetere l'errore dei tanti elenchi generici già in circolazione. Il metodo sopra (le domande da fare, i segnali da cercare) funziona nel frattempo ovunque tu stia guardando.
+Non ancora — come spieghiamo in questo articolo, non pubblichiamo nomi di spiagge finché non abbiamo una verifica diretta e scritta delle piazzole XXL, per non ripetere l'errore dei tanti elenchi generici già in circolazione. Il metodo sopra (le domande da fare, i segnali da cercare) funziona nel frattempo ovunque tu stia guardando, incluse le spiagge per alani e san bernardo, dove il problema dello spazio per piazzola si sente più che altrove.

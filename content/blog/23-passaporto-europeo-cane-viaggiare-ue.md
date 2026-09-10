@@ -9,9 +9,9 @@ tempo_lettura: 5 min
 data_pubblicazione: 2026-08-30
 ---
 
-# Passaporto europeo per il cane: cosa serve per viaggiare in UE
+# Passaporto europeo cane: cosa serve per viaggiare in UE
 
-Se il viaggio con il tuo cane gigante esce dai confini italiani, i documenti cambiano rispetto a quelli descritti nella [guida per gli spostamenti in Italia](/blog/documenti-vaccinazioni-viaggiare-cane-italia/). Ecco cosa richiede davvero la normativa europea, con fonte.
+Il passaporto europeo cane è il primo documento da procurarsi se vuoi viaggiare con cane estero, dentro i confini dell'Unione Europea. Se il viaggio con il tuo cane gigante esce dai confini italiani, i documenti cambiano rispetto a quelli descritti nella [guida per gli spostamenti in Italia](/blog/documenti-vaccinazioni-viaggiare-cane-italia/) — sono i documenti cane viaggio UE che la normativa europea richiede davvero, con fonte.
 
 ## Il passaporto europeo per animali da compagnia
 
@@ -25,7 +25,7 @@ Se il viaggio con il tuo cane gigante esce dai confini italiani, i documenti cam
 
 1. **Microchip registrato** (o tatuaggio leggibile, solo se fatto prima del 3 luglio 2011) — senza identificazione elettronica, il passaporto non può essere rilasciato.
 2. **Passaporto europeo** rilasciato da un veterinario abilitato, che attesti anche l'idoneità dell'animale a viaggiare.
-3. **Vaccinazione antirabbica in corso di validità.** Il viaggio può iniziare solo **dopo 21 giorni pieni** dal completamento del protocollo della prima vaccinazione — un dettaglio spesso sottovalutato: se il cane non è mai stato vaccinato contro la rabbia, non basta farlo il giorno prima di partire.
+3. **Vaccino antirabbico cane obbligatorio in corso di validità.** Il viaggio può iniziare solo **dopo 21 giorni pieni** dal completamento del protocollo della prima vaccinazione — un dettaglio spesso sottovalutato: se il cane non è mai stato vaccinato contro la rabbia, non basta farlo il giorno prima di partire.
 
 Se arrivi da un paese extra-UE, serve anche un certificato sanitario europeo specifico, diverso dal semplice passaporto.
 
