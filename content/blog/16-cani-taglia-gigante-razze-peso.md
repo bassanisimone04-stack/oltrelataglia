@@ -37,6 +37,7 @@ Ecco una razze cani giganti lista con i pesi tipici da adulti (con ampia variabi
 - **Leonberger** — tra i 45 e i 77 kg a seconda del sesso. Pelo lungo e folto: come il San Bernardo, va gestito con cura nei mesi caldi.
 - **Dogo Argentino** — generalmente tra i 40 e i 45 kg, al limite superiore della taglia grande.
 - **Cane Corso** — tipicamente tra i 40 e i 50 kg, spesso a cavallo tra grande e gigante.
+- **Kangal** — kangal gigante peso: i maschi arrivano fino a 65 kg. Pastore dell'Anatolia dal temperamento territoriale, ne parliamo nel dettaglio nella [guida dedicata al Kangal](/blog/kangal-gigante-peso-dove-viaggiare/).
 
 Le cifre sono indicative: il peso reale dipende da genetica, sesso, alimentazione e stato di forma del singolo cane, non solo dalla razza.
 
@@ -58,3 +59,6 @@ Non ne abbiamo trovato traccia in nessuna delle fonti consultate per questa dire
 
 **I cani di taglia gigante hanno un'aspettativa di vita più breve?**
 In generale sì: le razze giganti tendono ad avere un'aspettativa di vita più breve rispetto alle razze piccole, un fenomeno noto in medicina veterinaria legato alla velocità di crescita e all'usura di cuore e articolazioni. Le cifre esatte variano molto da razza a razza e da singolo cane.
+
+**Qual è la razza di cane più grande al mondo?**
+Non esiste una singola razza "più grande in assoluto": Alano, San Bernardo e Terranova si contendono il primato a seconda che si guardi l'altezza o il peso. Per il record vero e proprio, verificato dal Guinness World Records, vedi la nostra [guida al cane più alto del mondo](/blog/cane-piu-alto-del-mondo-record-alano/).
