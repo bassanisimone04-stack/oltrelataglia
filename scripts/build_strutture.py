@@ -231,7 +231,13 @@ def build():
       <div class="simili-grid">{simili_html}</div>'''
 
         seo_title = build_seo_title(st['nome'], st.get("taglia_bucket"))
-        meta_desc = truncate_desc(st['descrizione'], 155)
+        # Meta description costruita dai dati strutturati (taglia, supplemento,
+        # fonte): mette per primo cio' che cerca chi ha un cane grande, invece
+        # di tagliare a meta' la descrizione discorsiva della scheda.
+        tags_txt = ", ".join(t[0].lower() + t[1:] for t in st.get("tags", [])[:2])
+        meta_desc = truncate_desc(
+            f"{st['nome']}, {st['comune']}: {tags_txt}. Fonte: {st['fonte_nome']}, da confermare prima di prenotare."
+            if tags_txt else st['descrizione'], 155)
         page = f"""<!DOCTYPE html>
 <html lang="it">
 <head>
