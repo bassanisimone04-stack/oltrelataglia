@@ -1,0 +1,14 @@
+# Taglia Libera
+
+> Directory italiana di hotel, B&B e agriturismi che accettano cani di taglia grande e gigante, o più di un cane. Ogni scheda cita la fonte pubblica dei dati; i dati non sono ancora verificati telefonicamente e vanno confermati con la struttura prima di prenotare.
+
+## Sezioni principali
+- [Cerca alloggi](https://www.taglialibera.it/cerca/): elenco filtrabile delle strutture per taglia massima, numero di cani e servizi.
+- [Blog e guide](https://www.taglialibera.it/blog/): guide per viaggiare e vivere con un cane grande (viaggio, documenti, salute, regole).
+- [Calcolatore taglia cane](https://www.taglialibera.it/calcolatore-taglia-cane/): per capire in quale categoria di taglia rientra il proprio cane.
+- [Checklist di viaggio](https://www.taglialibera.it/checklist-viaggio-cane/)
+- [Chi siamo](https://www.taglialibera.it/chi-siamo/): come raccogliamo e citiamo i dati.
+
+## Come leggere i dati
+- Ogni scheda struttura riporta taglia massima, numero di cani, supplemento e fonte pubblica consultata.
+- "Non specificato nella fonte" significa che la fonte non indica quel dato: non va letto come "nessun limite".

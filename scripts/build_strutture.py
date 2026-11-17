@@ -129,6 +129,36 @@ def truncate_desc(text, limit=155):
     return cut.rstrip(",.;:") + "…"
 
 
+def build_faq(st):
+    """FAQ della scheda costruite SOLO dai dati gia' presenti (fatti, fonte):
+    nessun dato nuovo, e dove la fonte tace lo diciamo."""
+    f = dict(st["fatti"])
+    nome, fonte = st["nome"], st["fonte_nome"]
+    taglia = f.get("Taglia massima", "")
+    n_cani = f.get("Numero di cani", "")
+    supp = f.get("Supplemento animali", "")
+    conferma = "Il dato viene da una fonte pubblica e non è stato verificato per telefono: conferma con la struttura, meglio per iscritto, prima di prenotare."
+    faqs = []
+    if taglia:
+        faqs.append((f"{nome} accetta cani di taglia grande?",
+                     f"Taglia massima dichiarata da {fonte}: {taglia}. {conferma}"))
+    if n_cani:
+        if "Non specificato" in n_cani:
+            r = f"La fonte consultata ({fonte}) non indica un numero massimo di cani. Chiedilo alla struttura prima di prenotare, soprattutto se viaggi con più di un cane."
+        else:
+            r = f"Numero di cani dichiarato da {fonte}: {n_cani}. {conferma}"
+        faqs.append((f"Quanti cani si possono portare a {nome}?", r))
+    if supp:
+        if "Nessuno" in supp:
+            r = f"{fonte} non dichiara alcun supplemento per gli animali. Verifica comunque il costo in fase di prenotazione: le condizioni possono cambiare."
+        elif "Non" in supp and "fonte" in supp:
+            r = f"La fonte consultata ({fonte}) non indica il costo per gli animali. Chiedilo alla struttura prima di prenotare."
+        else:
+            r = f"Supplemento dichiarato da {fonte}: {supp}. {conferma}"
+        faqs.append((f"Quanto costa portare il cane a {nome}?", r))
+    return faqs
+
+
 def build():
     home_src = open(HOME, encoding="utf-8").read()
     style_block = extract(home_src, "<style>", "</style>")
@@ -213,6 +243,19 @@ def build():
             for k, v in st["fatti"]
         )
         servizi_html = "".join(f"<li>{html.escape(sv)}</li>" for sv in st["servizi"])
+        faqs = build_faq(st)
+        faq_html = "".join(
+            f"<h3 style=\"font-size:16px; margin:18px 0 6px;\">{html.escape(q)}</h3><p>{html.escape(a)}</p>" for q, a in faqs
+        )
+        faq_section = f'''
+      <h2 class="art-h2" style="font-size:20px; margin:36px 0 6px;">Domande frequenti</h2>{faq_html}
+      <p style="margin-top:22px;">Prima di prenotare leggi anche le <a href="/blog/domande-da-fare-prima-di-prenotare/">domande da fare alla struttura</a> e guarda le altre <a href="/regione/{st['regione_slug']}/">strutture in {html.escape(st['regione'])}</a>.</p>''' if faqs else ""
+        faq_ld = ""
+        if faqs:
+            faq_ld = "<script type=\"application/ld+json\">\n" + json.dumps({
+                "@context": "https://schema.org", "@type": "FAQPage",
+                "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs],
+            }, ensure_ascii=False, indent=2) + "\n</script>\n"
         tags_html = "".join(f'<span class="spec spec-hi">{html.escape(t)}</span>' for t in st["tags"])
 
         # strutture simili: stessa regione, fino a 3, escludendo la struttura stessa
@@ -286,7 +329,7 @@ def build():
       <div class="fact-grid">{facts_html}</div>
       <p>{html.escape(st['descrizione'])}</p>
       <h2 class="art-h2" style="font-size:20px; margin-bottom:14px;">Servizi dichiarati</h2>
-      <ul class="det-servizi">{servizi_html}</ul>{simili_section}
+      <ul class="det-servizi">{servizi_html}</ul>{faq_section}{simili_section}
     </div>
   </article>
 </main>
@@ -324,7 +367,7 @@ def build():
     ],
 }, ensure_ascii=False, indent=2)}
 </script>
-{header_script}
+{faq_ld}{header_script}
 </body>
 </html>
 """
