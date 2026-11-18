@@ -506,6 +506,7 @@ def build():
 <meta property="og:image" content="{OG_IMAGE}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.taglialibera.it/blog/">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"CollectionPage","name":"Guide per viaggiare con cani grandi","url":"https://www.taglialibera.it/blog/","isPartOf":{{"@type":"WebSite","name":"Taglia Libera","url":"https://www.taglialibera.it/"}}}}</script>
 <link rel="alternate" type="application/rss+xml" title="Taglia Libera — Guide" href="https://www.taglialibera.it/feed.xml">
 {style_block}
 <style>{article_css}
