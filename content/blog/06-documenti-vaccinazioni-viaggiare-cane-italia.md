@@ -39,6 +39,8 @@ Molte strutture, quando accettano animali, chiedono di vedere il libretto sanita
 
 Prima di partire per una zona che non conosci, vale la pena cercare in anticipo l'ambulatorio veterinario più vicino alla destinazione — non per aspettarsi un'emergenza, ma per non doverlo cercare di corsa se capita davvero. Alcune strutture, come [Agriturismo Bellavita](https://www.agriturismobellavita.it/agriturismo-per-animali/), dichiarano pubblicamente una convenzione con un ambulatorio veterinario attivo 24 ore su 24 — un dettaglio che, se presente, vale la pena verificare prima di scegliere dove alloggiare.
 
+Prima di partire controlla anche la profilassi contro zecche e pappataci: vedi [leishmaniosi e zecche, come proteggere il cane in viaggio](/blog/leishmaniosi-zecche-cane-viaggio/).
+
 ## Domande frequenti
 
 **Serve un documento specifico solo per i cani di taglia grande o gigante?**

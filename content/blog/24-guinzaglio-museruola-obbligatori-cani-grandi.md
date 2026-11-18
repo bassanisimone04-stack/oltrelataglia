@@ -36,6 +36,8 @@ Fino al 2009 esisteva un elenco di razze considerate "pericolose" (spesso di tag
 
 Nella pratica, un cane grande o gigante non ha obblighi diversi da un cane piccolo: guinzaglio sempre, museruola al seguito e da usare quando richiesto. La differenza è nella percezione — un Alano o un Mastino senza museruola in un luogo affollato attira più attenzione (e più richieste di indossarla) di un cane piccolo nella stessa situazione, anche se la legge tratta i due allo stesso modo.
 
+Per sapere come comportarti in locali e ristoranti, leggi anche [cani grandi al ristorante e al bar: cosa dice la legge](/blog/cani-grandi-ristorante-bar-regole/).
+
 ## Domande frequenti
 
 **Un cane di taglia gigante è obbligato alla museruola sempre, per legge?**

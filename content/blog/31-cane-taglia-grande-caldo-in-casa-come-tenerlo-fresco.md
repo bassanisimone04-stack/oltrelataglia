@@ -37,6 +37,8 @@ Il rischio di un colpo di calore in casa cane è spesso definito "silenzioso" pr
 - **Superfici fresche**: un tappetino rinfrescante o semplicemente il pavimento in piastrelle, dove il cane può sdraiarsi per disperdere calore per contatto
 - **Evitare sforzi fisici** nelle ore più calde della giornata, anche in casa (giochi, salti)
 
+In estate non dimenticare i parassiti: [leishmaniosi e zecche in viaggio](/blog/leishmaniosi-zecche-cane-viaggio/).
+
 ## Domande frequenti
 
 **Un cane gigante rischia il colpo di calore in casa anche senza esposizione diretta al sole?**

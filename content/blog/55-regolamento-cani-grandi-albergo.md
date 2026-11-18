@@ -33,6 +33,8 @@ All'interno della libertà contrattuale che la legge riconosce, una struttura se
 
 Se un hotel rifiuta il tuo cane per un limite che il sito non menzionava, non è (quasi mai) un problema di legalità del limite in sé, ma di trasparenza commerciale: puoi far notare la discrepanza tra quanto pubblicizzato e quanto applicato, chiedere una soluzione alternativa, o in casi seri segnalarlo come pratica commerciale scorretta alle associazioni dei consumatori. Il modo migliore per evitare la situazione resta comunque prevenirla, verificando per iscritto la taglia massima prima di prenotare — mai il giorno stesso della partenza.
 
+Per il ristorante o il bar fuori dalla struttura, vedi [cani grandi al ristorante: regole e gestore](/blog/cani-grandi-ristorante-bar-regole/).
+
 ## Domande frequenti
 
 **Un albergo può rifiutare il mio cane solo perché è di taglia grande?**
