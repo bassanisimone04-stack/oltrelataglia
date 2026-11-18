@@ -181,6 +181,17 @@ PAGE_CSS = """
 
 
 def page_shell(style_block, header_block, footer_block, header_script, title, description, path, body_html, extra_css="", extra_script=""):
+    import json as _json
+    _name = title.split("|")[0].strip()
+    _bc = _json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.taglialibera.it/"},
+            {"@type": "ListItem", "position": 2, "name": _name, "item": f"https://www.taglialibera.it/{path}"},
+        ],
+    }, ensure_ascii=False)
+    _bc_tag = f'<script type="application/ld+json">{_bc}</script>' if path else ""
     return f"""<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -193,7 +204,14 @@ def page_shell(style_block, header_block, footer_block, header_script, title, de
 <script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}}catch(e){{}}</script>
 <title>{title}</title>
 <meta name="description" content="{description}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{description}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.taglialibera.it/{path}">
+<meta property="og:image" content="https://www.taglialibera.it/img/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.taglialibera.it/{path}">
+{_bc_tag}
 {style_block}
 <style>{PAGE_CSS}
 {extra_css}</style>
