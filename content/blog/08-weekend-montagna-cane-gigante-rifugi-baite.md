@@ -37,6 +37,8 @@ Un temporale pomeridiano, un abbassamento di temperatura improvviso, un sentiero
 - **Cuscinetti o balsamo per i polpastrelli**, se i sentieri prevedono tratti rocciosi prolungati — le zampe di un cane abituato a superfici morbide possono risentirne.
 - Una **coperta o tappetino personale** da mettere nella baita, utile sia per l'igiene sia per dare al cane un punto di riferimento in un ambiente nuovo.
 
+Nei prati e nei boschi in quota e in collina servono anche le precauzioni contro zecche e pappataci: [guida alla prevenzione](/blog/leishmaniosi-zecche-cane-viaggio/).
+
 ## Domande frequenti
 
 **Un cane gigante fatica di più in montagna rispetto a uno di taglia media?**

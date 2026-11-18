@@ -5,6 +5,8 @@
 ## Sezioni principali
 - [Cerca alloggi](https://www.taglialibera.it/cerca/): elenco filtrabile delle strutture per taglia massima, numero di cani e servizi.
 - [Blog e guide](https://www.taglialibera.it/blog/): guide per viaggiare e vivere con un cane grande (viaggio, documenti, salute, regole).
+- [Cani grandi al ristorante e al bar](https://www.taglialibera.it/blog/cani-grandi-ristorante-bar-regole/): cosa dicono DPR 320/1954 e Reg. CE 852/2004 e il ruolo del gestore.
+- [Leishmaniosi e zecche in viaggio](https://www.taglialibera.it/blog/leishmaniosi-zecche-cane-viaggio/): periodo a rischio, prevenzione con il veterinario, controlli dopo la vacanza.
 - [Calcolatore taglia cane](https://www.taglialibera.it/calcolatore-taglia-cane/): per capire in quale categoria di taglia rientra il proprio cane.
 - [Checklist di viaggio](https://www.taglialibera.it/checklist-viaggio-cane/)
 - [Chi siamo](https://www.taglialibera.it/chi-siamo/): come raccogliamo e citiamo i dati.

@@ -41,6 +41,8 @@ Un cane gigante calmo in vacanza non nasce per caso in mezzo a stimoli nuovi: se
 
 Ridurre lo stress del cane in viaggio non richiede attrezzatura costosa o competenze particolari in nessuna delle cinque aree sopra: richiede solo di spostare il lavoro di organizzazione prima della partenza, invece di gestirlo — con più stress, per te e per il cane — quando è già troppo tardi per cambiare qualcosa. Se vuoi una versione stampabile di questa checklist da spuntare voce per voce, trovi tutto nella nostra [checklist di viaggio con un cane grande](/checklist-viaggio-cane/).
 
+Per i pasti fuori, leggi [cani grandi al ristorante e al bar](/blog/cani-grandi-ristorante-bar-regole/).
+
 ## Domande frequenti
 
 **Qual è la causa di stress più comune in vacanza con un cane gigante?**
